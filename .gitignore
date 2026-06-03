@@ -16,6 +16,10 @@ Gemfile.lock
 # Pagefind search index (built by GitHub Action; not tracked)
 _pagefind/
 
+# Raw video downloads from the interview pipeline (1-3 GB, not committed).
+# Whisper transcripts under archive/transcripts/ ARE committed.
+videos/
+
 # OCR scratch + raw OCR text dumps (the headered .md versions are kept; raw .txt are not)
 ocr_work/
 archive/documents/*_OCR.txt

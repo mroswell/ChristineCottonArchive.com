@@ -75,6 +75,14 @@ defaults:
     values:
       layout: default
       lang: en
+  # Whisper transcripts of the 18 interview videos. Front matter on each
+  # file sets title and source_url; this default covers the rest.
+  - scope:
+      path: "archive/transcripts"
+      type: pages
+    values:
+      layout: document
+      lang: fr
 
 # Treat trailing-slash pretty URLs as the default. /en/about/ rather than
 # /en/about.html — easier to remember, easier to deep-link.
