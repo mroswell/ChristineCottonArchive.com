@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: 'en' }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if page.title %}{{ page.title }} — {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
+  {% seo title=false %}
+  <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}">
+  <style>
+    .doc-meta { background: var(--card); border: 1px solid var(--line); border-radius: 10px;
+                padding: 12px 16px; margin: 0 0 24px; font-size: .9rem; color: var(--muted); }
+    .doc-meta strong { color: var(--ink); }
+    .doc-body { background: var(--card); border: 1px solid var(--line); border-radius: 10px;
+                padding: 26px 32px; }
+    .doc-body h1:first-child { margin-top: 0; }
+    .doc-body pre { background: #f4f3ef; padding: 12px; border-radius: 8px; overflow-x: auto; }
+    .doc-body code { background: #f4f3ef; padding: 1px 4px; border-radius: 4px; font-size: .92em; }
+    .doc-body table { border-collapse: collapse; margin: 14px 0; }
+    .doc-body th, .doc-body td { border: 1px solid var(--line); padding: 6px 10px; text-align: left; }
+    .doc-body blockquote { border-left: 3px solid var(--accent); margin: 16px 0; padding: 4px 16px;
+                color: var(--muted); }
+  </style>
+</head>
+<body>
+{%- include header.html -%}
+
+<main class="site-main">
+  <div class="wrap">
+    <p><a href="{{ '/en/archive/' | relative_url }}">← {% if page.lang == 'fr' %}Index de l'archive{% else %}Archive Index{% endif %}</a></p>
+
+    <div class="doc-meta">
+      {% if page.lang == 'fr' %}<strong>Document d'archive.</strong>{% else %}<strong>Archive document.</strong>{% endif %}
+      {% if page.source_pdf %}
+        {% if page.lang == 'fr' %}
+          PDF source&nbsp;: <a href="{{ page.source_pdf }}" rel="noopener">{{ page.source_pdf | split: '/' | last }}</a>.
+        {% else %}
+          Source PDF: <a href="{{ page.source_pdf }}" rel="noopener">{{ page.source_pdf | split: '/' | last }}</a>.
+        {% endif %}
+      {% endif %}
+      {% if page.source_url %}
+        {% if page.lang == 'fr' %}Original&nbsp;: {% else %}Original: {% endif %}<a href="{{ page.source_url }}" rel="noopener">{{ page.source_url }}</a>.
+      {% endif %}
+      {% if page.notes %}<br>{{ page.notes }}{% endif %}
+    </div>
+
+    <article class="doc-body">
+      {{ content }}
+    </article>
+  </div>
+</main>
+
+{%- include footer.html -%}
+</body>
+</html>

@@ -1,0 +1,89 @@
+{%- comment -%}
+  Shared site header. Every page renders this via the default layout.
+  Each page's front matter declares `lang` (en|fr) and optionally
+  `translation_path` (the URL of its twin in the other language tree).
+  The language toggle uses translation_path when present, otherwise it
+  falls back to the language root (/en/ or /fr/).
+{%- endcomment -%}
+
+{%- if page.lang == 'fr' -%}
+  {%- assign nav_home = "Accueil" -%}
+  {%- assign nav_expertise = "Expertises &amp; rapports" -%}
+  {%- assign nav_book = "Le livre" -%}
+  {%- assign nav_interviews = "Interviews" -%}
+  {%- assign nav_sources = "Sources &amp; liens" -%}
+  {%- assign nav_archive = "Index de l'archive" -%}
+  {%- assign nav_search_label = "Rechercher dans l'archive" -%}
+  {%- assign lang_switch_aria = "Choix de la langue" -%}
+  {%- assign url_home = "/fr/" -%}
+  {%- assign url_expertise = "/fr/expertises/" -%}
+  {%- assign url_book = "/fr/livre/" -%}
+  {%- assign url_interviews = "/fr/interviews/" -%}
+  {%- assign url_sources = "/fr/sources/" -%}
+  {%- assign url_archive = "/fr/archive/" -%}
+{%- else -%}
+  {%- assign nav_home = "Home" -%}
+  {%- assign nav_expertise = "Expertise &amp; Reports" -%}
+  {%- assign nav_book = "The Book" -%}
+  {%- assign nav_interviews = "Interviews" -%}
+  {%- assign nav_sources = "Sources &amp; Links" -%}
+  {%- assign nav_archive = "Archive Index" -%}
+  {%- assign nav_search_label = "Search the archive" -%}
+  {%- assign lang_switch_aria = "Language switcher" -%}
+  {%- assign url_home = "/en/" -%}
+  {%- assign url_expertise = "/en/expertise/" -%}
+  {%- assign url_book = "/en/book/" -%}
+  {%- assign url_interviews = "/en/interviews/" -%}
+  {%- assign url_sources = "/en/sources/" -%}
+  {%- assign url_archive = "/en/archive/" -%}
+{%- endif -%}
+
+{%- comment -%}
+  The language switch always shows both options. The current language is
+  marked with aria-current="page" and rendered as the "selected" half of
+  the pill; the other language links to this page's translation_path (or
+  to the language root if the page didn't declare one).
+{%- endcomment -%}
+{%- if page.lang == 'fr' -%}
+  {%- assign other_lang_href = page.translation_path | default: "/en/" -%}
+  {%- assign current_href = page.url -%}
+{%- else -%}
+  {%- assign other_lang_href = page.translation_path | default: "/fr/" -%}
+  {%- assign current_href = page.url -%}
+{%- endif -%}
+
+<header class="site-header">
+  <div class="wrap header-row">
+    <a class="brand" href="{{ url_home | relative_url }}">
+      <span class="brand-name">Christine Cotton</span>
+      <span class="brand-sub">{% if page.lang == 'fr' %}Archive de préservation{% else %}Preservation archive{% endif %}</span>
+    </a>
+
+    <nav class="site-nav" aria-label="{% if page.lang == 'fr' %}Navigation principale{% else %}Primary navigation{% endif %}">
+      <a href="{{ url_home       | relative_url }}">{{ nav_home }}</a>
+      <a href="{{ url_expertise  | relative_url }}">{{ nav_expertise }}</a>
+      <a href="{{ url_book       | relative_url }}">{{ nav_book }}</a>
+      <a href="{{ url_interviews | relative_url }}">{{ nav_interviews }}</a>
+      <a href="{{ url_sources    | relative_url }}">{{ nav_sources }}</a>
+      <a href="{{ url_archive    | relative_url }}">{{ nav_archive }}</a>
+    </nav>
+
+    {%- comment -%}
+      Search box. Wired up later with Pagefind (built during deploy).
+      Search results live on the same-language `/search/` page.
+    {%- endcomment -%}
+    <form class="site-search" role="search" action="{% if page.lang == 'fr' %}{{ '/fr/recherche/' | relative_url }}{% else %}{{ '/en/search/' | relative_url }}{% endif %}">
+      <input type="search" name="q" placeholder="{{ nav_search_label }}" aria-label="{{ nav_search_label }}">
+    </form>
+
+    <div class="lang-switch" role="group" aria-label="{{ lang_switch_aria }}">
+      {%- if page.lang == 'fr' -%}
+        <a href="{{ other_lang_href | relative_url }}" hreflang="en">English</a>
+        <a href="{{ current_href | relative_url }}" aria-current="page" hreflang="fr">Français</a>
+      {%- else -%}
+        <a href="{{ current_href | relative_url }}" aria-current="page" hreflang="en">English</a>
+        <a href="{{ other_lang_href | relative_url }}" hreflang="fr">Français</a>
+      {%- endif -%}
+    </div>
+  </div>
+</header>

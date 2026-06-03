@@ -5,6 +5,17 @@ Thumbs.db
 .vscode/
 .idea/
 
+# Jekyll build output and local gem cache
+_site/
+.jekyll-cache/
+.jekyll-metadata
+vendor/
+.bundle/
+Gemfile.lock
+
+# Pagefind search index (built by GitHub Action; not tracked)
+_pagefind/
+
 # OCR scratch + raw OCR text dumps (the headered .md versions are kept; raw .txt are not)
 ocr_work/
 archive/documents/*_OCR.txt
@@ -52,3 +63,9 @@ archive/sources/VAERS_*.md
 # NOTE: the PDFs that REMAIN tracked (CV, the OPECST presentation, plus any
 # site images you add) are still sizeable, so configure Git LFS before the
 # first commit:  git lfs install && git lfs track "pdfs/**"   (see TODO.md).
+
+# Local-only backups of her X / Twitter / social posts (kept for preservation
+# in case posts or accounts are later removed; not republished per the
+# copyright policy in CLAUDE.md). Drop screenshots, .html, .json, or .txt
+# captures into archive/social/ and they'll stay out of git.
+archive/social/

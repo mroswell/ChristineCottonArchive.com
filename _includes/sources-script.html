@@ -1,0 +1,39 @@
+<script>
+(function () {
+  var q = document.getElementById('sources-q');
+  var items = Array.prototype.slice.call(document.querySelectorAll('.cat li'));
+  var cats = Array.prototype.slice.call(document.querySelectorAll('.cat'));
+  var countEl = document.getElementById('sources-count');
+  var emptyEl = document.getElementById('sources-empty');
+  var labels = {{ include.labels | jsonify }};
+  var total = items.length;
+
+  function haystack(li) {
+    var a = li.querySelector('a');
+    var d = li.querySelector('.desc');
+    return ((a ? a.href + ' ' + a.textContent : '') + ' ' + (d ? d.textContent : '')).toLowerCase();
+  }
+  items.forEach(function (li) { li._h = haystack(li); });
+
+  function render() {
+    var term = q.value.trim().toLowerCase();
+    var visible = 0;
+    items.forEach(function (li) {
+      var show = !term || li._h.indexOf(term) !== -1;
+      li.style.display = show ? '' : 'none';
+      if (show) visible++;
+    });
+    cats.forEach(function (cat) {
+      var any = cat.querySelector('li:not([style*="display: none"])');
+      cat.classList.toggle('cat-empty', !any);
+    });
+    emptyEl.style.display = visible === 0 ? 'block' : 'none';
+    countEl.textContent = term
+      ? labels.filtered.replace('{n}', visible).replace('{total}', total)
+      : labels.total.replace('{total}', total);
+  }
+
+  q.addEventListener('input', render);
+  render();
+})();
+</script>

@@ -1,0 +1,4 @@
+no_thumbnail:       "Pas de vignette"
+transcript_pending: "Transcription : pas encore générée"
+watch_button:       "Regarder"
+count_template:     "{n} sur {total} vidéos"

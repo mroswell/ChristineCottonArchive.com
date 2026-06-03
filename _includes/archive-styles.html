@@ -1,0 +1,20 @@
+<style>
+  /* Per-page styles for the searchable Archive Index. */
+  .archive-controls { position: sticky; top: 0; background: var(--bg); padding: 16px 0 10px;
+    z-index: 5; border-bottom: 1px solid var(--line); margin-bottom: 12px; }
+  .archive-controls .row { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+  .archive-controls input[type=search], .archive-controls select {
+    font: inherit; padding: 9px 11px; border: 1px solid var(--line);
+    border-radius: 8px; background: #fff; color: var(--ink); }
+  .archive-controls input[type=search] { flex: 1; min-width: 220px; }
+  .archive-count { color: var(--muted); font-size: .85rem; margin-top: 8px; }
+  .item { background: var(--card); border: 1px solid var(--line); border-radius: 10px;
+    padding: 14px 16px; margin: 10px 0; }
+  .item h3 { margin: 0 0 4px; font-size: 1.05rem; }
+  .item .meta { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; margin: 6px 0; }
+  .item .desc { font-size: .92rem; color: #2f343a; margin: 6px 0 8px; max-width: none; }
+  .item .links a { font-size: .85rem; text-decoration: none; color: var(--accent);
+    margin-right: 14px; font-weight: 600; }
+  .item .links a:hover { text-decoration: underline; }
+  .item .links a.ext::after { content: " \2197"; font-weight: 400; }
+</style>

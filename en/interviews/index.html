@@ -1,0 +1,23 @@
+---
+title: Interviews
+lang: en
+translation_path: /fr/interviews/
+permalink: /en/interviews/
+---
+
+{% include interviews-styles.html %}
+
+<h1>Interviews &amp; video appearances</h1>
+<p>A searchable catalog of her 18 video interviews on YouTube and Dailymotion.
+Most are in French. Transcripts have not yet been generated; the link on each
+card takes you to the original video.</p>
+
+<div class="vcontrols">
+  <input id="vsearch" type="search" placeholder="Search by title, channel, or platform…" autocomplete="off">
+  <span id="vcount"></span>
+</div>
+
+<div class="vgrid" id="vgrid"></div>
+<p id="vempty" hidden>No matching videos.</p>
+
+{% include interviews-script.html labels=site.data.interviews_labels_en %}

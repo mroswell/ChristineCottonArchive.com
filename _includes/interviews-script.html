@@ -1,0 +1,62 @@
+<script>
+const videos = [
+  {id:"WmDFTibK-Ek", platform:"YouTube", title:"Le désastre sanitaire ne fait que commencer I Christine Cotton", author:"Cercle Aristote - Pierre Yves Rougeyron", url:"https://www.youtube.com/watch?v=WmDFTibK-Ek", thumb:"https://img.youtube.com/vi/WmDFTibK-Ek/hqdefault.jpg"},
+  {id:"MJksTpVRQuA", platform:"YouTube", title:"Covid : où en sont les chiffres en 2023 ?", author:"Sud Radio", url:"https://www.youtube.com/watch?v=MJksTpVRQuA", thumb:"https://img.youtube.com/vi/MJksTpVRQuA/hqdefault.jpg"},
+  {id:"JjLTt5_BGAE", platform:"YouTube", title:"La vérité sur les essais Pfizer - Le Zoom - Christine Cotton - TVL", author:"Chaîne officielle TVL", url:"https://www.youtube.com/watch?v=JjLTt5_BGAE", thumb:"https://img.youtube.com/vi/JjLTt5_BGAE/hqdefault.jpg"},
+  {id:"ASXFLQdQXyU", platform:"YouTube", title:"Christine Cotton : « On a des risques qui sont parfaitement documentés ! » #COVID19", author:"LES INCORRECTIBLES", url:"https://www.youtube.com/watch?v=ASXFLQdQXyU", thumb:"https://img.youtube.com/vi/ASXFLQdQXyU/hqdefault.jpg"},
+  {id:"prH1pkJrWhg", platform:"YouTube", title:"Covid19 - Christine Cotton : \"La science ce n'est pas de la politique, c'est de la statistique !\"", author:"Sud Radio", url:"https://www.youtube.com/watch?v=prH1pkJrWhg", thumb:"https://img.youtube.com/vi/prH1pkJrWhg/hqdefault.jpg"},
+  {id:"iecQwlo5AhM", platform:"YouTube", title:"« J'ai découvert la face cachée de l'industrie pharmaceutique » – Christine Cotton", author:"Epoch Times France", url:"https://www.youtube.com/watch?v=iecQwlo5AhM", thumb:"https://img.youtube.com/vi/iecQwlo5AhM/hqdefault.jpg"},
+  {id:"O8S7BSrRj3U", platform:"YouTube", title:"Pfizer : scandaleuses révélations sur l'essai clinique", author:"Décoder l'éco", url:"https://www.youtube.com/watch?v=O8S7BSrRj3U", thumb:"https://img.youtube.com/vi/O8S7BSrRj3U/hqdefault.jpg"},
+  {id:"TQQVmdTXY-k", platform:"YouTube", title:"Christine Cotton - Biostatisticienne - Lanceuse d'alerte", author:"Elo Veut Savoir", url:"https://www.youtube.com/watch?v=TQQVmdTXY-k", thumb:"https://img.youtube.com/vi/TQQVmdTXY-k/hqdefault.jpg"},
+  {id:"6D-LjaD99ys", platform:"YouTube", title:"REVAV AG Intervention de Christine Cotton Biostatisticienne octobre 2022", author:"Guillaume Ageorges", url:"https://www.youtube.com/watch?v=6D-LjaD99ys", thumb:"https://img.youtube.com/vi/6D-LjaD99ys/hqdefault.jpg"},
+  {id:"Jn-2b0fUsrk", platform:"YouTube", title:"[DEBRIEF] La biostatisticienne Christine Cotton sur l'efficacité du vaccin anti-COVID Pfizer", author:"Michèle Rivasi", url:"https://www.youtube.com/watch?v=Jn-2b0fUsrk", thumb:"https://img.youtube.com/vi/Jn-2b0fUsrk/hqdefault.jpg"},
+  {id:"sli4nYArz9k", platform:"YouTube", title:"Christine Cotton révèle le scandale des vaccins anticovid !", author:"Nicolas Dupont-Aignan", url:"https://www.youtube.com/watch?v=sli4nYArz9k", thumb:"https://img.youtube.com/vi/sli4nYArz9k/hqdefault.jpg"},
+  {id:"KwUr6wqeVT0", platform:"YouTube", title:"COVID : les vérités cachées de la politique vaccinale - Christine Cotton", author:"Ligne Droite • La matinale de Radio Courtoisie", url:"https://www.youtube.com/watch?v=KwUr6wqeVT0", thumb:"https://img.youtube.com/vi/KwUr6wqeVT0/hqdefault.jpg"},
+  {id:"LIPps6b8LgE", platform:"YouTube", title:"Actualité de la semaine et invitée exceptionnelle, la biostatisticienne Christine COTTON", author:"Ensemble Pour Les Libertés", url:"https://www.youtube.com/watch?v=LIPps6b8LgE", thumb:"https://img.youtube.com/vi/LIPps6b8LgE/hqdefault.jpg"},
+  {id:"j2RnxnY6QL8", platform:"YouTube", title:"\"La Commission veut prolonger ce pass sans base scientifique !\" Virginie Joron, Christine Cotton", author:"Ligne Droite • La matinale de Radio Courtoisie", url:"https://www.youtube.com/watch?v=j2RnxnY6QL8", thumb:"https://img.youtube.com/vi/j2RnxnY6QL8/hqdefault.jpg"},
+  {id:"snXhb5p5uTY", platform:"YouTube", title:"Autorisation du vaccin COVID : erreurs ou complicités ?", author:"Virginie Joron", url:"https://www.youtube.com/watch?v=snXhb5p5uTY", thumb:"https://img.youtube.com/vi/snXhb5p5uTY/hqdefault.jpg"},
+  {id:"D69Q58E0rMM", platform:"YouTube", title:"CeNC - Commission d'enquête nationale citoyenne - bio-statisticienne Christine Cotton témoigne", author:"Actualité Politique Du Québec", url:"https://www.youtube.com/watch?v=D69Q58E0rMM", thumb:"https://img.youtube.com/vi/D69Q58E0rMM/hqdefault.jpg"},
+  {id:"x887fvm", platform:"Dailymotion", title:"Les essais cliniques de Pfizer sont-ils frauduleux ? Avec Christine Cotton", author:"Sud Radio", url:"https://www.dailymotion.com/video/x887fvm", thumb:null},
+  {id:"x8arx5y", platform:"Dailymotion", title:"Documents déclassifiés de Pfizer et revelations choc de Christine Cotton", author:"Sud Radio", url:"https://www.dailymotion.com/video/x8arx5y", thumb:null}
+];
+
+const VLABELS = {{ include.labels | jsonify }};
+
+const grid = document.getElementById("vgrid");
+const vcountEl = document.getElementById("vcount");
+const vemptyEl = document.getElementById("vempty");
+const vsearchEl = document.getElementById("vsearch");
+
+function vesc(s){ return s.replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c])); }
+
+function cardHTML(v){
+  const thumb = v.thumb
+    ? `<img class="thumb" src="${vesc(v.thumb)}" alt="" loading="lazy">`
+    : `<div class="thumb placeholder">${VLABELS.no_thumbnail}</div>`;
+  return `<article class="card vcard">
+    ${thumb}
+    <div class="body">
+      <span class="badge">${vesc(v.platform)}</span>
+      <div class="title">${vesc(v.title)}</div>
+      <div class="meta">${vesc(v.author)}</div>
+      <div class="transcript">${VLABELS.transcript_pending}</div>
+      <a class="watch" href="${vesc(v.url)}" target="_blank" rel="noopener">${VLABELS.watch_button} &#9654;</a>
+    </div>
+  </article>`;
+}
+
+function vrender(list){
+  grid.innerHTML = list.map(cardHTML).join("");
+  vemptyEl.hidden = list.length > 0;
+  vcountEl.textContent = VLABELS.count_template.replace("{n}", list.length).replace("{total}", videos.length);
+}
+
+vsearchEl.addEventListener("input", () => {
+  const q = vsearchEl.value.trim().toLowerCase();
+  const filtered = !q ? videos : videos.filter(v =>
+    (v.title + " " + v.author + " " + v.platform).toLowerCase().includes(q));
+  vrender(filtered);
+});
+
+vrender(videos);
+</script>

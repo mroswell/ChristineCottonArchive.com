@@ -1,0 +1,32 @@
+---
+title: Index de l'archive
+lang: fr
+translation_path: /en/archive/
+permalink: /fr/archive/
+---
+
+{% include archive-styles.html %}
+
+<h1>Index de l'archive</h1>
+<p>Index consultable de tous les éléments de cette archive&nbsp;: les rapports de
+Christine Cotton, son livre, les résumés, les interviews, les pages de son site,
+et les documents tiers qu'elle a cités. Filtrez par type, mot-clé ou langue&nbsp;;
+cliquez vers l'archive locale (ses propres éditions anglaises lorsqu'elles existent)
+ou vers l'original.</p>
+
+<p class="muted"><small><em>Les descriptions des éléments sont actuellement en
+anglais ; la traduction française est en cours.</em></small></p>
+
+<div class="archive-controls">
+  <div class="row">
+    <input type="search" id="q" placeholder="Rechercher titres, descriptions, mots-clés…" autocomplete="off">
+    <select id="type"><option value="">Tous types</option></select>
+    <select id="tag"><option value="">Tous mots-clés</option></select>
+    <select id="lang"><option value="">Toutes langues</option></select>
+  </div>
+  <div class="archive-count" id="count"></div>
+</div>
+
+<div id="list"></div>
+
+{% include archive-script.html labels=site.data.archive_labels_fr %}

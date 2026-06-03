@@ -1,0 +1,29 @@
+---
+title: Sources & Liens
+lang: fr
+translation_path: /en/sources/
+permalink: /fr/sources/
+---
+
+{% include sources-styles.html %}
+
+<h1>Sources &amp; liens externes</h1>
+<p>Index catégorisé et consultable des 231 liens externes cités par Christine
+Cotton dans son travail — régulateurs, revues à comité de lecture, médias,
+documents judiciaires et organisations de défense.</p>
+
+<p class="muted"><small><em>Les descriptions des liens sont actuellement en
+anglais ; la traduction française est en cours.</em></small></p>
+
+<div class="sources-search">
+  <input id="sources-q" type="search" placeholder="Filtrer par URL ou description…" autocomplete="off">
+  <div class="count" id="sources-count"></div>
+</div>
+
+<div id="list">
+{% include sources-list.html LABELS_SRC=site.data.sources_labels_fr %}
+</div>
+
+<p class="sources-empty" id="sources-empty">Aucun lien ne correspond à votre recherche.</p>
+
+{% include sources-script.html labels=site.data.sources_script_labels_fr %}

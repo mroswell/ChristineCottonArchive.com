@@ -1,0 +1,28 @@
+---
+title: Archive Index
+lang: en
+translation_path: /fr/archive/
+permalink: /en/archive/
+---
+
+{% include archive-styles.html %}
+
+<h1>Archive index</h1>
+<p>A searchable index of every captured item in this archive: Christine Cotton's
+reports, book, summaries, interviews, the web pages of her site, and the third-party
+documents she cited. Filter by type, tag, or language; click into the local
+archive (her own English editions where they exist) or the original.</p>
+
+<div class="archive-controls">
+  <div class="row">
+    <input type="search" id="q" placeholder="Search titles, descriptions, tags…" autocomplete="off">
+    <select id="type"><option value="">All types</option></select>
+    <select id="tag"><option value="">All tags</option></select>
+    <select id="lang"><option value="">All languages</option></select>
+  </div>
+  <div class="archive-count" id="count"></div>
+</div>
+
+<div id="list"></div>
+
+{% include archive-script.html labels=site.data.archive_labels_en %}

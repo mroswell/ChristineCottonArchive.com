@@ -1,0 +1,288 @@
+{%- comment -%}
+  Shared archive-index data + filter logic. Both /en/archive/ and /fr/archive/
+  include this. The chrome (page headings, filter labels) lives on the page
+  itself; this file only emits the data array, optgroup tag categories, and
+  the render/filter functions.
+
+  Item descriptions are currently in English (the captured source language).
+  When the French translations are written, switch on `page.lang` here.
+{%- endcomment -%}
+<script>
+const ARCH = "{{ '/archive/' | relative_url }}";
+const items = [
+  // ---- Reports & expertises ----
+  {t:"Assessment of Methodological Practices in Pfizer's COVID-19 mRNA Vaccine Trials (GCP) — full report",
+   type:"Report", lang:"EN", date:"2024-12-30",
+   tags:["Pfizer","GCP","clinical-trial","efficacy","safety","C4591001","flagship"],
+   d:"Her flagship 414-page expert report assessing Good Clinical Practice, efficacy, safety and immunogenicity across all Pfizer trials (adults, adolescents, children, boosters, bivalents, pregnancy). Full extracted English text.",
+   orig:"https://christinecotton.com/Vaccine-expertise%20GCP-CCotton-2024-12-30-ENG.pdf"},
+
+  {t:"Évaluation des pratiques méthodologiques — essais Pfizer (rapport complet, FR)",
+   type:"Report", lang:"FR", date:"2025-01-27",
+   tags:["Pfizer","GCP","clinical-trial"],
+   d:"The French edition of the full expertise (432 pages), updated 27 January 2025. Full extracted French text captured.",
+   orig:"https://christinecotton.com/Vaccine-expertise%20GCP-CCotton-2025-01-27-French.pdf"},
+
+  {t:"Expertise on the Pfizer/BioNTech C4591001 Trial — 2022 archive (EN)",
+   type:"Report", lang:"EN", date:"2022-02-14",
+   tags:["Pfizer","GCP","clinical-trial","archive"],
+   d:"The 105-page February 2022 English expertise — the earlier version of her analysis. OCR text captured (slide-style scan; fragmentary).",
+   orig:"https://christinecotton.com/ENG-Vaccine-expertise-GCP-CCotton-2022-02-14-v2_AC.pdf"},
+
+  {t:"Expertise sur l'essai Pfizer/BioNTech C4591001 — archive 2022 (FR)",
+   type:"Report", lang:"FR", date:"2022-02-28",
+   tags:["Pfizer","GCP","clinical-trial","archive"],
+   d:"The 111-page February 2022 French expertise archive. OCR text captured (English OCR engine — accents imperfect; superseded by the 432-pg French report).",
+   orig:"https://christinecotton.com/Vaccine-expertise-GCP-CCotton-2022-02-28-French-v2_AC.pdf"},
+
+  {t:"Summary of the Expertise (EN, 35 pages)",
+   type:"Summary", lang:"EN", date:"2022-02-23",
+   tags:["Pfizer","summary"],
+   d:"A 35-page English summary of the expertise (dedicated to Maxime Beltra). OCR text captured (slide-style scan).",
+   orig:"https://christinecotton.com/ENG-SUMMARY-Expertise-GCP-CCotton-2022-02-23_AC.pdf"},
+
+  {t:"Update of the Expertise (EN, 54 pages)",
+   type:"Summary", lang:"EN", date:"2023-08-08",
+   tags:["Pfizer","summary","update"],
+   d:"A 54-page English update/résumé of the expertise (with OpenVAET). Full extracted text captured.",
+   orig:"https://christinecotton.com/R%C3%A9sum%C3%A9-Exp-2023-08-08-eng-copyright.pdf"},
+
+  {t:"Summary presented to Dr Peter A. McCullough (EN slides)",
+   type:"Presentation", lang:"EN", date:"2023-07-15",
+   tags:["Pfizer","summary","presentation"],
+   d:"Work/summary slides she presented to Dr Peter A. McCullough on 14 July 2023. Full extracted text captured.",
+   orig:"https://christinecotton.com/Summary-Exp-2023-07-15-eng-copyright.pdf"},
+
+  {t:"OPECST parliamentary presentation",
+   type:"Presentation", lang:"FR", date:"2022-04-05",
+   tags:["OPECST","parliament","testimony","safety"],
+   d:"Her 5 April 2022 presentation to France's Parliamentary Office for Scientific & Technological Assessment (OPECST), which she says was kept confidential. Full text captured (French) + English translation.",
+   local:ARCH+"documents/OPECST_presentation_2022-04-05_EN/",
+   localFr:ARCH+"documents/OPECST_presentation_2022-04-05_FR/",
+   orig:"https://christinecotton.com/Presentation-CC-OPECTS-2022-04-05.pdf"},
+
+  {t:"Summary of the Pfizer expertise (FR, 2021 home-page document)",
+   type:"Summary", lang:"FR", date:"2021-02-16",
+   tags:["Pfizer","summary"],
+   d:"The early 2021 summary document embedded on the home page. OCR text captured (English OCR engine — accents imperfect).",
+   orig:"https://christinecotton.com/SUMMARY-EVAL-PFIZER-Exp-2021-02-16-FR-v2_AC.pdf"},
+
+  // ---- CV ----
+  {t:"Curriculum Vitae — Christine Cotton (English)",
+   type:"CV", lang:"EN", date:"2023",
+   tags:["biography","career","biostatistics","Statitec","publications"],
+   d:"Her full professional CV: founder/director of Statitec, 20+ years in clinical-trial biostatistics across dozens of therapeutic areas, FDA submissions, named co-author on many peer-reviewed studies. Full English text captured.",
+   local:ARCH+"documents/CV_Christine_Cotton_EN/",
+   orig:"https://christinecotton.com/CV_CCottonEng-v2.pdf"},
+
+  // ---- Book ----
+  {t:"Book — “Tous vaccinés, tous protégés ?” (FR print) / “The Trial Was Almost Perfect” (EN ebook)",
+   type:"Book", lang:"FR/EN", date:"2023",
+   tags:["book","testimonies","vaccine","Pfizer"],
+   d:"Her book on the vaccines, the failings of the COVID clinical trials, and victims' testimonies (prefaces by L. Muller-Bronn, M. Rivasi, V. Joron, M. Wonner). The French print edition is sold via booksellers (see External links). Her free English ebook, “The Trial Was Almost Perfect” (213 pp, 20 Oct 2024, preface by Surya Arby), is available free from her Support page (not republished here, for copyright reasons).",
+   orig:"https://christinecotton.com/support-me"},
+
+  {t:"Source — “Estimating the Number of COVID Vaccine Deaths in America” (Rose & Crawford)",
+   type:"Source document", lang:"EN", date:"2021",
+   tags:["mortality","sources"],
+   d:"External VAERS analysis by Jessica Rose & Mathew Crawford, cited in her work (not authored by Cotton). Full text captured. Source: U.S. regulations.gov docket CDC-2021-0089.",
+   orig:"https://downloads.regulations.gov/CDC-2021-0089-0024/attachment_1.pdf"},
+
+  {t:"Book sources — chapter-by-chapter references",
+   type:"Source list", lang:"FR/EN", date:"",
+   tags:["sources","references","bibliography"],
+   d:"The full chapter-by-chapter list of every source cited in her book (regulators, journals, press, legal cases). French original + English translation archived; all source URLs are in the External links page.",
+   local:ARCH+"pages_en/my_book_sources_EN/",
+   localFr:ARCH+"pages/my_book_sources/",
+   orig:"https://christinecotton.com/my_book_sources"},
+
+  // ---- Source document ----
+  {t:"Pfizer/BioNTech C4591001 — final clinical trial protocol",
+   type:"Source document", lang:"EN", date:"2023-07-25",
+   tags:["Pfizer","protocol","clinical-trial","C4591001"],
+   d:"The complete Pfizer trial protocol (approved 25 July 2023) that underpins her analysis. A Pfizer source document (Pfizer's copyright), not her writing. Linked to the NEJM-hosted original protocol.",
+   orig:"https://www.nejm.org/doi/suppl/10.1056/NEJMoa2110345/suppl_file/nejmoa2110345_protocol.pdf"},
+
+  // ---- Articles (OpenVAET) ----
+  {t:"OpenVAET — Pfizer/BioNTech C4591001: deaths during the trial",
+   type:"Article", lang:"FR/EN", date:"",
+   tags:["Pfizer","C4591001","mortality","OpenVAET","article"],
+   d:"Co-authored Substack analysis (with Pierre, OpenVAET) of deaths recorded during the pivotal Pfizer trial.",
+   orig:"https://openvaet.substack.com/p/essai-clinique-pfizerbiontech-c4591001",
+   orig2:"https://openvaet.substack.com/p/pfizerbiontech-c4591001-trial-deaths"},
+
+  {t:"OpenVAET — C4591001 Phase 1 antibodies: “where haven't they cheated exactly?”",
+   type:"Article", lang:"FR", date:"",
+   tags:["Pfizer","C4591001","immunogenicity","OpenVAET","article"],
+   d:"Co-authored Substack analysis of the Phase 1 antibody/immunogenicity data.",
+   orig:"https://openvaet.substack.com/p/essai-pfizerbiontech-c4591001-anticorps-91d"},
+
+  {t:"OpenVAET — Pfizer/BioNTech C4591001 Trial Audit Report v1",
+   type:"Article", lang:"EN", date:"2024-05-31",
+   tags:["Pfizer","C4591001","audit","OpenVAET","article"],
+   d:"Co-authored English audit report of the C4591001 trial (v1, 31 May 2024).",
+   orig:"https://openvaet.substack.com/p/pfizerbiontech-c4591001-trial-audit"},
+
+  // ---- Web pages ----
+  {t:"Home page (Accueil)",
+   type:"Web page", lang:"FR", date:"",
+   tags:["overview"],
+   d:"The site's landing page: overview of her investigations, book, interviews and reports. Archived French + English translation.",
+   local:ARCH+"pages_en/index_EN/", localFr:ARCH+"pages/index/",
+   orig:"https://christinecotton.com/"},
+
+  {t:"Criticism of my work (Critiques de mon travail)",
+   type:"Web page", lang:"FR", date:"",
+   tags:["criticism","fact-checking","harassment"],
+   d:"Her page responding to public criticism / fact-checks of her work. Archived French + English translation.",
+   local:ARCH+"pages_en/critics_EN/", localFr:ARCH+"pages/critics/",
+   orig:"https://christinecotton.com/critics"},
+
+  {t:"English-materials index (English Presentation)",
+   type:"Web page", lang:"EN", date:"",
+   tags:["overview","English"],
+   d:"Her hub page listing every English-language item: the book in English, the 414/105/54/35-page reports, and the OpenVAET articles.",
+   local:ARCH+"pages/english_presentation/",
+   orig:"https://christinecotton.com/english_presentation"},
+
+  {t:"Support Me",
+   type:"Web page", lang:"EN", date:"",
+   tags:["support","book","English"],
+   d:"Donation page that also delivers the free English ebook of her book.",
+   local:ARCH+"pages/support-me/",
+   orig:"https://christinecotton.com/support-me"},
+
+  {t:"Legal notice (Mentions légales)",
+   type:"Legal", lang:"FR", date:"",
+   tags:["legal"],
+   d:"The site's legal notice. Archived French + English translation.",
+   local:ARCH+"pages_en/mentions_legales_EN/", localFr:ARCH+"pages/mentions_legales/",
+   orig:"https://christinecotton.com/mentions_legales"},
+
+  // ---- Interviews (18) ----
+  {t:"Le désastre sanitaire ne fait que commencer", type:"Interview", lang:"FR", date:"",
+   tags:["interview","video","Cercle Aristote"], d:"Interview — Cercle Aristote (Pierre-Yves Rougeyron).",
+   orig:"https://www.youtube.com/watch?v=WmDFTibK-Ek"},
+  {t:"Covid : où en sont les chiffres en 2023 ?", type:"Interview", lang:"FR", date:"",
+   tags:["interview","video","Sud Radio"], d:"Interview — Sud Radio.",
+   orig:"https://www.youtube.com/watch?v=MJksTpVRQuA"},
+  {t:"La vérité sur les essais Pfizer — Le Zoom", type:"Interview", lang:"FR", date:"",
+   tags:["interview","video","TVL","Pfizer"], d:"Interview — TVL (Chaîne officielle).",
+   orig:"https://www.youtube.com/watch?v=JjLTt5_BGAE"},
+  {t:"« On a des risques parfaitement documentés ! »", type:"Interview", lang:"FR", date:"",
+   tags:["interview","video","Les Incorrectibles","safety"], d:"Interview — LES INCORRECTIBLES.",
+   orig:"https://www.youtube.com/watch?v=ASXFLQdQXyU"},
+  {t:"« La science, c'est de la statistique ! »", type:"Interview", lang:"FR", date:"",
+   tags:["interview","video","Sud Radio"], d:"Interview — Sud Radio.",
+   orig:"https://www.youtube.com/watch?v=prH1pkJrWhg"},
+  {t:"« J'ai découvert la face cachée de l'industrie pharmaceutique »", type:"Interview", lang:"FR", date:"",
+   tags:["interview","video","Epoch Times"], d:"Interview — Epoch Times France.",
+   orig:"https://www.youtube.com/watch?v=iecQwlo5AhM"},
+  {t:"Pfizer : scandaleuses révélations sur l'essai clinique", type:"Interview", lang:"FR", date:"",
+   tags:["interview","video","Décoder l'éco","Pfizer"], d:"Interview — Décoder l'éco.",
+   orig:"https://www.youtube.com/watch?v=O8S7BSrRj3U"},
+  {t:"Christine Cotton — Biostatisticienne, lanceuse d'alerte", type:"Interview", lang:"FR", date:"",
+   tags:["interview","video","biography"], d:"Interview — Elo Veut Savoir.",
+   orig:"https://www.youtube.com/watch?v=TQQVmdTXY-k"},
+  {t:"REVAV AG — intervention de Christine Cotton (oct. 2022)", type:"Interview", lang:"FR", date:"2022-10",
+   tags:["interview","video"], d:"Talk — Guillaume Ageorges (REVAV AG).",
+   orig:"https://www.youtube.com/watch?v=6D-LjaD99ys"},
+  {t:"[DEBRIEF] sur l'efficacité du vaccin anti-COVID Pfizer", type:"Interview", lang:"FR", date:"",
+   tags:["interview","video","Michèle Rivasi","efficacy","Pfizer"], d:"Debrief — Michèle Rivasi (MEP).",
+   orig:"https://www.youtube.com/watch?v=Jn-2b0fUsrk"},
+  {t:"« Révèle le scandale des vaccins anticovid ! »", type:"Interview", lang:"FR", date:"",
+   tags:["interview","video","Dupont-Aignan"], d:"Interview — Nicolas Dupont-Aignan.",
+   orig:"https://www.youtube.com/watch?v=sli4nYArz9k"},
+  {t:"COVID : les vérités cachées de la politique vaccinale", type:"Interview", lang:"FR", date:"",
+   tags:["interview","video","Radio Courtoisie"], d:"Interview — Radio Courtoisie (Ligne Droite).",
+   orig:"https://www.youtube.com/watch?v=KwUr6wqeVT0"},
+  {t:"Actualité de la semaine — invitée Christine Cotton", type:"Interview", lang:"FR", date:"",
+   tags:["interview","video"], d:"Interview — Ensemble Pour Les Libertés.",
+   orig:"https://www.youtube.com/watch?v=LIPps6b8LgE"},
+  {t:"« La Commission veut prolonger ce pass sans base scientifique ! »", type:"Interview", lang:"FR", date:"",
+   tags:["interview","video","Radio Courtoisie","Joron"], d:"With Virginie Joron — Radio Courtoisie (Ligne Droite).",
+   orig:"https://www.youtube.com/watch?v=j2RnxnY6QL8"},
+  {t:"Autorisation du vaccin COVID : erreurs ou complicités ?", type:"Interview", lang:"FR", date:"",
+   tags:["interview","video","Joron"], d:"Interview with Virginie Joron (MEP).",
+   orig:"https://www.youtube.com/watch?v=snXhb5p5uTY"},
+  {t:"CeNC — Commission d'enquête nationale citoyenne : témoignage", type:"Interview", lang:"FR", date:"",
+   tags:["interview","video","testimony"], d:"Testimony — Actualité Politique Du Québec.",
+   orig:"https://www.youtube.com/watch?v=D69Q58E0rMM"},
+  {t:"Les essais cliniques de Pfizer sont-ils frauduleux ?", type:"Interview", lang:"FR", date:"",
+   tags:["interview","video","Sud Radio","Pfizer"], d:"Interview — Sud Radio (Dailymotion).",
+   orig:"https://www.dailymotion.com/video/x887fvm"},
+  {t:"Documents déclassifiés de Pfizer — révélations choc", type:"Interview", lang:"FR", date:"",
+   tags:["interview","video","Sud Radio","Pfizer"], d:"Interview — Sud Radio (Dailymotion).",
+   orig:"https://www.dailymotion.com/video/x8arx5y"}
+];
+
+const LABELS = {{ include.labels | jsonify }};
+
+const $ = s => document.querySelector(s);
+const listEl = $("#list"), qEl = $("#q"), typeEl = $("#type"), tagEl = $("#tag"), langEl = $("#lang"), countEl = $("#count");
+
+[...new Set(items.map(i=>i.type))].sort().forEach(t=>typeEl.add(new Option(t,t)));
+[...new Set(items.map(i=>i.lang))].sort().forEach(t=>langEl.add(new Option(t,t)));
+
+const TAG_CATEGORIES = {
+  [LABELS.cat_trial]:    ["Pfizer","C4591001","clinical-trial","GCP","safety","efficacy","protocol","immunogenicity","mortality","vaccine"],
+  [LABELS.cat_status]:   ["summary","archive","overview","flagship","update","audit","sources","references","bibliography"],
+  [LABELS.cat_format]:   ["interview","video","article","book","presentation","legal"],
+  [LABELS.cat_life]:     ["biography","career","biostatistics","Statitec","publications"],
+  [LABELS.cat_people]:   ["OpenVAET","Joron","Michèle Rivasi","Dupont-Aignan"],
+  [LABELS.cat_media]:    ["Sud Radio","Radio Courtoisie","Cercle Aristote","TVL","Les Incorrectibles","Epoch Times","Décoder l'éco"],
+  [LABELS.cat_official]: ["OPECST","parliament","testimony"],
+  [LABELS.cat_advocacy]: ["criticism","fact-checking","harassment","testimonies","support"],
+  [LABELS.cat_language]: ["English"]
+};
+const tagCounts = {};
+items.forEach(i => (i.tags||[]).forEach(t => tagCounts[t] = (tagCounts[t]||0) + 1));
+const seen = new Set();
+Object.entries(TAG_CATEGORIES).forEach(([cat,tags]) => {
+  const og = document.createElement("optgroup"); og.label = cat;
+  tags.forEach(t => { if (tagCounts[t]) { og.appendChild(new Option(`${t} (${tagCounts[t]})`, t)); seen.add(t); } });
+  if (og.children.length) tagEl.appendChild(og);
+});
+const otherTags = [...new Set(items.flatMap(i=>i.tags||[]))].filter(t => !seen.has(t)).sort();
+if (otherTags.length) {
+  const og = document.createElement("optgroup"); og.label = LABELS.cat_other;
+  otherTags.forEach(t => og.appendChild(new Option(`${t} (${tagCounts[t]})`, t)));
+  tagEl.appendChild(og);
+}
+
+function esc(s){return (s||"").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[c]));}
+function hl(s,q){ if(!q) return esc(s); const i=s.toLowerCase().indexOf(q.toLowerCase());
+  if(i<0) return esc(s); return esc(s.slice(0,i)) + "<mark>" + esc(s.slice(i,i+q.length)) + "</mark>" + esc(s.slice(i+q.length)); }
+
+function render(){
+  const q = qEl.value.trim().toLowerCase(), ty = typeEl.value, tg = tagEl.value, lg = langEl.value;
+  let n = 0; listEl.innerHTML = "";
+  items.forEach(i => {
+    const hay = (i.t+" "+i.d+" "+(i.tags||[]).join(" ")+" "+i.type+" "+i.lang).toLowerCase();
+    if (q && !hay.includes(q)) return;
+    if (ty && i.type !== ty) return;
+    if (tg && !(i.tags||[]).includes(tg)) return;
+    if (lg && i.lang !== lg) return;
+    n++;
+    const el = document.createElement("div"); el.className = "item";
+    let links = "";
+    if (i.local)   links += `<a href="${i.local}">${LABELS.link_archived_en}</a>`;
+    if (i.localFr) links += `<a href="${i.localFr}">${LABELS.link_archived_fr}</a>`;
+    if (i.orig)    links += `<a class="ext" target="_blank" rel="noopener" href="${i.orig}">${LABELS.link_original}</a>`;
+    if (i.orig2)   links += `<a class="ext" target="_blank" rel="noopener" href="${i.orig2}">${LABELS.link_original_en}</a>`;
+    el.innerHTML = `<h3>${hl(i.t,q)}</h3>
+      <div class="meta">
+        <span class="chip type">${esc(i.type)}</span>
+        <span class="chip lang">${esc(i.lang)}</span>
+        ${i.date ? `<span class="chip">${esc(i.date)}</span>` : ""}
+        ${(i.tags||[]).map(t => `<span class="chip">${esc(t)}</span>`).join("")}
+      </div>
+      <div class="desc">${hl(i.d,q)}</div>
+      <div class="links">${links}</div>`;
+    listEl.appendChild(el);
+  });
+  countEl.textContent = LABELS.count_template.replace("{n}", n).replace("{total}", items.length);
+}
+[qEl,typeEl,tagEl,langEl].forEach(e => e.addEventListener("input", render));
+render();
+</script>

@@ -1,0 +1,26 @@
+---
+title: Sources & Links
+lang: en
+translation_path: /fr/sources/
+permalink: /en/sources/
+---
+
+{% include sources-styles.html %}
+
+<h1>Sources &amp; external links</h1>
+<p>A categorized, searchable index of the 231 external links Christine Cotton
+cited across her work — regulators, peer-reviewed journals, news media,
+court filings, and advocacy organizations.</p>
+
+<div class="sources-search">
+  <input id="sources-q" type="search" placeholder="Filter by URL or description…" autocomplete="off">
+  <div class="count" id="sources-count"></div>
+</div>
+
+<div id="list">
+{% include sources-list.html LABELS_SRC=site.data.sources_labels_en %}
+</div>
+
+<p class="sources-empty" id="sources-empty">No links match your search.</p>
+
+{% include sources-script.html labels=site.data.sources_script_labels_en %}

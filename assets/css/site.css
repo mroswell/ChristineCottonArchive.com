@@ -1,0 +1,218 @@
+/* Christine Cotton archive — consolidated site stylesheet.
+   Palette and base styles lifted from catalog/index.html so the existing
+   look-and-feel carries over. Per-page modules (the searchable Archive
+   Index, the interviews grid, the external-links list) can add their own
+   styles on top; this file is the shared baseline. */
+
+:root {
+  color-scheme: light;
+  --bg:        #f7f6f3;
+  --card:      #fff;
+  --ink:       #1f2328;
+  --muted:     #6b7280;
+  --line:      #e5e3dd;
+  --accent:    #2f5d7c;
+  --accent-2:  #7c2f3e;
+  --chip:      #eef1f4;
+  --chip-ink:  #33506a;
+  --max-width: 1000px;
+}
+
+* { box-sizing: border-box; }
+
+html, body { margin: 0; padding: 0; }
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.wrap {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 20px;
+  width: 100%;
+}
+
+a { color: var(--accent); }
+a:hover { text-decoration: underline; }
+
+/* ───────────────────────── Header ───────────────────────── */
+
+.site-header {
+  background: var(--card);
+  border-bottom: 1px solid var(--line);
+  padding: 18px 0;
+}
+
+.header-row {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.brand {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: var(--ink);
+  line-height: 1.15;
+  margin-right: auto;
+}
+
+.brand-name { font-weight: 700; font-size: 1.15rem; }
+.brand-sub  { font-size: .8rem; color: var(--muted); }
+
+.site-nav {
+  display: flex;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+
+.site-nav a {
+  text-decoration: none;
+  color: var(--ink);
+  font-size: .9rem;
+  font-weight: 500;
+  padding: 6px 10px;
+  border-radius: 6px;
+}
+
+.site-nav a:hover,
+.site-nav a[aria-current="page"] {
+  background: var(--chip);
+  color: var(--chip-ink);
+  text-decoration: none;
+}
+
+.site-search { margin: 0; }
+.site-search input {
+  font: inherit;
+  padding: 7px 10px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+  color: var(--ink);
+  width: 180px;
+}
+.site-search input:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(47, 93, 124, .15);
+}
+
+/* Segmented language switch on the far right of the header. Both languages
+   are always visible; the current one is highlighted via aria-current. */
+.lang-switch {
+  display: inline-flex;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  overflow: hidden;
+  font-size: .8rem;
+  background: #fff;
+}
+.lang-switch a {
+  padding: 7px 12px;
+  text-decoration: none;
+  color: var(--muted);
+  font-weight: 600;
+  line-height: 1;
+  border-right: 1px solid var(--line);
+}
+.lang-switch a:last-child { border-right: none; }
+.lang-switch a:hover {
+  background: var(--chip);
+  color: var(--chip-ink);
+  text-decoration: none;
+}
+.lang-switch a[aria-current="page"] {
+  background: var(--accent);
+  color: #fff;
+  cursor: default;
+  pointer-events: none;
+}
+
+/* ───────────────────────── Main column ───────────────────────── */
+
+.site-main { padding: 32px 0 56px; flex: 1; }
+
+h1 { font-size: 1.7rem; margin: 0 0 12px; }
+h2 { font-size: 1.25rem; margin: 28px 0 10px; }
+h3 { font-size: 1.05rem; margin: 18px 0 6px; }
+
+p { max-width: 70ch; }
+
+/* Cards & chips — reused by Archive Index, document pages, etc. */
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 14px 16px;
+  margin: 10px 0;
+}
+
+.chip {
+  font-size: .72rem;
+  background: var(--chip);
+  color: var(--chip-ink);
+  padding: 2px 8px;
+  border-radius: 999px;
+  white-space: nowrap;
+  display: inline-block;
+}
+.chip.type { background: #e8efe9; color: #2f6b46; font-weight: 700; }
+.chip.lang { background: #f2ece2; color: #7a5a2e; }
+
+mark { background: #fdf2a8; padding: 0 1px; }
+
+/* ───────────────────────── Footer ───────────────────────── */
+
+.site-footer {
+  background: var(--card);
+  border-top: 1px solid var(--line);
+  padding: 28px 0 36px;
+  color: var(--muted);
+  font-size: .85rem;
+}
+
+.site-foot-nav {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+.site-foot-nav a {
+  color: var(--muted);
+  text-decoration: none;
+  font-weight: 600;
+}
+.site-foot-nav a:hover { color: var(--accent); text-decoration: underline; }
+
+.site-attrib { max-width: 70ch; margin: 0; }
+
+/* ───────────────────────── Responsive ───────────────────────── */
+
+@media (max-width: 720px) {
+  .header-row { gap: 12px; }
+  .site-nav { order: 4; width: 100%; justify-content: flex-start; }
+  .site-search { order: 2; flex: 1; }
+  .site-search input { width: 100%; }
+  .lang-switch { order: 3; }
+}
+
+/* ───────────────────────── Print ───────────────────────── */
+
+@media print {
+  .site-header, .site-footer, .site-search, .lang-toggle, .site-nav { display: none; }
+  body { background: #fff; color: #000; }
+  .wrap { max-width: 100%; padding: 0; }
+  a { color: #000; text-decoration: underline; }
+}

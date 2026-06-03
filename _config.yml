@@ -1,0 +1,83 @@
+title: "Christine Cotton — Archive"
+description: >-
+  A bilingual preservation archive of the life's work of Christine Cotton
+  (1970–), French biostatistician, founder of the CRO Statitec, and whistleblower
+  who produced a detailed Good Clinical Practice critique of Pfizer/BioNTech's
+  COVID-19 vaccine clinical trial C4591001.
+url: ""
+baseurl: ""
+lang: en
+
+plugins:
+  - jekyll-sitemap
+  - jekyll-seo-tag
+  - jekyll-redirect-from
+
+# Files and directories Jekyll should not process. The archive/ tree contains
+# captured source text — we DO want Jekyll to serve those files (so cards in
+# the Archive Index can link into them) but we don't want every .md to become
+# a fully-chromed page by default. The `defaults` block below adds chrome only
+# to files in archive/documents/.
+exclude:
+  - README.md
+  - CLAUDE.md
+  - TODO.md
+  - INITIAL_PROMPT.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor/
+  - node_modules/
+  - ocr_work/
+  - dups/
+  - archive/sources/   # third-party documents; site links to original publishers
+  - archive/social/    # local-only social-media backups (not republished)
+  - pdfs/              # preserved locally, not republished
+  - catalog/           # legacy standalone HTML, superseded by /en/ and /fr/
+
+# Per-directory defaults: every page under /en/ is implicitly English,
+# every page under /fr/ is implicitly French. Pages can also set their
+# `translation_path` front matter to point at their twin in the other tree;
+# the language toggle in the header uses this.
+defaults:
+  - scope:
+      path: "en"
+    values:
+      lang: en
+      layout: default
+  - scope:
+      path: "fr"
+    values:
+      lang: fr
+      layout: default
+  # Captured English-language documents — wrapped in the document layout so
+  # they render with the site chrome plus a provenance block.
+  - scope:
+      path: "archive/documents"
+      type: pages
+    values:
+      layout: document
+  # The captured French/English site pages — also rendered, but they're more
+  # like content fragments, so use the default layout.
+  - scope:
+      path: "archive/pages"
+      type: pages
+    values:
+      layout: default
+      lang: fr
+  - scope:
+      path: "archive/pages_en"
+      type: pages
+    values:
+      layout: default
+      lang: en
+
+# Treat trailing-slash pretty URLs as the default. /en/about/ rather than
+# /en/about.html — easier to remember, easier to deep-link.
+permalink: pretty
+
+# SEO defaults consumed by jekyll-seo-tag.
+author:
+  name: "Christine Cotton Archive"
+  # TODO: set a real contact email before launch — used in the footer and
+  # by takedown/corrections requests per CLAUDE.md policy.
+  email: ""

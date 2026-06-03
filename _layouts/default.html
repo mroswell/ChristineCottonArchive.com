@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: 'en' }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if page.title %}{{ page.title }} — {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
+  {% seo title=false %}
+  {%- comment -%}
+    Hreflang for the bilingual twin, so search engines know the two URLs
+    are translations of one another. Only emitted when the page declares
+    a translation_path in its front matter.
+  {%- endcomment -%}
+  {%- if page.translation_path -%}
+    <link rel="alternate" hreflang="{% if page.lang == 'fr' %}en{% else %}fr{% endif %}" href="{{ page.translation_path | absolute_url }}">
+    <link rel="alternate" hreflang="{{ page.lang | default: 'en' }}" href="{{ page.url | absolute_url }}">
+  {%- endif -%}
+  <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}">
+</head>
+<body>
+{%- include header.html -%}
+
+<main class="site-main">
+  <div class="wrap">
+    {{ content }}
+  </div>
+</main>
+
+{%- include footer.html -%}
+</body>
+</html>

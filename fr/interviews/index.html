@@ -1,0 +1,23 @@
+---
+title: Interviews
+lang: fr
+translation_path: /en/interviews/
+permalink: /fr/interviews/
+---
+
+{% include interviews-styles.html %}
+
+<h1>Interviews &amp; apparitions vidéo</h1>
+<p>Catalogue consultable de ses 18 interviews vidéo sur YouTube et Dailymotion.
+La plupart sont en français. Les transcriptions n'ont pas encore été générées&nbsp;;
+le lien sur chaque carte renvoie vers la vidéo d'origine.</p>
+
+<div class="vcontrols">
+  <input id="vsearch" type="search" placeholder="Rechercher par titre, chaîne ou plateforme…" autocomplete="off">
+  <span id="vcount"></span>
+</div>
+
+<div class="vgrid" id="vgrid"></div>
+<p id="vempty" hidden>Aucune vidéo ne correspond.</p>
+
+{% include interviews-script.html labels=site.data.interviews_labels_fr %}

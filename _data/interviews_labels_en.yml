@@ -1,0 +1,4 @@
+no_thumbnail:       "No thumbnail"
+transcript_pending: "Transcript: not yet generated"
+watch_button:       "Watch"
+count_template:     "{n} of {total} videos"
