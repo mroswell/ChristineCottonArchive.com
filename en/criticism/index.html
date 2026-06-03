@@ -22,15 +22,41 @@ permalink: /en/criticism/
 
 <h2>Screenshots gallery</h2>
 
-<p>The original page presents a gallery of <strong>27 screenshots</strong> of
-messages received. The image URLs (on christinecotton.com) are:</p>
+<p>The 27 screenshots of messages she received, mirrored from
+<code>christinecotton.com/critics/</code>. Click any thumbnail to open the
+full-size image.</p>
 
-<ul>
-  <li><code>https://christinecotton.com/critics/1.png</code> through
-    <code>https://christinecotton.com/critics/25.png</code></li>
-  <li><code>https://christinecotton.com/critics/26.jpg</code></li>
-  <li><code>https://christinecotton.com/critics/27.jpg</code></li>
-</ul>
+<style>
+  .critics-gallery { display: grid; gap: 10px;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    margin: 20px 0 30px; }
+  .critics-gallery a { display: block; background: var(--card);
+    border: 1px solid var(--line); border-radius: 8px; overflow: hidden;
+    aspect-ratio: 1 / 1; }
+  .critics-gallery img { width: 100%; height: 100%;
+    object-fit: cover; object-position: top; display: block; }
+</style>
 
-<p class="muted"><small>The screenshots themselves are not yet mirrored in this
-archive. They will be added once downloaded.</small></p>
+<div class="critics-gallery">
+{%- for n in (1..25) -%}
+  <a href="{{ '/assets/images/critics/' | append: n | append: '.png' | relative_url }}"
+     target="_blank" rel="noopener">
+    <img src="{{ '/assets/images/critics/' | append: n | append: '.png' | relative_url }}"
+         alt="Screenshot {{ n }} of 27 — message received by Christine Cotton"
+         loading="lazy">
+  </a>
+{%- endfor -%}
+{%- for n in (26..27) -%}
+  <a href="{{ '/assets/images/critics/' | append: n | append: '.jpg' | relative_url }}"
+     target="_blank" rel="noopener">
+    <img src="{{ '/assets/images/critics/' | append: n | append: '.jpg' | relative_url }}"
+         alt="Screenshot {{ n }} of 27 — message received by Christine Cotton"
+         loading="lazy">
+  </a>
+{%- endfor -%}
+</div>
+
+<p class="muted"><small>Mirrored for preservation. If you are the author of one
+of these messages and want it removed, see
+<a href="{{ '/en/legal/#contact' | relative_url }}">Contact &amp; corrections</a>
+on the Legal notice page.</small></p>
