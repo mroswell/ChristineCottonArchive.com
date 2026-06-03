@@ -1,0 +1,54 @@
+# OS / editor
+.DS_Store
+Thumbs.db
+*.swp
+.vscode/
+.idea/
+
+# OCR scratch + raw OCR text dumps (the headered .md versions are kept; raw .txt are not)
+ocr_work/
+archive/documents/*_OCR.txt
+
+# Node (only if a React/Vite build is ever added)
+node_modules/
+dist/
+.cache/
+npm-debug.log*
+
+# Python (only if notebooks/scripts are added)
+__pycache__/
+*.pyc
+.venv/
+venv/
+.ipynb_checkpoints/
+
+# Temp
+*.tmp
+
+# ──────────────────────────────────────────────────────────────────────────
+# Copyrighted material — kept LOCALLY for preservation but NOT published in
+# this repo. The website links to the originals instead (her christinecotton.com
+# pages for her own works; the original publishers for third-party documents).
+# ──────────────────────────────────────────────────────────────────────────
+# Her GCP expertise reports, summaries, update, McCullough slides (PDFs)
+pdfs/Vaccine-expertise*.pdf
+pdfs/ENG-Vaccine-expertise*.pdf
+pdfs/ENG-SUMMARY-Expertise*.pdf
+pdfs/SUMMARY-EVAL-PFIZER*.pdf
+pdfs/Résumé-Exp-*.pdf
+pdfs/Summary-Exp-*.pdf
+# Her book (offered free, but excluded from the repo per owner's choice)
+pdfs/The_Trial_was_almost_Perfect*.pdf
+# Extracted text of all the above
+archive/documents/Expertise_*.md
+archive/documents/Summary_*.md
+archive/documents/Update_*.md
+archive/documents/Book_*.md
+# Third-party source documents (site links to their original publishers)
+pdfs/m5351-c4591001-*.pdf
+pdfs/CDC-2021-0089-*.pdf
+archive/sources/VAERS_*.md
+
+# NOTE: the PDFs that REMAIN tracked (CV, the OPECST presentation, plus any
+# site images you add) are still sizeable, so configure Git LFS before the
+# first commit:  git lfs install && git lfs track "pdfs/**"   (see TODO.md).
