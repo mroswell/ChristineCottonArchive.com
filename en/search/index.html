@@ -3,6 +3,8 @@ title: Search
 lang: en
 translation_path: /fr/recherche/
 permalink: /en/search/
+# This page itself isn't useful to index — it's just a UI host.
+pagefind: false
 ---
 
 <h1>Search the archive</h1>
@@ -10,37 +12,38 @@ permalink: /en/search/
 <p>Full-text search across this site — reports, OCR text, captured pages,
 interview titles, and the external-link catalog.</p>
 
-<div id="pagefind-search" class="pagefind-host">
-  <input type="search" id="pagefind-input"
-    placeholder="Type a word, name, or phrase…"
-    autocomplete="off" autofocus>
-  <div id="pagefind-status" class="pagefind-status"></div>
-  <div id="pagefind-results"></div>
-</div>
+<link rel="stylesheet" href="{{ '/pagefind/pagefind-ui.css' | relative_url }}">
+<script src="{{ '/pagefind/pagefind-ui.js' | relative_url }}" onerror="document.getElementById('pagefind-missing').hidden=false"></script>
 
-<style>
-  .pagefind-host { margin: 18px 0 40px; }
-  #pagefind-input { width: 100%; padding: 12px 16px; font-size: 1.05rem;
-    border: 1px solid var(--line); border-radius: 8px; background: var(--card); color: var(--ink); }
-  #pagefind-input:focus { outline: none; border-color: var(--accent);
-    box-shadow: 0 0 0 3px rgba(47, 93, 124, .15); }
-  .pagefind-status { color: var(--muted); font-size: .9rem; margin: 12px 0; }
-</style>
+<div id="pagefind-search"></div>
+
+<p id="pagefind-missing" hidden style="color: var(--muted); margin-top: 14px;">
+  <strong>Search index not loaded.</strong> If you're previewing locally, run
+  <code>bundle exec jekyll build &amp;&amp; npx pagefind --site _site</code>
+  and then serve <code>_site/</code>. On the deployed site this means the
+  most recent build hasn't completed yet — wait a minute and refresh.
+</p>
 
 <noscript><p>Search needs JavaScript. Browse the
   <a href="{{ '/en/archive/' | relative_url }}">Archive Index</a> instead.</p></noscript>
 
 <script>
-(function () {
-  var input = document.getElementById('pagefind-input');
-  var status = document.getElementById('pagefind-status');
-  var results = document.getElementById('pagefind-results');
-  status.textContent = 'Search index not yet built. Run Pagefind during deploy to populate this page.';
-
-  // When the Pagefind bundle is present (built by the GH Actions workflow),
-  // wire it up here. Until then this page is an intentional stub.
   if (window.PagefindUI) {
-    new PagefindUI({ element: '#pagefind-search', showSubResults: true });
+    new PagefindUI({
+      element: '#pagefind-search',
+      showSubResults: true,
+      translations: {
+        placeholder: 'Type a word, name, or phrase…',
+        clear_search: 'Clear',
+        load_more: 'Load more results',
+        search_label: 'Search this site',
+        filters_label: 'Filters',
+        zero_results: 'No results for [SEARCH_TERM]',
+        many_results: '[COUNT] results for [SEARCH_TERM]',
+        one_result: '[COUNT] result for [SEARCH_TERM]',
+        alt_search: 'No results for [SEARCH_TERM]. Showing results for [DIFFERENT_TERM] instead',
+        searching: 'Searching for [SEARCH_TERM]…'
+      }
+    });
   }
-})();
 </script>

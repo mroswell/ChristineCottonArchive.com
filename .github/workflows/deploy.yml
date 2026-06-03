@@ -56,6 +56,19 @@ jobs:
         env:
           JEKYLL_ENV: production
 
+      - name: Setup Node (for Pagefind)
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Build Pagefind search index
+        # Indexes _site/ in place — drops the UI assets and binary index at
+        # _site/pagefind/, which the search page loads at runtime. Pagefind
+        # respects each page's <html lang> for stemming, and the
+        # data-pagefind-body attributes on _layouts/{default,document}.html
+        # scope indexing to page content (not the shared header / footer).
+        run: npx -y pagefind@^1 --site _site
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
 
