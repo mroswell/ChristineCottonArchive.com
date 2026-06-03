@@ -1,9 +1,10 @@
 ---
-# Root redirect. A real visitor lands here; we point them at the English tree by
-# default. The language toggle in the header lets them switch to /fr/ at any
-# time, and both /en/ and /fr/ have their full content trees.
-# (A future enhancement: serve a small JS that reads navigator.language and
-# redirects to /fr/ for French-speaking visitors before they see the EN page.)
+# Root redirect. A real visitor lands here; we point them at the English tree
+# by default. The language toggle in the header lets them switch to /fr/ at
+# any time, and both /en/ and /fr/ have their full content trees.
+# All URLs are piped through `relative_url` so they respect the site's
+# baseurl (e.g. /ChristineCottonArchive.com/en/ on the unbranded GH Pages
+# default URL, or /en/ once a CNAME is in place).
 permalink: /
 sitemap: false
 ---
@@ -12,13 +13,14 @@ sitemap: false
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta http-equiv="refresh" content="0; url=/en/">
-  <link rel="canonical" href="/en/">
-  <link rel="alternate" hreflang="en" href="/en/">
-  <link rel="alternate" hreflang="fr" href="/fr/">
+  <meta http-equiv="refresh" content="0; url={{ '/en/' | relative_url }}">
+  <link rel="canonical" href="{{ '/en/' | absolute_url }}">
+  <link rel="alternate" hreflang="en" href="{{ '/en/' | absolute_url }}">
+  <link rel="alternate" hreflang="fr" href="{{ '/fr/' | absolute_url }}">
   <title>Christine Cotton — Archive</title>
 </head>
 <body>
-  <p>Redirecting to <a href="/en/">English</a> / <a href="/fr/">français</a>…</p>
+  <p>Redirecting to <a href="{{ '/en/' | relative_url }}">English</a> /
+  <a href="{{ '/fr/' | relative_url }}">français</a>…</p>
 </body>
 </html>
