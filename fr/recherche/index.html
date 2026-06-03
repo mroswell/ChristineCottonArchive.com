@@ -28,9 +28,10 @@ capturées, titres d'interviews et catalogue de liens externes.</p>
 
 <script>
   if (window.PagefindUI) {
-    new PagefindUI({
+    const ui = new PagefindUI({
       element: '#pagefind-search',
       showSubResults: true,
+      autofocus: true,
       translations: {
         placeholder: 'Tapez un mot, un nom ou une expression…',
         clear_search: 'Effacer',
@@ -44,5 +45,28 @@ capturées, titres d'interviews et catalogue de liens externes.</p>
         searching: 'Recherche de [SEARCH_TERM]…'
       }
     });
+
+    // Si l'URL contient ?q=…, lance cette recherche au chargement (pour
+    // que la boîte de recherche de l'en-tête fonctionne via GET et que
+    // l'URL soit partageable / mémorisable).
+    const params = new URLSearchParams(window.location.search);
+    const initialQuery = params.get('q');
+    if (initialQuery) ui.triggerSearch(initialQuery);
+
+    // Tient l'URL à jour à mesure que l'on tape dans le champ Pagefind.
+    const searchInput = document.querySelector('.pagefind-ui__search-input');
+    if (searchInput) {
+      let debounce;
+      searchInput.addEventListener('input', () => {
+        clearTimeout(debounce);
+        debounce = setTimeout(() => {
+          const term = searchInput.value;
+          const url = new URL(window.location);
+          if (term) url.searchParams.set('q', term);
+          else url.searchParams.delete('q');
+          window.history.replaceState({}, '', url);
+        }, 250);
+      });
+    }
   }
 </script>
