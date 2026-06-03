@@ -203,9 +203,9 @@ mark { background: #fdf2a8; padding: 0 1px; }
 @media (max-width: 720px) {
   .header-row { gap: 12px; }
   .site-nav { order: 4; width: 100%; justify-content: flex-start; }
-  .site-search { order: 2; flex: 1; }
+  .lang-switch { order: 2; }
+  .site-search { order: 3; flex: 1; }
   .site-search input { width: 100%; }
-  .lang-switch { order: 3; }
 }
 
 /* ───────────────────────── Print ───────────────────────── */

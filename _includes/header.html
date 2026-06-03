@@ -68,14 +68,6 @@
       <a href="{{ url_archive    | relative_url }}">{{ nav_archive }}</a>
     </nav>
 
-    {%- comment -%}
-      Search box. Wired up later with Pagefind (built during deploy).
-      Search results live on the same-language `/search/` page.
-    {%- endcomment -%}
-    <form class="site-search" role="search" action="{% if page.lang == 'fr' %}{{ '/fr/recherche/' | relative_url }}{% else %}{{ '/en/search/' | relative_url }}{% endif %}">
-      <input type="search" name="q" placeholder="{{ nav_search_label }}" aria-label="{{ nav_search_label }}">
-    </form>
-
     <div class="lang-switch" role="group" aria-label="{{ lang_switch_aria }}">
       {%- if page.lang == 'fr' -%}
         <a href="{{ other_lang_href | relative_url }}" hreflang="en">English</a>
@@ -85,5 +77,13 @@
         <a href="{{ other_lang_href | relative_url }}" hreflang="fr">Français</a>
       {%- endif -%}
     </div>
+
+    {%- comment -%}
+      Search box. Wired up later with Pagefind (built during deploy).
+      Search results live on the same-language `/search/` page.
+    {%- endcomment -%}
+    <form class="site-search" role="search" action="{% if page.lang == 'fr' %}{{ '/fr/recherche/' | relative_url }}{% else %}{{ '/en/search/' | relative_url }}{% endif %}">
+      <input type="search" name="q" placeholder="{{ nav_search_label }}" aria-label="{{ nav_search_label }}">
+    </form>
   </div>
 </header>
