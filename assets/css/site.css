@@ -91,7 +91,7 @@ a:hover { text-decoration: underline; }
   text-decoration: none;
 }
 
-.site-search { margin: 0; }
+.site-search { margin: 0 0 0 auto; }  /* push to far right of the header */
 .site-search input {
   font: inherit;
   padding: 7px 10px;
