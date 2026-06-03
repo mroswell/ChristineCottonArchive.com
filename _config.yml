@@ -31,8 +31,13 @@ exclude:
   - dups/
   - archive/sources/   # third-party documents; site links to original publishers
   - archive/social/    # local-only social-media backups (not republished)
-  - pdfs/              # preserved locally, not republished
   - catalog/           # legacy standalone HTML, superseded by /en/ and /fr/
+
+# Note: pdfs/ is intentionally NOT excluded. The copyrighted PDFs in that
+# directory are git-ignored (see .gitignore), so on the GitHub Actions
+# runner only the CV and OPECST presentation PDFs are present — and those
+# ARE meant to be served. Excluding pdfs/ here would 404 the OPECST link
+# from /en/expertise/ etc.
 
 # Per-directory defaults: every page under /en/ is implicitly English,
 # every page under /fr/ is implicitly French. Pages can also set their

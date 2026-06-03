@@ -26,7 +26,7 @@
 
 <main class="site-main">
   <div class="wrap">
-    <p><a href="{{ '/en/archive/' | relative_url }}">← {% if page.lang == 'fr' %}Index de l'archive{% else %}Archive Index{% endif %}</a></p>
+    <p><a href="{% if page.lang == 'fr' %}{{ '/fr/archive/' | relative_url }}{% else %}{{ '/en/archive/' | relative_url }}{% endif %}">← {% if page.lang == 'fr' %}Index de l'archive{% else %}Archive Index{% endif %}</a></p>
 
     <div class="doc-meta">
       {% if page.lang == 'fr' %}<strong>Document d'archive.</strong>{% else %}<strong>Archive document.</strong>{% endif %}
