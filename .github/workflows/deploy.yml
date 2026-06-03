@@ -1,0 +1,71 @@
+# Build and deploy the Jekyll site to GitHub Pages.
+#
+# We can't use GH Pages' classic "deploy from branch" mode for this site —
+# that mode pins to Jekyll 3.9 (broken on Ruby 3.4+) and runs in safe mode,
+# which disables our _plugins/archive_pages.rb generator (the one that
+# renders the 29 captured archive documents at /archive/.../slug/).
+#
+# Instead we build the site here with our own Gemfile and let
+# actions/deploy-pages publish the _site/ output.
+
+name: Deploy site to GitHub Pages
+
+on:
+  # Auto-deploy every push to main.
+  push:
+    branches: [main]
+  # Manual trigger from the Actions tab, useful for redeploys.
+  workflow_dispatch:
+
+# Permissions required by actions/deploy-pages and actions/configure-pages.
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Only one Pages deployment at a time. Don't cancel in-progress runs —
+# letting a deploy finish is safer than racing it.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.3'
+          bundler-cache: true
+
+      - name: Setup Pages
+        id: pages
+        uses: actions/configure-pages@v5
+
+      - name: Build with Jekyll
+        # `base_path` from configure-pages is the URL prefix the site
+        # should think it lives at. Without a custom domain it resolves to
+        # "/<repo-name>" (here "/ChristineCottonArchive.com"). Once a CNAME
+        # is added at the repo, it resolves to "" and links update with
+        # no workflow changes needed.
+        run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
+        env:
+          JEKYLL_ENV: production
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
