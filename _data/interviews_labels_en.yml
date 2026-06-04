@@ -1,4 +1,7 @@
 no_thumbnail:       "No thumbnail"
 transcript_pending: "Transcript: not yet generated"
+transcript_label:   "Transcript:"
+lang_fr:            "French"
+lang_en:            "English"
 watch_button:       "Watch"
 count_template:     "{n} of {total} videos"

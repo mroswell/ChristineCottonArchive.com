@@ -22,12 +22,29 @@ const videos = [
 
 const VLABELS = {{ include.labels | jsonify }};
 
+// Map of video id -> { fr: bool, en: bool } so cards can show transcript
+// links only for videos that actually have a transcript yet. Filled in
+// by ocr_work/transcribe-interviews-whisperx.py as transcripts land.
+const TRANSCRIPTS = {{ site.data.transcripts_index | jsonify }} || {};
+const BASEURL = {{ site.baseurl | jsonify }};
+
 const grid = document.getElementById("vgrid");
 const vcountEl = document.getElementById("vcount");
 const vemptyEl = document.getElementById("vempty");
 const vsearchEl = document.getElementById("vsearch");
 
 function vesc(s){ return s.replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c])); }
+
+function transcriptLine(v) {
+  const t = TRANSCRIPTS[v.id];
+  if (!t || (!t.fr && !t.en)) {
+    return `<div class="transcript">${VLABELS.transcript_pending}</div>`;
+  }
+  const links = [];
+  if (t.fr) links.push(`<a href="${BASEURL}/archive/transcripts/${v.id}/">${VLABELS.lang_fr}</a>`);
+  if (t.en) links.push(`<a href="${BASEURL}/archive/transcripts/${v.id}_en/">${VLABELS.lang_en}</a>`);
+  return `<div class="transcript"><strong>${VLABELS.transcript_label}</strong> ${links.join(" · ")}</div>`;
+}
 
 function cardHTML(v){
   const thumb = v.thumb
@@ -39,7 +56,7 @@ function cardHTML(v){
       <span class="badge">${vesc(v.platform)}</span>
       <div class="title">${vesc(v.title)}</div>
       <div class="meta">${vesc(v.author)}</div>
-      <div class="transcript">${VLABELS.transcript_pending}</div>
+      ${transcriptLine(v)}
       <a class="watch" href="${vesc(v.url)}" target="_blank" rel="noopener">${VLABELS.watch_button} &#9654;</a>
     </div>
   </article>`;
