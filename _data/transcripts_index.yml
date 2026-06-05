@@ -2,6 +2,9 @@
 # Updated incrementally as each transcript pair is written.
 # Keys are video IDs; values mark which languages are available.
 
+6D-LjaD99ys:
+  en: true
+  fr: true
 ASXFLQdQXyU:
   en: true
   fr: true
@@ -12,6 +15,10 @@ MJksTpVRQuA:
   en: true
   fr: true
 O8S7BSrRj3U:
+  en: true
+  fr: true
+TQQVmdTXY-k:
+  en: true
   fr: true
 WmDFTibK-Ek:
   en: true
