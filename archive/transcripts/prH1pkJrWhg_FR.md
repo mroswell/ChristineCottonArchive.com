@@ -7,7 +7,7 @@ source_date: "2023-06-19"
 notes: "Diarized French auto-transcript via whisperX (medium, fr) + pyannote diarization. Channel: Sud Radio. Speaker labels are anonymous (SPEAKER_00, SPEAKER_01…) and may need light editing."
 ---
 
-**Bumper [00:00]** Pour ne rien manquer, abonnez-vous maintenant !
+**Jingle [00:00]** Pour ne rien manquer, abonnez-vous maintenant !
 
 **André Bercoff [00:20]** Bonjour Christine Cotton. Alors dites-moi votre livre, c'est un jacuz, mais il est nettement plus long que ce qu'avait fait Emile Zola. Alors vous ne faites pas de la dentelle, mais c'est un bouquin passionnant. C'est un bouquin passionnant, tous vaccinés, tous protégés, qui est paru aux éditions Guy Trédaniel, parce que vous, Vous prenez le temps et vous prenez la compétence et je voudrais rappeler qui est Christine Cotton pour ceux qui ne la connaîtraient pas. Et vous la vous présentez très très bien d'ailleurs à la fin de votre livre. Vous avez, je vais d'ailleurs reprendre ce que vous dites vous-même. et quand vous dites je suis Christine Cotton, vous êtes bio-statisticienne, vous avez été président de la société, vous avez travaillé avec tous les laboratoires, mais je voudrais Christine Cotton qu'on commence parce qu'on définit bien les choses et justement toutes les définitions et les études, qu'est-ce que c'est qu'être bio-statisticien en matière médicale et en matière sanitaire ?
 
@@ -43,11 +43,11 @@ notes: "Diarized French auto-transcript via whisperX (medium, fr) + pyannote dia
 
 **Bercoff [07:04]** C'est ça qui est en creusant, évidemment, Peu de gens peuvent faire ça, nous en tout cas, ce n'est pas à notre, ni à notre portée, ni dans nos possibilités. Vous le faites, on va en parler justement, parce que 4,25%, 0,424%, c'est pas tout à fait le même chiffre, c'est le moins qu'on puisse dire. On se retrouve, Christine Cotton, avec vous.
 
-**Station ID [07:27]** dans une petite minute, à très vite. Et vous souhaitez interpeller Christine Cotton sur son livre, tous vaccinés, tous protégés. Vous nous appelez au 0826 300 300, on attend vos appels. On se retrouve tout de suite sur Sud Radio, 0826 300 300. À tout de suite. Ici, Sud Radio.
+**Indicatif [07:27]** dans une petite minute, à très vite. Et vous souhaitez interpeller Christine Cotton sur son livre, tous vaccinés, tous protégés. Vous nous appelez au 0826 300 300, on attend vos appels. On se retrouve tout de suite sur Sud Radio, 0826 300 300. À tout de suite. Ici, Sud Radio.
 
-**Bumper [07:42]** Les Français parlent au français. Je n'aime pas la planquette de mots.
+**Jingle [07:42]** Les Français parlent au français. Je n'aime pas la planquette de mots.
 
-**Bumper [07:55]** Je n'aime pas la planquette de mots.
+**Jingle [07:55]** Je n'aime pas la planquette de mots.
 
 **Bercoff [08:00]** Tous vaccinés, tous protégés avec un point à l'interrogation. C'est le livre, c'est l'ouvrage de Christine Cotton, de la biostatisticienne Christine Cotton, qui vient de paraître chez Guy Trédaniel et... Le sous-titre, c'est « Chronique d'une catastrophe sanitaire annoncée ». Vous n'y allez pas par cas de chemin, Christine Cotton, donc en avançant, vous avez donc étudié, vous allez regarder, vous avez les instruments évidemment, vous avez 25 ans derrière vous de pratique, 23 ans, vous avez regardé tout cela. et vous dites au fond, vous parlez du temps effectivement, vous dites comment on a fabriqué très très très vite quelque chose qui pour les autres vaccins est une jamais vue, prenait beaucoup plus de temps. Vous avez regardé ce qu'on disait effectivement, efficacité absolument, et le fameux tous vaccinés tous protégés, c'était ce qu'un certain nombre de ministres et d'autorités avaient dit sur les radios et les télévisions. Au début c'était absolument Et si vous ne le faites pas, et alors vous parlez beaucoup du fait de la différence, je dirais, de l'influence pratiquement abyssale. Et je voudrais qu'on parle de ça, d'un certain nombre de personnes comme vous, vous citez aussi d'autres personnes, vous n'êtes pas évidemment seuls. Et le discours, dans les radios, les télévisions, en tout cas dans les 4-5ème, vous disiez, mais d'un côté il y a cette chose, on a vu le QR code, on a vu la trilogie dont vous parlez, la fameuse trilogie QR code, vaccins, etc. Et vous dites après, Mais on comprend pas, il y a vraiment, je dirais, un fossé entre ce que moi, Christine Cotton, je constate, et ce que je vois dire et pratiquer et faire.
 
@@ -79,11 +79,11 @@ notes: "Diarized French auto-transcript via whisperX (medium, fr) + pyannote dia
 
 **Bercoff [13:54]** Justement, on arrive à ça, on va en parler tout de suite de ces fameux effets indésirables, de la pharmacovigilance, de tout cela, de VAERS, ces compagnies. parce que justement quand est arrivée la vague ou les vagues, non pas les vagues au micron et compagnie, mais les vagues des effets indésirables ou des effets effectivement secondaires, là je voudrais qu'on en parle vraiment Christine Cotton, c'est la base de votre livre aussi et vous avez un peu retracé cela. Qu'est-ce qui se passe là-dessus ? Eh ben la même chose, les mêmes démarches. À tout de suite avec vous. Tous vaccinés, tous protégés.
 
-**Station ID [14:32]** C'est la question qu'on se pose. Et vous nous appelez au 0826 300 300 pour interpeller Christine Coteau sur son livre. Tous vaccinés, tous protégés aux éditions Guy Très Daniel. 0826 300 300, on se retrouve tout de suite.
+**Indicatif [14:32]** C'est la question qu'on se pose. Et vous nous appelez au 0826 300 300 pour interpeller Christine Coteau sur son livre. Tous vaccinés, tous protégés aux éditions Guy Très Daniel. 0826 300 300, on se retrouve tout de suite.
 
-**Bumper [14:47]** Ici Sud Radio. Les Français parlent au français. Les carottes sont cuites.
+**Jingle [14:47]** Ici Sud Radio. Les Français parlent au français. Les carottes sont cuites.
 
-**Bumper [15:01]** Les carottes sont cuites.
+**Jingle [15:01]** Les carottes sont cuites.
 
 **Bercoff [15:02]** Et je ne suis pas le seul, Christine Cotton, et depuis trois ans, peut-être avant dans tous ces états, tous vaccinés, tous protégés, point d'interrogation. Christine Cotton, je voudrais juste lire un extrait de votre livre, rapide. Deux choses, l'avis de la haute autorité de santé du 2 février 2021, donc il y a plus d'un an, autorisant le vaccin AZD1-1222 d'AstraZeneca, stipule la haute autorité de santé note toutefois qu'à ce stade, les données ne permettent pas de conclure quant à l'efficacité vaccinale chez les personnes âgées de 65 ans et plus. et sur les formes sévères, sur les formes asymptomatiques. Voilà, la Haute Autorité de Santé et non pas simplement Christine Cotton ou d'autres médecins traités de tous les noms. Et puis, autre chose, la Food and Drug Administration dont vous avez déjà parlé, avait demandé de garder secret les documents relatifs aux essais cliniques pendant 75 ans. Et ça, ça a pu être effectivement renversé par un juge américain, c'est bien ça.
 
@@ -123,9 +123,9 @@ notes: "Diarized French auto-transcript via whisperX (medium, fr) + pyannote dia
 
 **Bercoff [23:05]** En attendant Christine Cotton, moi je dis que vous soyez vraiment lisez ce livre, prenez le temps de le lire, c'est un livre extrêmement d'heureux, qui est un gros livre, important de prendre, effectivement, la moindre des choses, le temps de le regarder, de le lire, et après on en discute. Et comme vous dites, on audite. Comme on vous audite aujourd'hui, Christine Cotton, pour votre livre. On a plusieurs auditeurs qui ont des questions à vous poser, qui ont envie d'intervenir. Lucien ?
 
-**Station ID [23:34]** Oui, beaucoup d'auditeurs nous appellent au 0826 300 300 et vous continuez de nous appeler au 0826 300 300. Vous pouvez avoir la parole et on accueille Émilien de Haras qui aimerait nous parler des effets secondaires. Bonjour Émilien.
+**Indicatif [23:34]** Oui, beaucoup d'auditeurs nous appellent au 0826 300 300 et vous continuez de nous appeler au 0826 300 300. Vous pouvez avoir la parole et on accueille Émilien de Haras qui aimerait nous parler des effets secondaires. Bonjour Émilien.
 
-**Caller [23:45]** Bonjour Emilia. Bonjour André, bonjour à votre invité. Merci de me reprendre une nouvelle fois sur grande antenne. J'étais déjà intervenu il y a quelque temps pour expliquer un petit peu ma situation. Je vais vous resigliturer un petit peu le contexte. Moi, je suis pompier professionnel, j'ai été sous une obligation vaccinale par la loi sanitaire qui était passée en août 2021. Au delà des statistiques, en fait, aujourd'hui, derrière, c'est l'humain, en plus de chiffres. Aujourd'hui, c'est les vies qui ont basculé pour des milliers de personnes. Et pour ces personnes-là, comme moi, en fait, on est dans l'errance la plus complète.
+**Auditeur [23:45]** Bonjour Emilia. Bonjour André, bonjour à votre invité. Merci de me reprendre une nouvelle fois sur grande antenne. J'étais déjà intervenu il y a quelque temps pour expliquer un petit peu ma situation. Je vais vous resigliturer un petit peu le contexte. Moi, je suis pompier professionnel, j'ai été sous une obligation vaccinale par la loi sanitaire qui était passée en août 2021. Au delà des statistiques, en fait, aujourd'hui, derrière, c'est l'humain, en plus de chiffres. Aujourd'hui, c'est les vies qui ont basculé pour des milliers de personnes. Et pour ces personnes-là, comme moi, en fait, on est dans l'errance la plus complète.
 
 **Bercoff [24:26]** On n'existe pas. Vous savez, beaucoup de gens nous appellent, et c'est important, vous l'avez exposé, donc Christine Cotton, Il y a des émiliens, il y en a beaucoup, il y a effectivement des hommes et des femmes. Comment vous réagissez à cela ? D'ailleurs vous en avez, vous avez des témoignages dans votre livre, bien sûr.
 
@@ -141,19 +141,19 @@ notes: "Diarized French auto-transcript via whisperX (medium, fr) + pyannote dia
 
 **Bercoff [25:26]** On se retrouve juste après cette dernière petite pause avec les singotans et avec nos auditeurs.
 
-**Station ID [25:32]** À tout de suite. Et vous continuez de nous appeler au 0826 300 300. On se retrouve tout de suite.
+**Indicatif [25:32]** À tout de suite. Et vous continuez de nous appeler au 0826 300 300. On se retrouve tout de suite.
 
-**Bumper [25:38]** Ici Sud Radio. Les Français parlent au français. Je n'aime pas la blanquette de mots.
+**Jingle [25:38]** Ici Sud Radio. Les Français parlent au français. Je n'aime pas la blanquette de mots.
 
-**Bumper [25:48]** Je n'aime pas la blanquette de mots.
+**Jingle [25:48]** Je n'aime pas la blanquette de mots.
 
-**Station ID [25:54]** Vous êtes bien dans le face-à-face d'André Bercoff avec Christine Cotton pour son livre Tous vaccinés, tous protégés, vaccins Covid-19, chronique d'une catastrophe sanitaire annoncée. Vous avez la parole 0826 300 300. On accueille Christophe de Angers. Bonjour Christophe.
+**Indicatif [25:54]** Vous êtes bien dans le face-à-face d'André Bercoff avec Christine Cotton pour son livre Tous vaccinés, tous protégés, vaccins Covid-19, chronique d'une catastrophe sanitaire annoncée. Vous avez la parole 0826 300 300. On accueille Christophe de Angers. Bonjour Christophe.
 
-**Caller [26:08]** Bonjour Christophe. Bonjour André. Bonjour Madame Cotton. Merci pour votre publicité. Je voulais dire que peut-être qu'un jour au journal de France 2, on entendra parler des SMS de Ursula von Leyen, du procès BioNTech en Allemagne, des lits de Madame Cotton, de Pierre Chaillot et puis d'autres et c'est pas le cas et je crois que le rapport de force pour l'instant, il est vraiment en notre défaveur. Et je pense qu'il faudrait aussi peut-être pour qu'on se caresse ça, mais c'est aussi, André, je vous interroge là-dessus, c'est que Mme Cotton, c'est organiser ce qu'il existait il y a très longtemps des disputations. C'est-à-dire, il faudrait que des confrontations soient archivées, de manière radio ou vidéo, on ne pense pas la même chose. Parce que qu'est-ce qu'on a ? Chacun fait sa chaîne YouTube, son réseau. On a des chroniqueurs qui invitent par exemple Raoult ou d'autres, et puis bon, c'est toujours la même chose. Personnellement, je rêverais, entre guillemets, qu'on ait des disputations dans des débats entre les spécialistes, organisés de manière intelligente, pas des fois dans pointe, ou quelque chose qui se crée là, parce que sinon, on est amené à être dans le banc.
+**Auditeur [26:08]** Bonjour Christophe. Bonjour André. Bonjour Madame Cotton. Merci pour votre publicité. Je voulais dire que peut-être qu'un jour au journal de France 2, on entendra parler des SMS de Ursula von Leyen, du procès BioNTech en Allemagne, des lits de Madame Cotton, de Pierre Chaillot et puis d'autres et c'est pas le cas et je crois que le rapport de force pour l'instant, il est vraiment en notre défaveur. Et je pense qu'il faudrait aussi peut-être pour qu'on se caresse ça, mais c'est aussi, André, je vous interroge là-dessus, c'est que Mme Cotton, c'est organiser ce qu'il existait il y a très longtemps des disputations. C'est-à-dire, il faudrait que des confrontations soient archivées, de manière radio ou vidéo, on ne pense pas la même chose. Parce que qu'est-ce qu'on a ? Chacun fait sa chaîne YouTube, son réseau. On a des chroniqueurs qui invitent par exemple Raoult ou d'autres, et puis bon, c'est toujours la même chose. Personnellement, je rêverais, entre guillemets, qu'on ait des disputations dans des débats entre les spécialistes, organisés de manière intelligente, pas des fois dans pointe, ou quelque chose qui se crée là, parce que sinon, on est amené à être dans le banc.
 
 **Bercoff [27:19]** Oui, chacun dans sa tribu, je comprends bien ce que vous dites Christophe.
 
-**Caller [27:22]** C'est une clandestinité, presque, et je comprends les insultes qu'a reçus Mme Cotton, tout ça, c'est dégoûtant, mais c'est comme ça maintenant et non moi je souhaite vraiment qu'il y ait une médiatisation un peu différente mais je pense que vous pouvez l'organiser en tout cas des médias libres peut-être je sais pas voilà ce que vous voulez vous dire merci.
+**Auditeur [27:22]** C'est une clandestinité, presque, et je comprends les insultes qu'a reçus Mme Cotton, tout ça, c'est dégoûtant, mais c'est comme ça maintenant et non moi je souhaite vraiment qu'il y ait une médiatisation un peu différente mais je pense que vous pouvez l'organiser en tout cas des médias libres peut-être je sais pas voilà ce que vous voulez vous dire merci.
 
 **Bercoff [27:42]** Merci à vous Christine Cotton est-ce que vous avez été invité à des débats avec justement un certain nombre que ce soit de médecins de chercheurs ou même de labos vous qui avez très et longtemps fréquenter les labos, vous avez travaillé non pas pour eux mais avec eux, est-ce que vous avez été invité à des débats contradictoires ?
 
