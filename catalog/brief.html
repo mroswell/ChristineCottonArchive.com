@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>In Brief — Christine Cotton Archive</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg:#f7f6f3; --card:#fff; --ink:#1f2328; --muted:#6b7280; --line:#e5e3dd;
+    --accent:#2f5d7c; --accent2:#7c2f3e; --chip:#eef1f4; --chip-ink:#33506a;
+    --soft:#fbfaf7;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--ink); line-height: 1.55;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  .wrap { max-width: 820px; margin: 0 auto; padding: 28px 22px 64px; }
+  .breadcrumb { font-size: .85rem; color: var(--muted); margin-bottom: 14px; display:flex; gap: 10px; flex-wrap:wrap; }
+  .breadcrumb a { color: var(--accent); text-decoration: none; font-weight: 600; }
+  .breadcrumb a:hover { text-decoration: underline; }
+
+  .title-block { margin-bottom: 18px; }
+  .video-title { font-size: 1.45rem; line-height: 1.25; margin: 0 0 6px; }
+  .video-meta {
+    color: var(--muted); font-size: .9rem; display:flex; gap: 10px; flex-wrap:wrap; align-items: center;
+  }
+  .video-meta .badge {
+    font-size: .72rem; font-weight: 600; padding: 2px 8px;
+    border-radius: 999px; background: var(--chip); color: var(--chip-ink);
+  }
+  .video-meta a.watch {
+    color: #fff; background: var(--accent); padding: 6px 12px; border-radius: 8px;
+    text-decoration: none; font-weight: 600; font-size: .85rem;
+  }
+  .video-meta a.watch:hover { background: #245a93; }
+
+  /* Brief body — same look as inline panel, but in a full-width article */
+  .brief-card {
+    background: var(--soft); border: 1px solid var(--line); border-radius: 14px;
+    padding: 24px 26px; box-shadow: 0 1px 2px rgba(0,0,0,.04);
+  }
+  .brief-body { font-size: 1rem; }
+  .brief-header {
+    display:flex; flex-wrap:wrap; gap:10px 18px; align-items:center;
+    font-size:.88rem; color:var(--muted); margin-bottom:14px;
+  }
+  .lang-toggle {
+    margin-left: auto; display:inline-flex; border:1px solid var(--line); border-radius:999px; overflow:hidden;
+  }
+  .lang-toggle button {
+    border:0; background:#fff; color:var(--muted); font:inherit; font-size:.78rem;
+    padding:3px 10px; cursor:pointer;
+  }
+  .lang-toggle button.on { background:var(--accent); color:#fff; }
+
+  .pull-quote {
+    border-left: 3px solid var(--accent2); padding: 8px 14px; margin: 0 0 18px;
+    font-style: italic; color: #2f343a; background: #fff; font-size: 1.05rem;
+  }
+  .brief-section { margin: 18px 0 6px; }
+  .brief-section h4 {
+    margin: 0 0 8px; font-size: .82rem; text-transform: uppercase;
+    letter-spacing: .05em; color: var(--accent); font-weight: 700;
+  }
+  .brief-section h4.todos-h { color: var(--accent2); }
+  .claims-list { list-style: none; padding: 0; margin: 0; }
+  .claim {
+    margin: 0;
+    padding: 16px 0;
+    border-top: 1px solid var(--line);
+  }
+  .claim:first-child { border-top: 0; padding-top: 4px; }
+  .claim-text { display:block; }
+  .claim-meta { display:flex; flex-wrap:wrap; gap:6px; margin-top:6px; font-size:.82rem; }
+  .ts-chip {
+    text-decoration:none; background: var(--chip); color: var(--chip-ink);
+    padding:2px 9px; border-radius:999px; font-variant-numeric: tabular-nums;
+  }
+  .ts-chip:hover { background:#dce4ec; }
+  .topic-chip {
+    background:#eef3ee; color:#2f6b46; padding:2px 9px; border-radius:999px;
+  }
+  .claim-sources { color: var(--muted); font-size:.82rem; margin-top:4px; }
+  .docs-list, .todo-list { margin: 4px 0 0; padding: 0; list-style: none; }
+  .docs-list li { margin: 6px 0; font-size: .92rem; color: var(--ink); }
+  .docs-list li .where { color: var(--muted); font-style: italic; }
+  .todo-item { display:flex; gap:10px; margin: 10px 0; align-items: flex-start; }
+  .todo-item input[type=checkbox] { margin-top: 4px; accent-color: var(--accent2); flex-shrink:0; width:18px; height:18px; }
+  .todo-item label { cursor: pointer; font-size: .95rem; }
+  .todo-item.done label { color: var(--muted); text-decoration: line-through; }
+  .todo-context { display:block; font-size:.82rem; color: var(--muted); margin-top: 4px; }
+  .brief-footer {
+    margin-top: 18px; padding-top: 12px; border-top: 1px dashed var(--line);
+    font-size: .8rem; color: var(--muted); display:flex; flex-wrap:wrap; gap:14px; align-items:center;
+  }
+  .brief-footer button.reset {
+    border:0; background:none; color:var(--accent2); font:inherit; font-size:.8rem;
+    cursor:pointer; text-decoration:underline; padding:0;
+  }
+  .stub-msg { color: var(--muted); font-style: italic; padding: 12px 0; }
+  .error { color: var(--accent2); padding: 30px 0; }
+
+  .brief-body[data-lang="en"] .fr-only { display:none; }
+  .brief-body[data-lang="fr"] .en-only { display:none; }
+</style>
+<script src="./brief-render.js"></script>
+</head>
+<body>
+<div class="wrap">
+  <nav class="breadcrumb" id="breadcrumb">
+    <a href="./interviews.html">← All interviews</a>
+    <a href="./follow_ups.html">⇢ Follow-ups</a>
+    <a href="./index.html">Archive index</a>
+  </nav>
+
+  <div id="content"></div>
+</div>
+
+<script>
+// Self-contained — mirrors videos[] from interviews.html for back-link metadata
+const videos = [
+  {id:"WmDFTibK-Ek", platform:"YouTube", title:"Le désastre sanitaire ne fait que commencer I Christine Cotton", author:"Cercle Aristote - Pierre Yves Rougeyron", url:"https://www.youtube.com/watch?v=WmDFTibK-Ek"},
+  {id:"MJksTpVRQuA", platform:"YouTube", title:"Covid : où en sont les chiffres en 2023 ?", author:"Sud Radio", url:"https://www.youtube.com/watch?v=MJksTpVRQuA"},
+  {id:"JjLTt5_BGAE", platform:"YouTube", title:"La vérité sur les essais Pfizer - Le Zoom - Christine Cotton - TVL", author:"Chaîne officielle TVL", url:"https://www.youtube.com/watch?v=JjLTt5_BGAE"},
+  {id:"ASXFLQdQXyU", platform:"YouTube", title:"Christine Cotton : « On a des risques qui sont parfaitement documentés ! » #COVID19", author:"LES INCORRECTIBLES", url:"https://www.youtube.com/watch?v=ASXFLQdQXyU"},
+  {id:"prH1pkJrWhg", platform:"YouTube", title:"Covid19 - Christine Cotton : La science ce n'est pas de la politique, c'est de la statistique !", author:"Sud Radio", url:"https://www.youtube.com/watch?v=prH1pkJrWhg"},
+  {id:"iecQwlo5AhM", platform:"YouTube", title:"« J'ai découvert la face cachée de l'industrie pharmaceutique » – Christine Cotton", author:"Epoch Times France", url:"https://www.youtube.com/watch?v=iecQwlo5AhM"},
+  {id:"O8S7BSrRj3U", platform:"YouTube", title:"Pfizer : scandaleuses révélations sur l'essai clinique", author:"Décoder l'éco", url:"https://www.youtube.com/watch?v=O8S7BSrRj3U"},
+  {id:"TQQVmdTXY-k", platform:"YouTube", title:"Christine Cotton - Biostatisticienne - Lanceuse d'alerte", author:"Elo Veut Savoir", url:"https://www.youtube.com/watch?v=TQQVmdTXY-k"},
+  {id:"6D-LjaD99ys", platform:"YouTube", title:"REVAV AG Intervention de Christine Cotton Biostatisticienne octobre 2022", author:"Guillaume Ageorges", url:"https://www.youtube.com/watch?v=6D-LjaD99ys"},
+  {id:"Jn-2b0fUsrk", platform:"YouTube", title:"[DEBRIEF] La biostatisticienne Christine Cotton sur l'efficacité du vaccin anti-COVID Pfizer", author:"Michèle Rivasi", url:"https://www.youtube.com/watch?v=Jn-2b0fUsrk"},
+  {id:"sli4nYArz9k", platform:"YouTube", title:"Christine Cotton révèle le scandale des vaccins anticovid !", author:"Nicolas Dupont-Aignan", url:"https://www.youtube.com/watch?v=sli4nYArz9k"},
+  {id:"KwUr6wqeVT0", platform:"YouTube", title:"COVID : les vérités cachées de la politique vaccinale - Christine Cotton", author:"Ligne Droite • La matinale de Radio Courtoisie", url:"https://www.youtube.com/watch?v=KwUr6wqeVT0"},
+  {id:"LIPps6b8LgE", platform:"YouTube", title:"Actualité de la semaine et invitée exceptionnelle, la biostatisticienne Christine COTTON", author:"Ensemble Pour Les Libertés", url:"https://www.youtube.com/watch?v=LIPps6b8LgE"},
+  {id:"j2RnxnY6QL8", platform:"YouTube", title:"La Commission veut prolonger ce pass sans base scientifique ! Virginie Joron, Christine Cotton", author:"Ligne Droite • La matinale de Radio Courtoisie", url:"https://www.youtube.com/watch?v=j2RnxnY6QL8"},
+  {id:"snXhb5p5uTY", platform:"YouTube", title:"Autorisation du vaccin COVID : erreurs ou complicités ?", author:"Virginie Joron", url:"https://www.youtube.com/watch?v=snXhb5p5uTY"},
+  {id:"D69Q58E0rMM", platform:"YouTube", title:"CeNC - Commission d'enquête nationale citoyenne - bio-statisticienne Christine Cotton témoigne", author:"Actualité Politique Du Québec", url:"https://www.youtube.com/watch?v=D69Q58E0rMM"},
+  {id:"x887fvm", platform:"Dailymotion", title:"Les essais cliniques de Pfizer sont-ils frauduleux ? Avec Christine Cotton", author:"Sud Radio", url:"https://www.dailymotion.com/video/x887fvm"},
+  {id:"x8arx5y", platform:"Dailymotion", title:"Documents déclassifiés de Pfizer et revelations choc de Christine Cotton", author:"Sud Radio", url:"https://www.dailymotion.com/video/x8arx5y"}
+];
+const videoById = Object.fromEntries(videos.map(v => [v.id, v]));
+
+const U = window.briefUtils;
+const contentEl = document.getElementById("content");
+
+function getId() {
+  return new URLSearchParams(location.search).get("id") || "";
+}
+
+function setTitleAndMeta(v, brief) {
+  if (v) {
+    document.title = "In Brief — " + v.title + " · Christine Cotton";
+  }
+}
+
+function renderError(msg) {
+  contentEl.innerHTML = `<div class="error">${U.esc(msg)}</div>`;
+}
+
+function renderPage(briefs) {
+  const id = getId();
+  const v = videoById[id];
+  if (!id || !v) {
+    renderError("Unknown interview id. Pick one from the All interviews page.");
+    return;
+  }
+  setTitleAndMeta(v);
+  const b = briefs[id];
+  const isStub = !b || b.status === "stub" || !b.status;
+  const lang = U.loadLang();
+  const bodyHTML = isStub ? U.renderStubBody(v) : U.renderBriefBody(v, b);
+
+  contentEl.innerHTML = `
+    <div class="title-block">
+      <h1 class="video-title">${U.esc(v.title)}</h1>
+      <div class="video-meta">
+        <span class="badge">${U.esc(v.platform)}</span>
+        <span>${U.esc(v.author)}</span>
+        <a class="watch" href="${U.esc(v.url)}" target="_blank" rel="noopener">Watch ▶</a>
+        <span>Transcript: <a href="../archive/transcripts/${U.esc(v.id)}_EN.md">EN</a> · <a href="../archive/transcripts/${U.esc(v.id)}_FR.md">FR</a></span>
+      </div>
+    </div>
+    <article class="brief-card">
+      <div class="brief-body" data-lang="${lang}" data-video-id="${U.esc(v.id)}">
+        ${bodyHTML}
+      </div>
+    </article>
+  `;
+  U.syncLangButtons(contentEl);
+}
+
+// ---------- events ----------
+contentEl.addEventListener("change", (e) => {
+  const cb = e.target.closest('input[type=checkbox][data-todo-id]');
+  if (!cb) return;
+  U.setTodoChecked(cb.dataset.todoId, cb.checked);
+  const row = cb.closest(".todo-item");
+  if (row) row.classList.toggle("done", cb.checked);
+});
+
+contentEl.addEventListener("click", (e) => {
+  const langBtn = e.target.closest("button[data-lang-set]");
+  if (langBtn) {
+    U.saveLang(langBtn.dataset.langSet);
+    U.syncLangButtons(document);
+    return;
+  }
+  const reset = e.target.closest("button[data-reset-video]");
+  if (reset) {
+    const vid = reset.dataset.resetVideo;
+    const labelEN = "Clear all checks for this interview?";
+    const labelFR = "Décocher toutes les cases de cette interview ?";
+    const lang = U.loadLang();
+    if (!confirm(lang === "fr" ? labelFR : labelEN)) return;
+    const state = U.loadTodos();
+    // Wipe only ids belonging to this video's brief
+    fetch("./briefs.json", {cache: "no-cache"}).then(r => r.json()).then(data => {
+      const b = data.briefs?.[vid];
+      if (!b || !b.todos) return;
+      for (const t of b.todos) delete state[t.id];
+      U.saveTodos(state);
+      // re-render
+      init();
+    });
+    return;
+  }
+});
+
+// Cross-tab sync
+window.addEventListener("storage", (e) => {
+  if (e.key === U.TODO_KEY) {
+    // refresh checkbox states without full re-render
+    document.querySelectorAll('input[type=checkbox][data-todo-id]').forEach(cb => {
+      const state = U.loadTodos();
+      const isChecked = !!state[cb.dataset.todoId]?.checked;
+      cb.checked = isChecked;
+      const row = cb.closest(".todo-item");
+      if (row) row.classList.toggle("done", isChecked);
+    });
+  }
+  if (e.key === U.LANG_KEY) {
+    U.syncLangButtons(document);
+  }
+});
+
+async function init() {
+  try {
+    const r = await fetch("./briefs.json", {cache: "no-cache"});
+    if (!r.ok) throw new Error("briefs.json " + r.status);
+    const data = await r.json();
+    renderPage(data.briefs || {});
+  } catch (err) {
+    renderError("Could not load briefs.json: " + err.message);
+  }
+}
+init();
+</script>
+</body>
+</html>

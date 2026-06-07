@@ -5,28 +5,47 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Christine Cotton — Interviews &amp; Video Appearances</title>
 <style>
-  :root { color-scheme: light; }
+  :root {
+    color-scheme: light;
+    --bg:#f7f6f3; --card:#fff; --ink:#1f2328; --muted:#6b7280; --line:#e5e3dd;
+    --accent:#2f5d7c; --accent2:#7c2f3e; --chip:#eef1f4; --chip-ink:#33506a;
+    --soft:#fbfaf7; --hi:#fdf2a8;
+  }
   * { box-sizing: border-box; }
   body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    margin: 0; background: #f7f8fa; color: #1b1f24; line-height: 1.5;
+    margin: 0; background: var(--bg); color: var(--ink); line-height: 1.5;
   }
-  .wrap { max-width: 1000px; margin: 0 auto; padding: 32px 20px 64px; }
+  .wrap { max-width: 1100px; margin: 0 auto; padding: 32px 20px 64px; }
   header h1 { font-size: 1.7rem; margin: 0 0 6px; }
-  header p { margin: 0 0 20px; color: #5a6471; }
-  .controls { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin-bottom: 22px; }
+  header p { margin: 0 0 14px; color: var(--muted); max-width: 70ch; }
+  .top-links { display:flex; gap:10px; flex-wrap:wrap; margin: 0 0 22px; }
+  .top-links a {
+    display:inline-block; text-decoration:none; background:var(--accent); color:#fff;
+    padding:8px 13px; border-radius:8px; font-size:.88rem; font-weight:600;
+  }
+  .top-links a.alt { background:var(--accent2); }
+  .top-links a.followups-link { background:#fff; color:var(--accent2); border:1px solid var(--accent2); }
+  .top-links a.followups-link b { font-variant-numeric: tabular-nums; }
+  .controls { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin-bottom: 14px; }
   #search {
-    flex: 1 1 260px; padding: 10px 14px; font-size: 1rem; border: 1px solid #ccd2da;
+    flex: 1 1 260px; padding: 10px 14px; font-size: 1rem; border: 1px solid var(--line);
     border-radius: 8px; background: #fff; outline: none;
   }
-  #search:focus { border-color: #2b6cb0; box-shadow: 0 0 0 3px rgba(43,108,176,.15); }
-  #count { color: #5a6471; font-size: .9rem; white-space: nowrap; }
+  #search:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(47,93,124,.15); }
+  .filter-pill {
+    display:inline-flex; align-items:center; gap:6px; font-size:.85rem; color:var(--ink);
+    background:#fff; border:1px solid var(--line); border-radius:999px; padding:6px 12px;
+    cursor:pointer; user-select:none;
+  }
+  .filter-pill input { accent-color: var(--accent2); }
+  #count { color: var(--muted); font-size: .9rem; white-space: nowrap; }
   .grid {
     display: grid; gap: 18px;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   }
   .card {
-    background: #fff; border: 1px solid #e3e7ec; border-radius: 12px; overflow: hidden;
+    background: var(--card); border: 1px solid var(--line); border-radius: 12px; overflow: hidden;
     display: flex; flex-direction: column; box-shadow: 0 1px 2px rgba(0,0,0,.04);
   }
   .thumb { width: 100%; aspect-ratio: 16/9; object-fit: cover; background: #e8ebef; display: block; }
@@ -34,30 +53,136 @@
     display: flex; align-items: center; justify-content: center;
     color: #8a939e; font-size: .85rem; letter-spacing: .03em;
   }
-  .body { padding: 14px 16px 16px; display: flex; flex-direction: column; gap: 6px; flex: 1; }
+  .body { padding: 14px 16px 14px; display: flex; flex-direction: column; gap: 6px; flex: 1; }
   .title { font-weight: 600; font-size: 1rem; }
-  .meta { font-size: .85rem; color: #5a6471; }
+  .meta { font-size: .85rem; color: var(--muted); }
   .badge {
     display: inline-block; font-size: .72rem; font-weight: 600; padding: 2px 8px;
-    border-radius: 999px; background: #edf2f7; color: #2b4a6b; align-self: flex-start;
+    border-radius: 999px; background: var(--chip); color: var(--chip-ink); align-self: flex-start;
   }
-  .transcript { font-size: .8rem; color: #97a0ab; font-style: italic; }
-  .watch {
-    margin-top: auto; align-self: flex-start; text-decoration: none; font-weight: 600;
-    font-size: .9rem; color: #fff; background: #2b6cb0; padding: 8px 14px; border-radius: 8px;
+  .actions { display:flex; gap:8px; margin-top:8px; flex-wrap:wrap; align-items:center; }
+  .actions .watch {
+    text-decoration: none; font-weight: 600;
+    font-size: .85rem; color: #fff; background: var(--accent); padding: 7px 12px; border-radius: 8px;
   }
-  .watch:hover { background: #245a93; }
-  .empty { color: #5a6471; padding: 30px 0; }
+  .actions .watch:hover { background: #245a93; }
+  .actions .transcript-link { font-size:.8rem; color:var(--muted); text-decoration:none; }
+  .actions .transcript-link a { color:var(--accent); text-decoration:none; font-weight:600; }
+  .actions .transcript-link a:hover { text-decoration:underline; }
+  .status-dot {
+    display:inline-block; width:8px; height:8px; border-radius:50%;
+    background:var(--muted); margin-right:4px; vertical-align:middle;
+  }
+  .status-dot.complete { background:#3e8a55; }
+  .status-dot.draft    { background:#b18a2a; }
+  .status-dot.stub     { background:#c0c0c0; }
+  .open-flag {
+    display:inline-block; font-size:.7rem; font-weight:700; color:var(--accent2);
+    background:#f5e6ea; padding:2px 8px; border-radius:999px; margin-left:6px;
+  }
+
+  /* In Brief panel */
+  details.brief {
+    border-top: 1px solid var(--line); background: var(--soft);
+  }
+  details.brief > summary {
+    list-style: none; cursor: pointer; padding: 10px 16px;
+    font-size: .88rem; font-weight: 600; color: var(--accent);
+    display:flex; align-items:center; gap:10px;
+  }
+  details.brief > summary::-webkit-details-marker { display:none; }
+  details.brief > summary .chevron {
+    margin-left: 6px; font-size: .8rem; color: var(--muted); transition: transform .15s;
+  }
+  details.brief[open] > summary .chevron { transform: rotate(180deg); display:inline-block; }
+  details.brief > summary .open-page {
+    margin-left: auto; font-size: .78rem; color: var(--accent); text-decoration: none;
+    border: 1px solid var(--line); border-radius: 6px; padding: 2px 8px; background:#fff;
+    font-weight: 500;
+  }
+  details.brief > summary .open-page:hover {
+    border-color: var(--accent); text-decoration: underline;
+  }
+  .brief-body { padding: 4px 16px 16px; font-size: .9rem; }
+  .brief-header {
+    display:flex; flex-wrap:wrap; gap:10px 18px; align-items:center;
+    font-size:.83rem; color:var(--muted); margin-bottom:12px;
+  }
+  .brief-header .lang-toggle {
+    margin-left:auto; display:inline-flex; border:1px solid var(--line); border-radius:999px; overflow:hidden;
+  }
+  .brief-header .lang-toggle button {
+    border:0; background:#fff; color:var(--muted); font:inherit; font-size:.78rem;
+    padding:3px 10px; cursor:pointer;
+  }
+  .brief-header .lang-toggle button.on { background:var(--accent); color:#fff; }
+  .pull-quote {
+    border-left: 3px solid var(--accent2); padding: 6px 12px; margin: 0 0 14px;
+    font-style: italic; color: #2f343a; background: #fff;
+  }
+  .brief-section { margin: 14px 0 6px; }
+  .brief-section h4 {
+    margin: 0 0 6px; font-size: .8rem; text-transform: uppercase;
+    letter-spacing: .04em; color: var(--accent); font-weight: 700;
+  }
+  .brief-section h4.todos-h { color: var(--accent2); }
+  .claims-list { list-style: none; padding: 0; margin: 0; }
+  .claim {
+    margin: 0;
+    padding: 14px 0;
+    border-top: 1px solid var(--line);
+  }
+  .claim:first-child { border-top: 0; padding-top: 4px; }
+  .claim-text { display:block; }
+  .claim-meta { display:flex; flex-wrap:wrap; gap:6px; margin-top:3px; font-size:.78rem; }
+  .ts-chip {
+    text-decoration:none; background: var(--chip); color: var(--chip-ink);
+    padding:1px 8px; border-radius:999px; font-variant-numeric: tabular-nums;
+  }
+  .ts-chip:hover { background:#dce4ec; }
+  .topic-chip {
+    background:#eef3ee; color:#2f6b46; padding:1px 8px; border-radius:999px;
+  }
+  .claim-sources { color: var(--muted); font-size:.78rem; margin-top:2px; }
+  .docs-list, .todo-list { margin: 4px 0 0; padding: 0; list-style: none; }
+  .docs-list li { margin: 4px 0; font-size: .85rem; color: var(--ink); }
+  .docs-list li .where { color: var(--muted); font-style: italic; }
+  .todo-item { display:flex; gap:8px; margin: 8px 0; align-items: flex-start; }
+  .todo-item input[type=checkbox] { margin-top: 3px; accent-color: var(--accent2); flex-shrink:0; }
+  .todo-item label { cursor: pointer; }
+  .todo-item.done label { color: var(--muted); text-decoration: line-through; }
+  .todo-context { display:block; font-size:.78rem; color: var(--muted); margin-top: 2px; }
+  .brief-footer {
+    margin-top: 14px; padding-top: 10px; border-top: 1px dashed var(--line);
+    font-size: .76rem; color: var(--muted); display:flex; flex-wrap:wrap; gap:12px; align-items:center;
+  }
+  .brief-footer button.reset {
+    border:0; background:none; color:var(--accent2); font:inherit; font-size:.76rem;
+    cursor:pointer; text-decoration:underline; padding:0;
+  }
+  .stub-msg { color: var(--muted); font-style: italic; padding: 4px 0 6px; }
+  .empty { color: var(--muted); padding: 30px 0; }
+
+  /* Language scoping: brief panel gets data-lang="en"|"fr" */
+  .brief-body[data-lang="en"] .fr-only { display:none; }
+  .brief-body[data-lang="fr"] .en-only { display:none; }
 </style>
+<script src="./brief-render.js"></script>
 </head>
 <body>
 <div class="wrap">
   <header>
     <h1>Christine Cotton — Interviews &amp; Video Appearances</h1>
-    <p>French biostatistician who critiqued Pfizer's COVID-19 vaccine trials. A searchable catalog of her video appearances.</p>
+    <p>French biostatistician who critiqued Pfizer's COVID-19 vaccine trials. A searchable catalog of her video appearances, with an "In Brief" summary, cited documents, and a research follow-up checklist on each card.</p>
+    <div class="top-links">
+      <a href="./index.html">← Archive index</a>
+      <a class="alt" href="./external_links.html">External links &amp; sources</a>
+      <a class="followups-link" href="./follow_ups.html">⇢ All research follow-ups (<b id="open-count">…</b> open)</a>
+    </div>
   </header>
   <div class="controls">
     <input id="search" type="search" placeholder="Search by title, channel, or platform…" autocomplete="off">
+    <label class="filter-pill"><input type="checkbox" id="open-only">Has open follow-ups</label>
     <span id="count"></span>
   </div>
   <div class="grid" id="grid"></div>
@@ -85,43 +210,200 @@ const videos = [
   {id:"x8arx5y", platform:"Dailymotion", title:"Documents déclassifiés de Pfizer et revelations choc de Christine Cotton", author:"Sud Radio", url:"https://www.dailymotion.com/video/x8arx5y", thumb:null}
 ];
 
+// ---------- shared utilities (from brief-render.js) ----------
+const { TODO_KEY, LANG_KEY, esc, loadTodos, saveTodos, setTodoChecked, loadLang, saveLang } = window.briefUtils;
+
+// ---------- render ----------
 const grid = document.getElementById("grid");
 const countEl = document.getElementById("count");
 const emptyEl = document.getElementById("empty");
 const searchEl = document.getElementById("search");
+const openOnlyEl = document.getElementById("open-only");
+const openCountEl = document.getElementById("open-count");
 
-function esc(s){ return s.replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c])); }
+let briefs = {};                  // map videoId -> brief
+let briefsLoaded = false;
 
-function cardHTML(v){
+// videoId -> [todoId,...]
+function videoTodoIds(videoId) {
+  const b = briefs[videoId];
+  if (!b || !b.todos) return [];
+  return b.todos.map(t => t.id);
+}
+function videoHasOpenTodo(videoId) {
+  const ids = videoTodoIds(videoId);
+  if (!ids.length) return false;
+  const state = loadTodos();
+  return ids.some(id => !state[id]?.checked);
+}
+function totalOpenCount() {
+  const state = loadTodos();
+  let open = 0;
+  for (const v of videos) {
+    for (const id of videoTodoIds(v.id)) if (!state[id]?.checked) open++;
+  }
+  return open;
+}
+function refreshOpenCount() {
+  openCountEl.textContent = totalOpenCount();
+}
+
+function renderBrief(v) {
+  const b = briefs[v.id];
+  const lang = loadLang();
+  const isStub = !b || b.status === "stub" || !b.status;
+  const statusClass = isStub ? "stub" : (b.status || "draft");
+  const statusLabel = { complete: "Complete", draft: "Draft", stub: "Stub" }[statusClass];
+  const openPageLink = `<a class="open-page" href="./brief.html?id=${esc(v.id)}" target="_blank" rel="noopener" title="Open this brief on its own page" data-open-page>↗ Open as page</a>`;
+  const body = isStub
+    ? window.briefUtils.renderStubBody(v)
+    : window.briefUtils.renderBriefBody(v, b);
+  return `<details class="brief"><summary>
+    In Brief <span class="status-dot ${statusClass}" title="${statusLabel}"></span>
+    ${openPageLink}
+    <span class="chevron">▾</span>
+  </summary>
+  <div class="brief-body" data-lang="${lang}" data-video-id="${esc(v.id)}">
+    ${body}
+  </div>
+  </details>`;
+}
+
+function cardHTML(v) {
   const thumb = v.thumb
     ? `<img class="thumb" src="${esc(v.thumb)}" alt="" loading="lazy">`
     : `<div class="thumb placeholder">No thumbnail</div>`;
-  return `<article class="card">
+  const openFlag = videoHasOpenTodo(v.id) ? `<span class="open-flag">↻ open follow-ups</span>` : "";
+  return `<article class="card" data-video-id="${esc(v.id)}">
     ${thumb}
     <div class="body">
-      <span class="badge">${esc(v.platform)}</span>
+      <div><span class="badge">${esc(v.platform)}</span>${openFlag}</div>
       <div class="title">${esc(v.title)}</div>
       <div class="meta">${esc(v.author)}</div>
-      <div class="transcript">Transcript: not yet generated</div>
-      <a class="watch" href="${esc(v.url)}" target="_blank" rel="noopener">Watch &#9654;</a>
+      <div class="actions">
+        <a class="watch" href="${esc(v.url)}" target="_blank" rel="noopener">Watch &#9654;</a>
+        <span class="transcript-link">Transcript: <a href="../archive/transcripts/${esc(v.id)}_EN.md">EN</a> · <a href="../archive/transcripts/${esc(v.id)}_FR.md">FR</a></span>
+      </div>
     </div>
+    ${briefsLoaded ? renderBrief(v) : ""}
   </article>`;
 }
 
-function render(list){
+function applyFilters() {
+  const q = searchEl.value.trim().toLowerCase();
+  const openOnly = openOnlyEl.checked;
+  let filtered = !q ? videos : videos.filter(v =>
+    (v.title + " " + v.author + " " + v.platform).toLowerCase().includes(q));
+  if (openOnly) filtered = filtered.filter(v => videoHasOpenTodo(v.id));
+  return filtered;
+}
+
+function render() {
+  const list = applyFilters();
   grid.innerHTML = list.map(cardHTML).join("");
   emptyEl.hidden = list.length > 0;
   countEl.textContent = `${list.length} of ${videos.length} videos`;
+  window.briefUtils.syncLangButtons(grid);
+  refreshOpenCount();
 }
 
-searchEl.addEventListener("input", () => {
-  const q = searchEl.value.trim().toLowerCase();
-  const filtered = !q ? videos : videos.filter(v =>
-    (v.title + " " + v.author + " " + v.platform).toLowerCase().includes(q));
-  render(filtered);
+// Update only the open-flag chips and counter without re-rendering everything
+function refreshOpenIndicators() {
+  document.querySelectorAll(".card").forEach(card => {
+    const vid = card.dataset.videoId;
+    const meta = card.querySelector(".body > div:first-child");
+    if (!meta) return;
+    const existing = meta.querySelector(".open-flag");
+    const hasOpen = videoHasOpenTodo(vid);
+    if (hasOpen && !existing) {
+      meta.insertAdjacentHTML("beforeend", `<span class="open-flag">↻ open follow-ups</span>`);
+    } else if (!hasOpen && existing) {
+      existing.remove();
+    }
+  });
+  refreshOpenCount();
+}
+
+// ---------- events ----------
+searchEl.addEventListener("input", render);
+openOnlyEl.addEventListener("change", render);
+
+grid.addEventListener("change", (e) => {
+  const cb = e.target.closest('input[type=checkbox][data-todo-id]');
+  if (!cb) return;
+  setTodoChecked(cb.dataset.todoId, cb.checked);
+  const row = cb.closest(".todo-item");
+  if (row) row.classList.toggle("done", cb.checked);
+  refreshOpenIndicators();
 });
 
-render(videos);
+grid.addEventListener("click", (e) => {
+  // "Open as page" link inside <summary> — don't toggle the details
+  const openPage = e.target.closest("a[data-open-page]");
+  if (openPage) {
+    e.stopPropagation();
+    return; // let the link navigate
+  }
+  // language toggle
+  const langBtn = e.target.closest("button[data-lang-set]");
+  if (langBtn) {
+    const lang = langBtn.dataset.langSet;
+    saveLang(lang);
+    window.briefUtils.syncLangButtons(document);
+    return;
+  }
+  // reset per-interview
+  const reset = e.target.closest("button[data-reset-video]");
+  if (reset) {
+    const vid = reset.dataset.resetVideo;
+    const ids = videoTodoIds(vid);
+    if (!ids.length) return;
+    const labelEN = "Clear all checks for this interview?";
+    const labelFR = "Décocher toutes les cases de cette interview ?";
+    const lang = loadLang();
+    if (!confirm(lang === "fr" ? labelFR : labelEN)) return;
+    const state = loadTodos();
+    ids.forEach(id => delete state[id]);
+    saveTodos(state);
+    // re-render to reset checkboxes within this card cleanly
+    render();
+    return;
+  }
+});
+
+// Cross-tab sync
+window.addEventListener("storage", (e) => {
+  if (e.key === TODO_KEY) {
+    // refresh checkbox states + open flags without losing scroll
+    document.querySelectorAll('input[type=checkbox][data-todo-id]').forEach(cb => {
+      const state = loadTodos();
+      const isChecked = !!state[cb.dataset.todoId]?.checked;
+      cb.checked = isChecked;
+      const row = cb.closest(".todo-item");
+      if (row) row.classList.toggle("done", isChecked);
+    });
+    refreshOpenIndicators();
+  }
+  if (e.key === LANG_KEY) {
+    window.briefUtils.syncLangButtons(document);
+  }
+});
+
+// ---------- boot ----------
+async function init() {
+  try {
+    const r = await fetch("./briefs.json", {cache: "no-cache"});
+    if (r.ok) {
+      const data = await r.json();
+      briefs = data.briefs || {};
+    }
+  } catch (err) {
+    console.warn("Could not load briefs.json — rendering without briefs.", err);
+  }
+  briefsLoaded = true;
+  render();
+}
+init();
 </script>
 </body>
 </html>

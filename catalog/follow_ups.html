@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Christine Cotton Archive — Research follow-ups</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg:#f7f6f3; --card:#fff; --ink:#1f2328; --muted:#6b7280; --line:#e5e3dd;
+    --accent:#2f5d7c; --accent2:#7c2f3e; --chip:#eef1f4; --chip-ink:#33506a;
+    --soft:#fbfaf7;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--ink); line-height: 1.5;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  .wrap { max-width: 900px; margin: 0 auto; padding: 32px 20px 64px; }
+  header h1 { font-size: 1.6rem; margin: 0 0 6px; }
+  header p { margin: 0 0 14px; color: var(--muted); max-width: 70ch; }
+  .top-links { display:flex; gap:10px; flex-wrap:wrap; margin: 0 0 22px; }
+  .top-links a {
+    display:inline-block; text-decoration:none; background:#fff; color:var(--accent);
+    padding:8px 13px; border-radius:8px; font-size:.88rem; font-weight:600;
+    border:1px solid var(--line);
+  }
+  .top-links a.primary { background:var(--accent); color:#fff; border-color:var(--accent); }
+
+  .counter {
+    background: #fff; border:1px solid var(--line); border-radius: 12px;
+    padding: 14px 18px; margin-bottom: 18px;
+    display:flex; gap: 18px; flex-wrap:wrap; align-items: center;
+  }
+  .counter .num { font-size: 1.8rem; font-weight: 700; color: var(--accent2); font-variant-numeric: tabular-nums; }
+  .counter .label { font-size: .9rem; color: var(--muted); }
+  .progress {
+    flex:1; min-width: 200px; height: 8px; background: #eee; border-radius: 999px; overflow:hidden;
+  }
+  .progress > div { height:100%; background: linear-gradient(90deg, var(--accent), var(--accent2)); transition: width .3s; }
+
+  .controls { display:flex; gap:10px; flex-wrap:wrap; align-items:center; margin-bottom: 14px; }
+  .seg {
+    display:inline-flex; border:1px solid var(--line); border-radius: 999px; overflow:hidden;
+  }
+  .seg button {
+    border:0; background:#fff; color:var(--muted); padding: 6px 14px;
+    font: inherit; font-size:.85rem; cursor:pointer;
+  }
+  .seg button.on { background: var(--accent); color: #fff; }
+  .lang-seg button.on { background: var(--accent); color: #fff; }
+  .interview-filter { font-size:.85rem; padding: 6px 11px; border-radius: 8px; border:1px solid var(--line); background:#fff; }
+  .reset-all {
+    margin-left:auto;
+    background:#fff; border:1px solid var(--accent2); color:var(--accent2);
+    padding: 6px 12px; border-radius: 8px; font: inherit; font-size: .85rem; cursor:pointer;
+  }
+  .reset-all:hover { background: #f5e6ea; }
+
+  .group {
+    background: var(--card); border: 1px solid var(--line); border-radius: 12px;
+    padding: 14px 18px; margin: 12px 0;
+  }
+  .group h3 {
+    margin: 0 0 4px; font-size: 1rem; color: var(--accent);
+    display:flex; gap:8px; align-items:center; flex-wrap:wrap;
+  }
+  .group h3 a { color: var(--accent); text-decoration: none; }
+  .group h3 a:hover { text-decoration: underline; }
+  .group .interview-meta { color: var(--muted); font-size: .82rem; margin-bottom: 8px; }
+  .group .interview-meta a { color: var(--muted); }
+  .progress-tiny {
+    display:inline-block; background:#eef0ec; border-radius:999px; padding: 1px 8px;
+    font-size:.72rem; color:#4f6f5a; font-variant-numeric: tabular-nums;
+  }
+
+  .todo-item { display:flex; gap:10px; margin: 8px 0; align-items: flex-start; }
+  .todo-item input[type=checkbox] { margin-top: 4px; accent-color: var(--accent2); flex-shrink:0; }
+  .todo-item label { cursor: pointer; font-size: .92rem; }
+  .todo-item.done label { color: var(--muted); text-decoration: line-through; }
+  .todo-context { display:block; font-size:.78rem; color: var(--muted); margin-top: 2px; }
+  .checked-at { display:block; font-size:.72rem; color:#3e8a55; margin-top: 2px; font-style: italic; }
+
+  .empty { color: var(--muted); padding: 30px 0; text-align: center; }
+
+  [data-lang="en"] .fr-only { display:none; }
+  [data-lang="fr"] .en-only { display:none; }
+</style>
+</head>
+<body data-lang="en">
+<div class="wrap">
+  <header>
+    <h1>Research follow-ups</h1>
+    <p>
+      <span class="en-only">Every open question across the 18 interviews. Cross-reference for sourcing: most items are document-location tasks (find page X, archive document Y, link to source Z). Checking an item here also checks it on the interviews page; checking it there checks it here.</span>
+      <span class="fr-only">Toutes les questions ouvertes à travers les 18 interviews. Référence transverse pour le sourçage : la plupart des tâches consistent à localiser un document (trouver la page X, archiver le document Y, créer le lien vers la source Z). Cocher ici coche aussi sur la page des interviews, et vice-versa.</span>
+    </p>
+    <div class="top-links">
+      <a class="primary" href="./interviews.html">← Interviews catalog</a>
+      <a href="./index.html">Archive index</a>
+      <a href="./external_links.html">External links &amp; sources</a>
+    </div>
+  </header>
+
+  <div class="counter" id="counter">
+    <div>
+      <div class="num"><span id="done-count">0</span> / <span id="total-count">0</span></div>
+      <div class="label"><span class="en-only">follow-ups complete</span><span class="fr-only">suivis terminés</span></div>
+    </div>
+    <div class="progress"><div id="progress-bar" style="width:0%"></div></div>
+  </div>
+
+  <div class="controls">
+    <div class="seg" id="status-seg">
+      <button data-status="all" class="on"><span class="en-only">All</span><span class="fr-only">Tous</span></button>
+      <button data-status="open"><span class="en-only">Open</span><span class="fr-only">Ouverts</span></button>
+      <button data-status="done"><span class="en-only">Done</span><span class="fr-only">Faits</span></button>
+    </div>
+    <select id="interview-filter" class="interview-filter"></select>
+    <div class="seg lang-seg" id="lang-seg">
+      <button data-lang-set="en" class="on">EN</button>
+      <button data-lang-set="fr">FR</button>
+    </div>
+    <button class="reset-all" id="reset-all">
+      <span class="en-only">Clear all checks</span><span class="fr-only">Tout décocher</span>
+    </button>
+  </div>
+
+  <main id="list"></main>
+  <p class="empty" id="empty" hidden>
+    <span class="en-only">No follow-ups match the current filters.</span>
+    <span class="fr-only">Aucun suivi ne correspond aux filtres actuels.</span>
+  </p>
+</div>
+
+<script>
+// Mirror of videos[] from interviews.html — kept duplicated so this page is self-contained.
+const videos = [
+  {id:"WmDFTibK-Ek", title:"Le désastre sanitaire ne fait que commencer", author:"Cercle Aristote", url:"https://www.youtube.com/watch?v=WmDFTibK-Ek"},
+  {id:"MJksTpVRQuA", title:"Covid : où en sont les chiffres en 2023 ?", author:"Sud Radio", url:"https://www.youtube.com/watch?v=MJksTpVRQuA"},
+  {id:"JjLTt5_BGAE", title:"La vérité sur les essais Pfizer - TVL", author:"Chaîne officielle TVL", url:"https://www.youtube.com/watch?v=JjLTt5_BGAE"},
+  {id:"ASXFLQdQXyU", title:"Christine Cotton : « On a des risques parfaitement documentés »", author:"LES INCORRECTIBLES", url:"https://www.youtube.com/watch?v=ASXFLQdQXyU"},
+  {id:"prH1pkJrWhg", title:"La science ce n'est pas de la politique, c'est de la statistique", author:"Sud Radio", url:"https://www.youtube.com/watch?v=prH1pkJrWhg"},
+  {id:"iecQwlo5AhM", title:"« J'ai découvert la face cachée de l'industrie pharmaceutique »", author:"Epoch Times France", url:"https://www.youtube.com/watch?v=iecQwlo5AhM"},
+  {id:"O8S7BSrRj3U", title:"Pfizer : scandaleuses révélations sur l'essai clinique", author:"Décoder l'éco", url:"https://www.youtube.com/watch?v=O8S7BSrRj3U"},
+  {id:"TQQVmdTXY-k", title:"Christine Cotton - Biostatisticienne - Lanceuse d'alerte", author:"Elo Veut Savoir", url:"https://www.youtube.com/watch?v=TQQVmdTXY-k"},
+  {id:"6D-LjaD99ys", title:"REVAV AG — intervention octobre 2022", author:"Guillaume Ageorges", url:"https://www.youtube.com/watch?v=6D-LjaD99ys"},
+  {id:"Jn-2b0fUsrk", title:"[DEBRIEF] Efficacité du vaccin anti-COVID Pfizer", author:"Michèle Rivasi", url:"https://www.youtube.com/watch?v=Jn-2b0fUsrk"},
+  {id:"sli4nYArz9k", title:"Christine Cotton révèle le scandale des vaccins anticovid", author:"Nicolas Dupont-Aignan", url:"https://www.youtube.com/watch?v=sli4nYArz9k"},
+  {id:"KwUr6wqeVT0", title:"COVID : les vérités cachées de la politique vaccinale", author:"Radio Courtoisie", url:"https://www.youtube.com/watch?v=KwUr6wqeVT0"},
+  {id:"LIPps6b8LgE", title:"Actualité de la semaine — invitée Christine Cotton", author:"Ensemble Pour Les Libertés", url:"https://www.youtube.com/watch?v=LIPps6b8LgE"},
+  {id:"j2RnxnY6QL8", title:"La Commission veut prolonger ce pass sans base scientifique", author:"Radio Courtoisie (avec Virginie Joron)", url:"https://www.youtube.com/watch?v=j2RnxnY6QL8"},
+  {id:"snXhb5p5uTY", title:"Autorisation du vaccin COVID : erreurs ou complicités ?", author:"Virginie Joron", url:"https://www.youtube.com/watch?v=snXhb5p5uTY"},
+  {id:"D69Q58E0rMM", title:"CeNC — Christine Cotton témoigne", author:"Actualité Politique Du Québec", url:"https://www.youtube.com/watch?v=D69Q58E0rMM"},
+  {id:"x887fvm", title:"Les essais cliniques de Pfizer sont-ils frauduleux ?", author:"Sud Radio", url:"https://www.dailymotion.com/video/x887fvm"},
+  {id:"x8arx5y", title:"Documents déclassifiés de Pfizer", author:"Sud Radio", url:"https://www.dailymotion.com/video/x8arx5y"}
+];
+const videoById = Object.fromEntries(videos.map(v => [v.id, v]));
+
+const TODO_KEY = "cotton-todos-v1";
+const LANG_KEY = "cottonBriefLang";
+const esc = s => String(s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+
+function loadTodos() { try { return JSON.parse(localStorage.getItem(TODO_KEY)) || {}; } catch { return {}; } }
+function saveTodos(s) { localStorage.setItem(TODO_KEY, JSON.stringify(s)); }
+function setTodoChecked(id, checked) {
+  const s = loadTodos();
+  if (checked) s[id] = { checked: true, checkedAt: new Date().toISOString() };
+  else delete s[id];
+  saveTodos(s);
+}
+function loadLang() { return localStorage.getItem(LANG_KEY) === "fr" ? "fr" : "en"; }
+function saveLang(l) { localStorage.setItem(LANG_KEY, l); }
+
+let briefs = {};
+let filters = { status: "all" /* all|open|done */, videoId: "" /* "" = all */ };
+
+const listEl = document.getElementById("list");
+const emptyEl = document.getElementById("empty");
+const doneCountEl = document.getElementById("done-count");
+const totalCountEl = document.getElementById("total-count");
+const progressBarEl = document.getElementById("progress-bar");
+const interviewFilterEl = document.getElementById("interview-filter");
+const statusSegEl = document.getElementById("status-seg");
+const langSegEl = document.getElementById("lang-seg");
+const resetAllEl = document.getElementById("reset-all");
+
+function collectTodos() {
+  // returns [{videoId, video, todo}], grouped order preserved (videos[] order)
+  const out = [];
+  for (const v of videos) {
+    const b = briefs[v.id];
+    if (!b || !b.todos) continue;
+    for (const t of b.todos) {
+      out.push({ videoId: v.id, video: v, todo: t });
+    }
+  }
+  return out;
+}
+
+function counter(rows) {
+  const state = loadTodos();
+  const total = rows.length;
+  const done = rows.filter(r => state[r.todo.id]?.checked).length;
+  return { total, done };
+}
+
+function renderCounter() {
+  const all = collectTodos();
+  const { total, done } = counter(all);
+  doneCountEl.textContent = done;
+  totalCountEl.textContent = total;
+  progressBarEl.style.width = total ? `${Math.round(100*done/total)}%` : "0%";
+}
+
+function renderList() {
+  const rows = collectTodos();
+  const state = loadTodos();
+  const filtered = rows.filter(r => {
+    if (filters.videoId && r.videoId !== filters.videoId) return false;
+    const done = !!state[r.todo.id]?.checked;
+    if (filters.status === "open" && done) return false;
+    if (filters.status === "done" && !done) return false;
+    return true;
+  });
+  // group by videoId, preserving order
+  const groups = {};
+  const order = [];
+  for (const r of filtered) {
+    if (!(r.videoId in groups)) { groups[r.videoId] = []; order.push(r.videoId); }
+    groups[r.videoId].push(r);
+  }
+  emptyEl.hidden = filtered.length > 0;
+  listEl.innerHTML = order.map(vid => {
+    const v = videoById[vid];
+    const allInVideo = rows.filter(r => r.videoId === vid);
+    const { total, done } = counter(allInVideo);
+    const itemsHTML = groups[vid].map(({todo}) => {
+      const isDone = !!state[todo.id]?.checked;
+      const checkedAt = isDone && state[todo.id]?.checkedAt
+        ? new Date(state[todo.id].checkedAt).toLocaleDateString() : "";
+      return `<li class="todo-item ${isDone ? "done" : ""}">
+        <input type="checkbox" id="cb-${esc(todo.id)}" data-todo-id="${esc(todo.id)}" ${isDone ? "checked" : ""}>
+        <label for="cb-${esc(todo.id)}">
+          <span class="en-only">${esc(todo.text.en)}</span>
+          <span class="fr-only">${esc(todo.text.fr || todo.text.en)}</span>
+          ${todo.context ? `<span class="todo-context">${esc(todo.context)}</span>` : ""}
+          ${isDone && checkedAt ? `<span class="checked-at">✓ ${esc(checkedAt)}</span>` : ""}
+        </label>
+      </li>`;
+    }).join("");
+    return `<section class="group">
+      <h3>
+        <a href="./interviews.html#${esc(vid)}">${esc(v.title)}</a>
+        <span class="progress-tiny">${done}/${total}</span>
+      </h3>
+      <div class="interview-meta">${esc(v.author)} · <a href="${esc(v.url)}" target="_blank" rel="noopener">watch ▶</a></div>
+      <ul style="padding:0; list-style:none; margin:0;">${itemsHTML}</ul>
+    </section>`;
+  }).join("");
+}
+
+function refreshAll() {
+  renderCounter();
+  renderList();
+}
+
+function populateInterviewFilter() {
+  const opts = [`<option value="">All interviews</option>`];
+  for (const v of videos) {
+    const b = briefs[v.id];
+    if (!b || !b.todos || !b.todos.length) continue;
+    opts.push(`<option value="${esc(v.id)}">${esc(v.author)} — ${esc(v.title.slice(0,60))}${v.title.length>60?"…":""}</option>`);
+  }
+  interviewFilterEl.innerHTML = opts.join("");
+}
+
+// events
+listEl.addEventListener("change", (e) => {
+  const cb = e.target.closest('input[type=checkbox][data-todo-id]');
+  if (!cb) return;
+  setTodoChecked(cb.dataset.todoId, cb.checked);
+  refreshAll();
+});
+statusSegEl.addEventListener("click", (e) => {
+  const btn = e.target.closest("button[data-status]");
+  if (!btn) return;
+  filters.status = btn.dataset.status;
+  statusSegEl.querySelectorAll("button").forEach(b => b.classList.toggle("on", b === btn));
+  renderList();
+});
+langSegEl.addEventListener("click", (e) => {
+  const btn = e.target.closest("button[data-lang-set]");
+  if (!btn) return;
+  const lang = btn.dataset.langSet;
+  saveLang(lang);
+  document.body.dataset.lang = lang;
+  langSegEl.querySelectorAll("button").forEach(b => b.classList.toggle("on", b === btn));
+});
+interviewFilterEl.addEventListener("change", () => {
+  filters.videoId = interviewFilterEl.value;
+  renderList();
+});
+resetAllEl.addEventListener("click", () => {
+  const lang = loadLang();
+  const msgEN = "Clear all checks across every interview?";
+  const msgFR = "Tout décocher dans toutes les interviews ?";
+  if (!confirm(lang === "fr" ? msgFR : msgEN)) return;
+  // Wipe only todo keys we know about, leave foreign keys alone
+  const s = loadTodos();
+  for (const v of videos) {
+    const b = briefs[v.id];
+    if (!b || !b.todos) continue;
+    for (const t of b.todos) delete s[t.id];
+  }
+  saveTodos(s);
+  refreshAll();
+});
+
+// cross-tab sync
+window.addEventListener("storage", (e) => {
+  if (e.key === TODO_KEY) refreshAll();
+  if (e.key === LANG_KEY) {
+    const lang = loadLang();
+    document.body.dataset.lang = lang;
+    langSegEl.querySelectorAll("button").forEach(b => b.classList.toggle("on", b.dataset.langSet === lang));
+  }
+});
+
+// boot
+async function init() {
+  document.body.dataset.lang = loadLang();
+  langSegEl.querySelectorAll("button").forEach(b => b.classList.toggle("on", b.dataset.langSet === loadLang()));
+  try {
+    const r = await fetch("./briefs.json", {cache: "no-cache"});
+    if (r.ok) {
+      const data = await r.json();
+      briefs = data.briefs || {};
+    }
+  } catch (err) {
+    console.warn("Could not load briefs.json", err);
+  }
+  populateInterviewFilter();
+  refreshAll();
+}
+init();
+</script>
+</body>
+</html>
