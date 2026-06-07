@@ -69,7 +69,7 @@ notes: "English translation of the French diarized transcript via Helsinki-NLP/o
 
 **Host [27:56]** Great vaccine country, yes.
 
-**Cotton [27:58]** That's it, big immunizing country, so what do people die of if they don't die of the Covid of serious forms then? Maybe many side effects. And then even then what should be stressed is that there was this committee in the Senate at the Opex, so the office of the parliamentary populations, of the technological practices. And so, there, they have produced an interim report that tells us that, indeed, there has been a lack of transparency on the side effects and that we still have to recognize today that there are people who are suffering and that they need to be treated.
+**Cotton [27:58]** That's it, big immunizing country, so what do people die of if they don't die of the Covid of serious forms then? Maybe many side effects. And then even then what should be stressed is that there was this committee in the Senate at the OPECST, so the office of the parliamentary populations, of the technological practices. And so, there, they have produced an interim report that tells us that, indeed, there has been a lack of transparency on the side effects and that we still have to recognize today that there are people who are suffering and that they need to be treated.
 
 **Host [28:29]** I believe that this is the term they use for information about these adverse reactions that have not been sufficiently disseminated to the general public.
 

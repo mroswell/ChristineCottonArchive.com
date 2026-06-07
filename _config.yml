@@ -22,6 +22,7 @@ exclude:
   - README.md
   - CLAUDE.md
   - TODO.md
+  - TRANSCRIPTS.md
   - INITIAL_PROMPT.md
   - Gemfile
   - Gemfile.lock

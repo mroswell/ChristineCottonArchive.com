@@ -95,7 +95,7 @@ notes: "English translation of the French diarized transcript via Helsinki-NLP/o
 
 **Bercoff [18:10]** It hasn't changed anything, it's worth calling the senator or the National Agency.
 
-**Cotton [18:15]** In fact, we are awaiting the final report of the Senators and MPs of Opex, whose interim version was released in June 2022. The final version is scheduled for October. So maybe if they want to take victims home on vacation or pay for their care, the multiple food supplements they're trying to take to get better, because the medical staff is flouting it, or paying someone to come and take care of it at home, well, we need money. They need money.
+**Cotton [18:15]** In fact, we are awaiting the final report of the Senators and MPs of OPECST, whose interim version was released in June 2022. The final version is scheduled for October. So maybe if they want to take victims home on vacation or pay for their care, the multiple food supplements they're trying to take to get better, because the medical staff is flouting it, or paying someone to come and take care of it at home, well, we need money. They need money.
 
 **Bercoff [18:47]** So Christine Cotton, what do you answer to those who say, and there are many, who say yes, but the ones you're talking about are a minority, we've vaccinated 3 billion people, if not 4 billion people, and still look, there's not 3 billion or 4 billion coffins. You know, we hear a lot, a lot of that also by saying, yes, okay, there have been problems, but finally, don't we inflate? Do the Christine Cotton, the Perronnes and others not inflate this number? What do you answer to that?
 

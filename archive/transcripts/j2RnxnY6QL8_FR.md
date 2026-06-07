@@ -69,7 +69,7 @@ notes: "Diarized French auto-transcript via whisperX (medium, fr) + pyannote dia
 
 **Animateur [27:56]** Grand pays vaccinateur, oui.
 
-**Cotton [27:58]** Voilà, grand pays vaccinateur, donc de quoi meurent les gens s'ils ne meurent pas du Covid de des formes graves alors ? Peut-être bien des effets indésirables. Et alors là quand même ce qu'il faut souligner c'est qu'il y a eu cette commission au Sénat à l'Opex, donc l'office des populations parlementaires, des pratiques technologiques. Et du coup, là, ils ont quand même sorti un rapport intermédiaire qui nous dit qu'effectivement, il y a eu un manque de transparence sur les effets indésirables et qu'il faut quand même reconnaître aujourd'hui qu'il y a des personnes en souffrance et qu'il faut les soigner.
+**Cotton [27:58]** Voilà, grand pays vaccinateur, donc de quoi meurent les gens s'ils ne meurent pas du Covid de des formes graves alors ? Peut-être bien des effets indésirables. Et alors là quand même ce qu'il faut souligner c'est qu'il y a eu cette commission au Sénat à l'OPECST, donc l'office des populations parlementaires, des pratiques technologiques. Et du coup, là, ils ont quand même sorti un rapport intermédiaire qui nous dit qu'effectivement, il y a eu un manque de transparence sur les effets indésirables et qu'il faut quand même reconnaître aujourd'hui qu'il y a des personnes en souffrance et qu'il faut les soigner.
 
 **Animateur [28:29]** Qu'il faut informer en loyauté, je crois que c'est le terme qu'ils utilisent concernant l'information, concernant ces effets indésirables qui n'ont pas été suffisamment diffusés dans le grand public.
 
