@@ -74,18 +74,44 @@
     font-size:.72rem; color:#4f6f5a; font-variant-numeric: tabular-nums;
   }
 
-  .todo-item { display:flex; gap:10px; margin: 8px 0; align-items: flex-start; }
+  .todo-item {
+    display:flex; gap:10px; margin: 0; padding: 14px 0;
+    align-items: flex-start; border-top: 1px solid var(--line);
+  }
+  .todo-item:first-child { border-top: 0; padding-top: 4px; }
   .todo-item input[type=checkbox] { margin-top: 4px; accent-color: var(--accent2); flex-shrink:0; }
   .todo-item label { cursor: pointer; font-size: .92rem; }
   .todo-item.done label { color: var(--muted); text-decoration: line-through; }
-  .todo-context { display:block; font-size:.78rem; color: var(--muted); margin-top: 2px; }
-  .checked-at { display:block; font-size:.72rem; color:#3e8a55; margin-top: 2px; font-style: italic; }
+  .todo-item.done .todo-meta, .todo-item.done .todo-docs, .todo-item.done .todo-context { opacity: .65; }
+  .todo-context { display:block; font-size:.78rem; color: var(--muted); margin-top: 4px; }
+  .todo-meta { display:flex; flex-wrap:wrap; gap:6px; margin-top: 6px; font-size: .78rem; }
+  .ts-chip {
+    text-decoration:none; background: var(--chip); color: var(--chip-ink);
+    padding:2px 9px; border-radius:999px; font-variant-numeric: tabular-nums;
+  }
+  .ts-chip:hover { background:#dce4ec; }
+  .topic-chip {
+    background:#eef3ee; color:#2f6b46; padding:2px 9px; border-radius:999px;
+  }
+  .todo-docs {
+    display:block; margin-top: 6px; padding: 8px 10px;
+    background: var(--soft); border: 1px solid var(--line); border-radius: 8px;
+    font-size: .82rem;
+  }
+  .todo-docs .docs-label {
+    display:block; font-size:.7rem; text-transform: uppercase;
+    letter-spacing:.05em; color: var(--muted); font-weight: 700; margin-bottom: 2px;
+  }
+  .todo-docs ul { margin: 0; padding-left: 18px; }
+  .todo-docs li { margin: 2px 0; }
+  .checked-at { display:block; font-size:.72rem; color:#3e8a55; margin-top: 4px; font-style: italic; }
 
   .empty { color: var(--muted); padding: 30px 0; text-align: center; }
 
   [data-lang="en"] .fr-only { display:none; }
   [data-lang="fr"] .en-only { display:none; }
 </style>
+<script src="./brief-render.js"></script>
 </head>
 <body data-lang="en">
 <div class="wrap">
@@ -136,24 +162,24 @@
 <script>
 // Mirror of videos[] from interviews.html — kept duplicated so this page is self-contained.
 const videos = [
-  {id:"WmDFTibK-Ek", title:"Le désastre sanitaire ne fait que commencer", author:"Cercle Aristote", url:"https://www.youtube.com/watch?v=WmDFTibK-Ek"},
-  {id:"MJksTpVRQuA", title:"Covid : où en sont les chiffres en 2023 ?", author:"Sud Radio", url:"https://www.youtube.com/watch?v=MJksTpVRQuA"},
-  {id:"JjLTt5_BGAE", title:"La vérité sur les essais Pfizer - TVL", author:"Chaîne officielle TVL", url:"https://www.youtube.com/watch?v=JjLTt5_BGAE"},
-  {id:"ASXFLQdQXyU", title:"Christine Cotton : « On a des risques parfaitement documentés »", author:"LES INCORRECTIBLES", url:"https://www.youtube.com/watch?v=ASXFLQdQXyU"},
-  {id:"prH1pkJrWhg", title:"La science ce n'est pas de la politique, c'est de la statistique", author:"Sud Radio", url:"https://www.youtube.com/watch?v=prH1pkJrWhg"},
-  {id:"iecQwlo5AhM", title:"« J'ai découvert la face cachée de l'industrie pharmaceutique »", author:"Epoch Times France", url:"https://www.youtube.com/watch?v=iecQwlo5AhM"},
-  {id:"O8S7BSrRj3U", title:"Pfizer : scandaleuses révélations sur l'essai clinique", author:"Décoder l'éco", url:"https://www.youtube.com/watch?v=O8S7BSrRj3U"},
-  {id:"TQQVmdTXY-k", title:"Christine Cotton - Biostatisticienne - Lanceuse d'alerte", author:"Elo Veut Savoir", url:"https://www.youtube.com/watch?v=TQQVmdTXY-k"},
-  {id:"6D-LjaD99ys", title:"REVAV AG — intervention octobre 2022", author:"Guillaume Ageorges", url:"https://www.youtube.com/watch?v=6D-LjaD99ys"},
-  {id:"Jn-2b0fUsrk", title:"[DEBRIEF] Efficacité du vaccin anti-COVID Pfizer", author:"Michèle Rivasi", url:"https://www.youtube.com/watch?v=Jn-2b0fUsrk"},
-  {id:"sli4nYArz9k", title:"Christine Cotton révèle le scandale des vaccins anticovid", author:"Nicolas Dupont-Aignan", url:"https://www.youtube.com/watch?v=sli4nYArz9k"},
-  {id:"KwUr6wqeVT0", title:"COVID : les vérités cachées de la politique vaccinale", author:"Radio Courtoisie", url:"https://www.youtube.com/watch?v=KwUr6wqeVT0"},
-  {id:"LIPps6b8LgE", title:"Actualité de la semaine — invitée Christine Cotton", author:"Ensemble Pour Les Libertés", url:"https://www.youtube.com/watch?v=LIPps6b8LgE"},
-  {id:"j2RnxnY6QL8", title:"La Commission veut prolonger ce pass sans base scientifique", author:"Radio Courtoisie (avec Virginie Joron)", url:"https://www.youtube.com/watch?v=j2RnxnY6QL8"},
-  {id:"snXhb5p5uTY", title:"Autorisation du vaccin COVID : erreurs ou complicités ?", author:"Virginie Joron", url:"https://www.youtube.com/watch?v=snXhb5p5uTY"},
-  {id:"D69Q58E0rMM", title:"CeNC — Christine Cotton témoigne", author:"Actualité Politique Du Québec", url:"https://www.youtube.com/watch?v=D69Q58E0rMM"},
-  {id:"x887fvm", title:"Les essais cliniques de Pfizer sont-ils frauduleux ?", author:"Sud Radio", url:"https://www.dailymotion.com/video/x887fvm"},
-  {id:"x8arx5y", title:"Documents déclassifiés de Pfizer", author:"Sud Radio", url:"https://www.dailymotion.com/video/x8arx5y"}
+  {id:"WmDFTibK-Ek", platform:"YouTube", title:"Le désastre sanitaire ne fait que commencer", author:"Cercle Aristote", url:"https://www.youtube.com/watch?v=WmDFTibK-Ek"},
+  {id:"MJksTpVRQuA", platform:"YouTube", title:"Covid : où en sont les chiffres en 2023 ?", author:"Sud Radio", url:"https://www.youtube.com/watch?v=MJksTpVRQuA"},
+  {id:"JjLTt5_BGAE", platform:"YouTube", title:"La vérité sur les essais Pfizer - TVL", author:"Chaîne officielle TVL", url:"https://www.youtube.com/watch?v=JjLTt5_BGAE"},
+  {id:"ASXFLQdQXyU", platform:"YouTube", title:"Christine Cotton : « On a des risques parfaitement documentés »", author:"LES INCORRECTIBLES", url:"https://www.youtube.com/watch?v=ASXFLQdQXyU"},
+  {id:"prH1pkJrWhg", platform:"YouTube", title:"La science ce n'est pas de la politique, c'est de la statistique", author:"Sud Radio", url:"https://www.youtube.com/watch?v=prH1pkJrWhg"},
+  {id:"iecQwlo5AhM", platform:"YouTube", title:"« J'ai découvert la face cachée de l'industrie pharmaceutique »", author:"Epoch Times France", url:"https://www.youtube.com/watch?v=iecQwlo5AhM"},
+  {id:"O8S7BSrRj3U", platform:"YouTube", title:"Pfizer : scandaleuses révélations sur l'essai clinique", author:"Décoder l'éco", url:"https://www.youtube.com/watch?v=O8S7BSrRj3U"},
+  {id:"TQQVmdTXY-k", platform:"YouTube", title:"Christine Cotton - Biostatisticienne - Lanceuse d'alerte", author:"Elo Veut Savoir", url:"https://www.youtube.com/watch?v=TQQVmdTXY-k"},
+  {id:"6D-LjaD99ys", platform:"YouTube", title:"REVAV AG — intervention octobre 2022", author:"Guillaume Ageorges", url:"https://www.youtube.com/watch?v=6D-LjaD99ys"},
+  {id:"Jn-2b0fUsrk", platform:"YouTube", title:"[DEBRIEF] Efficacité du vaccin anti-COVID Pfizer", author:"Michèle Rivasi", url:"https://www.youtube.com/watch?v=Jn-2b0fUsrk"},
+  {id:"sli4nYArz9k", platform:"YouTube", title:"Christine Cotton révèle le scandale des vaccins anticovid", author:"Nicolas Dupont-Aignan", url:"https://www.youtube.com/watch?v=sli4nYArz9k"},
+  {id:"KwUr6wqeVT0", platform:"YouTube", title:"COVID : les vérités cachées de la politique vaccinale", author:"Radio Courtoisie", url:"https://www.youtube.com/watch?v=KwUr6wqeVT0"},
+  {id:"LIPps6b8LgE", platform:"YouTube", title:"Actualité de la semaine — invitée Christine Cotton", author:"Ensemble Pour Les Libertés", url:"https://www.youtube.com/watch?v=LIPps6b8LgE"},
+  {id:"j2RnxnY6QL8", platform:"YouTube", title:"La Commission veut prolonger ce pass sans base scientifique", author:"Radio Courtoisie (avec Virginie Joron)", url:"https://www.youtube.com/watch?v=j2RnxnY6QL8"},
+  {id:"snXhb5p5uTY", platform:"YouTube", title:"Autorisation du vaccin COVID : erreurs ou complicités ?", author:"Virginie Joron", url:"https://www.youtube.com/watch?v=snXhb5p5uTY"},
+  {id:"D69Q58E0rMM", platform:"YouTube", title:"CeNC — Christine Cotton témoigne", author:"Actualité Politique Du Québec", url:"https://www.youtube.com/watch?v=D69Q58E0rMM"},
+  {id:"x887fvm", platform:"Dailymotion", title:"Les essais cliniques de Pfizer sont-ils frauduleux ?", author:"Sud Radio", url:"https://www.dailymotion.com/video/x887fvm"},
+  {id:"x8arx5y", platform:"Dailymotion", title:"Documents déclassifiés de Pfizer", author:"Sud Radio", url:"https://www.dailymotion.com/video/x8arx5y"}
 ];
 const videoById = Object.fromEntries(videos.map(v => [v.id, v]));
 
@@ -239,14 +265,28 @@ function renderList() {
       const isDone = !!state[todo.id]?.checked;
       const checkedAt = isDone && state[todo.id]?.checkedAt
         ? new Date(state[todo.id].checkedAt).toLocaleDateString() : "";
+      const tsChip = todo.timestamp
+        ? `<a class="ts-chip" href="${esc(window.briefUtils.videoTimeUrl(v, todo.timestamp))}" target="_blank" rel="noopener" title="Open the video at the moment Cotton makes the related claim">▶ ${esc(todo.timestamp)}</a>`
+        : "";
+      const briefChip = `<a class="ts-chip" href="./brief.html?id=${esc(vid)}" title="Open the full In Brief">↗ brief</a>`;
+      const docsHTML = todo.documents && todo.documents.length
+        ? `<div class="todo-docs">
+            <span class="docs-label en-only">Related documents</span>
+            <span class="docs-label fr-only">Documents associés</span>
+            <ul>${todo.documents.map(d => `<li>${esc(d)}</li>`).join("")}</ul>
+          </div>` : "";
       return `<li class="todo-item ${isDone ? "done" : ""}">
         <input type="checkbox" id="cb-${esc(todo.id)}" data-todo-id="${esc(todo.id)}" ${isDone ? "checked" : ""}>
-        <label for="cb-${esc(todo.id)}">
-          <span class="en-only">${esc(todo.text.en)}</span>
-          <span class="fr-only">${esc(todo.text.fr || todo.text.en)}</span>
+        <div style="flex:1; min-width:0;">
+          <label for="cb-${esc(todo.id)}">
+            <span class="en-only">${esc(todo.text.en)}</span>
+            <span class="fr-only">${esc(todo.text.fr || todo.text.en)}</span>
+          </label>
           ${todo.context ? `<span class="todo-context">${esc(todo.context)}</span>` : ""}
+          <div class="todo-meta">${tsChip}${briefChip}</div>
+          ${docsHTML}
           ${isDone && checkedAt ? `<span class="checked-at">✓ ${esc(checkedAt)}</span>` : ""}
-        </label>
+        </div>
       </li>`;
     }).join("");
     return `<section class="group">

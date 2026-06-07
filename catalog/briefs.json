@@ -185,7 +185,11 @@
             "en": "Locate the page(s) in the Pfizer C4591001 December 2020 interim report (or FDA briefing document) that show no demonstrated efficacy in participants over 75 years of age. Cotton says \"it is written in the reports\" — the FOIA'd / court-released Pfizer documents and the December 2020 FDA VRBPAC briefing should both contain this. Capture page numbers and add to the archive.",
             "fr": "Identifier la ou les pages du rapport intermédiaire C4591001 (déc. 2020) ou du document de briefing FDA qui démontrent l'absence d'efficacité chez les plus de 75 ans. Cotton précise « c'est écrit dans les rapports » — les documents Pfizer divulgués sous FOIA et le briefing VRBPAC de la FDA (déc. 2020) devraient le contenir. Noter les pages et ajouter à l'archive."
           },
-          "context": "Cotton states this twice for emphasis at ~02:00 of the Cercle Aristote interview. The flagship FOIA-able citation."
+          "context": "Cotton states this twice for emphasis at ~02:00 of the Cercle Aristote interview. The flagship FOIA-able citation.",
+          "timestamp": "04:55",
+          "documents": [
+            "Pfizer C4591001 interim clinical study report (Dec 2020)"
+          ]
         },
         {
           "id": "WmDFTibK-Ek-todo-2",
@@ -193,7 +197,11 @@
             "en": "Find and link the leaked Pfizer-South Africa supply contract (April 2021) that declares Phase 2-3 clinical trials \"completed.\" Likely the Health Justice Initiative disclosure.",
             "fr": "Retrouver et indexer le contrat Pfizer-Afrique du Sud (avril 2021) qui déclare les essais de phase 2-3 « terminés ». Source probable : la divulgation de la Health Justice Initiative."
           },
-          "context": "Cited at ~08:47 as proof that contracts were signed on impossible claims about trial completion."
+          "context": "Cited at ~08:47 as proof that contracts were signed on impossible claims about trial completion.",
+          "timestamp": "09:21",
+          "documents": [
+            "Leaked Pfizer-South Africa supply contract (April 2021)"
+          ]
         },
         {
           "id": "WmDFTibK-Ek-todo-3",
@@ -201,7 +209,11 @@
             "en": "Find the Moderna SEC filing (10-K or S-1) that classifies mRNA products as gene therapies. Cotton references it as the smoking-gun reclassification document.",
             "fr": "Retrouver le document SEC de Moderna (10-K ou S-1) classant les ARNm comme thérapies géniques. Cotton le présente comme la pièce maîtresse de la requalification."
           },
-          "context": "Cited at ~19:30 — the smoking gun for the vaccine-vs-gene-therapy reclassification argument."
+          "context": "Cited at ~19:30 — the smoking gun for the vaccine-vs-gene-therapy reclassification argument.",
+          "timestamp": "22:44",
+          "documents": [
+            "Moderna SEC 10-K / S-1 filing (gene-therapy classification)"
+          ]
         },
         {
           "id": "WmDFTibK-Ek-todo-4",
@@ -209,7 +221,11 @@
             "en": "Archive the FDA VRBPAC 22 October 2020 adverse-events-to-monitor slide deck (the list of Guillain-Barré, encephalitis, myocarditis, etc.) — available on the FDA YouTube channel.",
             "fr": "Archiver la présentation FDA VRBPAC du 22 octobre 2020 listant les effets indésirables à surveiller (Guillain-Barré, encéphalite, myocardite, etc.) — disponible sur la chaîne YouTube de la FDA."
           },
-          "context": "Cited at ~19:30 as proof harms were anticipated before rollout."
+          "context": "Cited at ~19:30 as proof harms were anticipated before rollout.",
+          "timestamp": "26:31",
+          "documents": [
+            "FDA VRBPAC meeting (22 Oct 2020) — adverse events of special interest slide deck"
+          ]
         },
         {
           "id": "WmDFTibK-Ek-todo-5",
@@ -217,7 +233,12 @@
             "en": "Locate the Pfizer C4591001 protocol section limiting Process 2 manufacturing validation to 250 patients per batch.",
             "fr": "Retrouver la section du protocole C4591001 limitant la validation du Process 2 à 250 patients par lot."
           },
-          "context": "Central to the \"product administered is not the product tested\" argument (~11:20)."
+          "context": "Central to the \"product administered is not the product tested\" argument (~11:20).",
+          "timestamp": "13:31",
+          "documents": [
+            "Pfizer C4591001 Protocol (Process 2 amendment)",
+            "Pfizer C4591001 trial database (FOIA / court-released)"
+          ]
         }
       ],
       "notes": {
@@ -346,7 +367,11 @@
             "en": "Find and link the European Parliament COVI hearing transcript or video where Pfizer's Janine Small confirmed that transmission was not tested before rollout (10 October 2022).",
             "fr": "Retrouver et indexer le transcript ou la vidéo de l'audition Pfizer (Janine Small) devant la commission COVI du Parlement européen, où elle reconnaît que la transmission n'a pas été testée avant la mise sur le marché (10 octobre 2022)."
           },
-          "context": "Cited at ~01:32 by Dupont-Aignan as the moment Pfizer publicly admitted the transmission gap."
+          "context": "Cited at ~01:32 by Dupont-Aignan as the moment Pfizer publicly admitted the transmission gap.",
+          "timestamp": "01:56",
+          "documents": [
+            "European Parliament COVI committee hearing (10 Oct 2022) — Janine Small testimony"
+          ]
         },
         {
           "id": "sli4nYArz9k-todo-2",
@@ -354,7 +379,12 @@
             "en": "Add Augusto Roux's medical record (or a summary with source) to archive/sources/, as a permanent reference for the trial-injury argument.",
             "fr": "Ajouter le dossier médical d'Augusto Roux (ou un résumé sourcé) dans archive/sources/, comme référence permanente sur les blessures subies pendant l'essai."
           },
-          "context": "Cotton states at ~04:35 that she has the full record. Worth requesting a sharable copy from her estate."
+          "context": "Cotton states at ~04:35 that she has the full record. Worth requesting a sharable copy from her estate.",
+          "timestamp": "04:43",
+          "documents": [
+            "Augusto Roux medical file",
+            "Maddie de Garay testimony to Sen. Ron Johnson"
+          ]
         },
         {
           "id": "sli4nYArz9k-todo-3",
@@ -362,7 +392,12 @@
             "en": "Locate the Sen. Ron Johnson press conference / hearing recording where Maddie de Garay's case was presented, and add to the interviews catalog or external_links.",
             "fr": "Retrouver l'enregistrement de la conférence de presse ou de l'audition du sénateur Ron Johnson où le cas de Maddie de Garay a été présenté, et l'ajouter au catalogue des interviews ou aux liens externes."
           },
-          "context": "Referenced at ~04:35 alongside the Roux case."
+          "context": "Referenced at ~04:35 alongside the Roux case.",
+          "timestamp": "04:43",
+          "documents": [
+            "Augusto Roux medical file",
+            "Maddie de Garay testimony to Sen. Ron Johnson"
+          ]
         },
         {
           "id": "sli4nYArz9k-todo-4",
@@ -370,7 +405,11 @@
             "en": "Cross-link this interview's documents-cited list with the relevant entries in catalog/external_links.html (Pfizer contracts, EP COVI hearing, Pfizer protocol).",
             "fr": "Croiser la liste des documents cités avec les entrées correspondantes dans catalog/external_links.html (contrats Pfizer, audition COVI, protocole Pfizer)."
           },
-          "context": "Maintenance: once external_links.html is the single source of truth, each interview brief should hyperlink in."
+          "context": "Maintenance: once external_links.html is the single source of truth, each interview brief should hyperlink in.",
+          "timestamp": "01:56",
+          "documents": [
+            "European Parliament COVI committee hearing (10 Oct 2022) — Janine Small testimony"
+          ]
         }
       ],
       "notes": {
@@ -528,7 +567,11 @@
             "en": "Find the section of the Pfizer C4591001 protocol that authorizes antipyretic use during the trial, and the data table (interim or final CSR) confirming the 3.5× imbalance in antipyretic use between vaccine and placebo arms.",
             "fr": "Retrouver la section du protocole C4591001 autorisant l'usage d'antipyrétiques pendant l'essai, et le tableau de données (rapport intermédiaire ou final) confirmant le déséquilibre de 3,5× dans l'usage d'antipyrétiques entre les groupes vacciné et placebo."
           },
-          "context": "Anchors the strongest specific claim in the interview (~02:54): the 95% headline was confounded by symptom suppression."
+          "context": "Anchors the strongest specific claim in the interview (~02:54): the 95% headline was confounded by symptom suppression.",
+          "timestamp": "02:36",
+          "documents": [
+            "Pfizer C4591001 interim clinical study report (Dec 2020) — antipyretic use tables"
+          ]
         },
         {
           "id": "snXhb5p5uTY-todo-2",
@@ -536,7 +579,11 @@
             "en": "Retrieve the EU Advance Purchase Agreement(s) and procurement figures showing 4.2 billion doses ordered for the EU. Sources: European Ombudsman case file, EP COVI committee reports, leaked HJI documents.",
             "fr": "Récupérer les accords d'achat anticipé (APA) de l'UE et les chiffres d'approvisionnement montrant la commande de 4,2 milliards de doses. Sources : dossier du Médiateur européen, rapports de la commission COVI du PE, documents fuités HJI."
           },
-          "context": "Cited at ~13:48 as proof Brussels knew boosters would be required."
+          "context": "Cited at ~13:48 as proof Brussels knew boosters would be required.",
+          "timestamp": "14:07",
+          "documents": [
+            "EU Advance Purchase Agreements (Pfizer/BioNTech)"
+          ]
         },
         {
           "id": "snXhb5p5uTY-todo-3",
@@ -544,7 +591,11 @@
             "en": "Find the Pfizer booster sub-study (added to C4591001 in December 2020) — the protocol amendment, ClinicalTrials.gov record, or FDA submission cover letter.",
             "fr": "Retrouver la sous-étude de rappel Pfizer ajoutée à C4591001 en décembre 2020 — amendement au protocole, enregistrement ClinicalTrials.gov ou lettre d'accompagnement de la soumission FDA."
           },
-          "context": "Cited at ~06:00 — proof that Pfizer was already preparing boosters at the moment of initial authorization."
+          "context": "Cited at ~06:00 — proof that Pfizer was already preparing boosters at the moment of initial authorization.",
+          "timestamp": "06:46",
+          "documents": [
+            "Pfizer booster sub-study protocol (Dec 2020 amendment to C4591001)"
+          ]
         },
         {
           "id": "snXhb5p5uTY-todo-4",
@@ -552,7 +603,11 @@
             "en": "Pull recent EU Transparency Register entries for vdL meetings with Bill Gates, Global Citizen, and Open Society Foundations; capture dates and meeting topics.",
             "fr": "Extraire du registre de transparence de l'UE les rendez-vous récents d'Ursula von der Leyen avec Bill Gates, Global Citizen et Open Society Foundations ; noter les dates et les sujets."
           },
-          "context": "Cited at ~17:32 as evidence of the influence network around the Commission's vaccine strategy."
+          "context": "Cited at ~17:32 as evidence of the influence network around the Commission's vaccine strategy.",
+          "timestamp": "18:44",
+          "documents": [
+            "EU Transparency Register (vdL meeting log)"
+          ]
         },
         {
           "id": "snXhb5p5uTY-todo-5",
@@ -560,7 +615,11 @@
             "en": "Archive the McKinsey-EU 2.5 million euro \"medical countermeasures manufacturing options\" contract (commissioning notice + final report if available).",
             "fr": "Archiver le contrat McKinsey-Commission européenne de 2,5 M€ sur les « options de fabrication de contre-mesures médicales » (avis d'attribution + rapport final si disponible)."
           },
-          "context": "Cited at ~17:32 as exhibit A in the McKinsey-EU-pharma triangle."
+          "context": "Cited at ~17:32 as exhibit A in the McKinsey-EU-pharma triangle.",
+          "timestamp": "18:06",
+          "documents": [
+            "EU Commission–McKinsey contract (2022, medical countermeasures study)"
+          ]
         }
       ],
       "notes": {
@@ -724,7 +783,11 @@
             "en": "Locate page 38 of the Pfizer C4591001 adolescent (12-15) clinical study report (April 2021) where the listed unknowns appear in black and white: duration of protection, efficacy on at-risk populations, efficacy on symptomatic cases, long-term effects, mortality, transmission.",
             "fr": "Retrouver la page 38 du rapport clinique adolescents 12-15 de l'essai C4591001 (avril 2021) où les inconnues apparaissent noir sur blanc : durée de protection, efficacité sur populations à risque, efficacité sur cas symptomatiques, effets à long terme, mortalité, transmission."
           },
-          "context": "Cited at 08:19 — flagship documentary evidence that the unknowns persisted into the pediatric authorization."
+          "context": "Cited at 08:19 — flagship documentary evidence that the unknowns persisted into the pediatric authorization.",
+          "timestamp": "08:19",
+          "documents": [
+            "Pfizer C4591001 adolescent (12-15) clinical study report (April 2021)"
+          ]
         },
         {
           "id": "MJksTpVRQuA-todo-2",
@@ -732,7 +795,12 @@
             "en": "Archive the EMA assessment report passages flagging Process 2 mRNA-integrity reservations / major objections, and link them to the Process 2 amendment in the C4591001 protocol.",
             "fr": "Archiver les passages du rapport d'évaluation EMA qui consignent les réserves voire objections majeures sur l'intégrité ARN du Process 2, et les rapprocher de l'amendement Process 2 du protocole C4591001."
           },
-          "context": "Cotton states at 12:11 that EMA reservations are \"all documented\" — locating the EPAR passage gives the archive a durable citation."
+          "context": "Cotton states at 12:11 that EMA reservations are \"all documented\" — locating the EPAR passage gives the archive a durable citation.",
+          "timestamp": "12:11",
+          "documents": [
+            "Pfizer C4591001 Protocol (Process 2 amendment)",
+            "EMA assessment report (Comirnaty)"
+          ]
         },
         {
           "id": "MJksTpVRQuA-todo-3",
@@ -740,7 +808,12 @@
             "en": "Find and cite the 2006 French pharmacovigilance under-reporting publication co-signed by Marie-Josèphe (Jean-Ville) Bérat, including the figure that some serious adverse events should be multiplied by 100.",
             "fr": "Retrouver et citer la publication française de pharmacovigilance de 2006 co-signée par Jean-Ville Bérat, qui évoque un facteur 100 de sous-déclaration pour certains cas graves."
           },
-          "context": "Cited at 17:12 as the empirical basis for Cotton's 10×–100× under-reporting multiplier."
+          "context": "Cited at 17:12 as the empirical basis for Cotton's 10×–100× under-reporting multiplier.",
+          "timestamp": "16:51",
+          "documents": [
+            "EudraVigilance (EMA adverse-event database)",
+            "2006 French pharmacovigilance publication (Jean-Ville Bérat et al.)"
+          ]
         },
         {
           "id": "MJksTpVRQuA-todo-4",
@@ -748,7 +821,11 @@
             "en": "Cross-reference the ANSM February 2023 efficacy update (45% post-primovaccination, 56% after 3rd dose, 75% after 4th–5th doses, decaying to 22% at 6 months) with Cotton's commentary; add to the Archive Index sources.",
             "fr": "Recouper l'actualisation ANSM de février 2023 (efficacité 45% après primovaccination, 56% après 3e dose, 75% après 4e–5e doses, déclinant à 22% à 6 mois) avec le commentaire de Cotton ; ajouter aux sources de l'Archive Index."
           },
-          "context": "Bercoff reads the ANSM figures in the intro (~03:30); they frame the entire interview as the 95% / 4.25% / 45% reality check."
+          "context": "Bercoff reads the ANSM figures in the intro (~03:30); they frame the entire interview as the 95% / 4.25% / 45% reality check.",
+          "timestamp": "09:44",
+          "documents": [
+            "Pfizer C4591001 interim clinical study report (Dec 2020)"
+          ]
         }
       ],
       "notes": {
@@ -949,7 +1026,12 @@
             "en": "Capture and archive page 8 of the leaked Pfizer-South Africa supply contract (April 2021), with the phrase declaring Phase 2-3 trials \"completed.\" This is the exact citation Cotton points to.",
             "fr": "Capturer et archiver la page 8 du contrat Pfizer-Afrique du Sud divulgué (avril 2021), avec la phrase qui déclare les essais de phase 2-3 « terminés ». C'est la citation exacte que Cotton désigne."
           },
-          "context": "Cotton turns directly to page 8 at 01:22 — exhibit A for the contracts-vs-trial-completion argument."
+          "context": "Cotton turns directly to page 8 at 01:22 — exhibit A for the contracts-vs-trial-completion argument.",
+          "timestamp": "01:22",
+          "documents": [
+            "Leaked Pfizer-South Africa supply contract (April 2021)",
+            "Pfizer C4591001 adolescent (12-15) clinical study report (April 2021)"
+          ]
         },
         {
           "id": "JjLTt5_BGAE-todo-2",
@@ -957,7 +1039,11 @@
             "en": "Locate and archive the FDA's June 2020 Guidance on Development and Licensure of Vaccines to Prevent COVID-19 — the document that allowed efficacy results based on just two months of follow-up. Cotton calls this the \"freeway\" the FDA built.",
             "fr": "Retrouver et archiver la « Guidance » FDA de juin 2020 sur le développement et la licence des vaccins Covid — le document qui a autorisé les résultats d'efficacité après seulement deux mois de suivi. Cotton parle d'une « autoroute »."
           },
-          "context": "Cited at 11:06 — the regulatory pivot that made the truncated follow-up legal."
+          "context": "Cited at 11:06 — the regulatory pivot that made the truncated follow-up legal.",
+          "timestamp": "11:06",
+          "documents": [
+            "FDA Guidance on Development and Licensure of Vaccines to Prevent COVID-19 (June 2020)"
+          ]
         },
         {
           "id": "JjLTt5_BGAE-todo-3",
@@ -965,7 +1051,11 @@
             "en": "Find and link the Jérôme Salomon France Info interview where he publicly warned that Pfizer antibodies last only a few months.",
             "fr": "Retrouver et indexer l'interview de Jérôme Salomon sur France Info où il avait dit publiquement que les anticorps du vaccin Pfizer ne durent que quelques mois."
           },
-          "context": "Cited at 18:55 — a French health-establishment figure who had read the macaque publication and warned about antibody waning, then disappeared from public view."
+          "context": "Cited at 18:55 — a French health-establishment figure who had read the macaque publication and warned about antibody waning, then disappeared from public view.",
+          "timestamp": "12:19",
+          "documents": [
+            "Pfizer-BioNTech pre-clinical macaque immunogenicity publication"
+          ]
         },
         {
           "id": "JjLTt5_BGAE-todo-4",
@@ -973,7 +1063,13 @@
             "en": "Verify the OPECST (April 2022) and ANSM (July 2022, closed) hearing records for Christine Cotton — both are referenced in book and interviews as the moments she presented her findings to French authorities. The OPECST archive should hold a written record.",
             "fr": "Vérifier les comptes-rendus d'audition OPECST (avril 2022) et ANSM (juillet 2022, à huis clos) de Christine Cotton — moments référencés dans le livre et les entretiens. L'archive OPECST devrait contenir un compte-rendu écrit."
           },
-          "context": "Cited at 17:12 as the formal record of Cotton bringing her critique to French parliament and regulator."
+          "context": "Cited at 17:12 as the formal record of Cotton bringing her critique to French parliament and regulator.",
+          "timestamp": "17:12",
+          "documents": [
+            "Cotton — Expertise of the Pfizer C4591001 trial (January 2022)",
+            "Cotton OPECST hearing (April 2022)",
+            "Cotton ANSM hearing (July 2022, closed)"
+          ]
         },
         {
           "id": "JjLTt5_BGAE-todo-5",
@@ -981,7 +1077,11 @@
             "en": "Document the Maxime case — the 22-year-old who died ~5-6 hours after his first dose. Cotton's book gives the name; the autopsy detail (wrong arm examined) is concrete enough to verify with case records or court filings.",
             "fr": "Documenter le cas Maxime — le jeune de 22 ans décédé 5-6 heures après sa première dose. Le livre de Cotton donne le nom ; le détail d'autopsie (mauvais bras examiné) est concret et vérifiable par les dossiers ou les plaintes."
           },
-          "context": "Cited at 22:38 — one of the most striking individual cases in Cotton's victim chapter."
+          "context": "Cited at 22:38 — one of the most striking individual cases in Cotton's victim chapter.",
+          "timestamp": "22:38",
+          "documents": [
+            "Maxime autopsy report (cited in book)"
+          ]
         }
       ],
       "notes": {
@@ -1137,7 +1237,11 @@
             "en": "Document the LinkedIn account suspension: timeline (post date, censorship, second post, suspension), the visit log Cotton describes (US State Dept., WHO, French ministries, etc.), and any correspondence with LinkedIn requesting reinstatement.",
             "fr": "Documenter la suspension du compte LinkedIn : chronologie (date de publication, censure, republication, suspension), le journal de visites décrit par Cotton (Département d'État américain, OMS, ministères français, etc.), et toute correspondance avec LinkedIn pour récupérer le compte."
           },
-          "context": "Cotton mentions the visits in this interview at 22:43 and details them more fully in the Cercle Aristote interview — a flagship example of the institutional response to her report."
+          "context": "Cotton mentions the visits in this interview at 22:43 and details them more fully in the Cercle Aristote interview — a flagship example of the institutional response to her report.",
+          "timestamp": "22:43",
+          "documents": [
+            "Cotton — January 2022 expertise report (LinkedIn post)"
+          ]
         },
         {
           "id": "ASXFLQdQXyU-todo-2",
@@ -1145,7 +1249,12 @@
             "en": "Cross-reference the OPECST (April 2022) and ANSM (July 2022) hearing records with this interview's discussion of Cotton's whistleblower role — both are referenced as the formal channels through which she alerted French authorities.",
             "fr": "Recouper les comptes-rendus d'audition OPECST (avril 2022) et ANSM (juillet 2022) avec ce qui est dit ici sur son rôle de lanceuse d'alerte — les deux audiences sont les canaux formels d'alerte aux autorités françaises."
           },
-          "context": "Cited at 28:39 — Cotton mentions OPECST as part of her whistleblower channel."
+          "context": "Cited at 28:39 — Cotton mentions OPECST as part of her whistleblower channel.",
+          "timestamp": "28:39",
+          "documents": [
+            "Cotton — Expertise of the Pfizer C4591001 trial (January 2022)",
+            "OPECST hearing of Christine Cotton (April 2022)"
+          ]
         },
         {
           "id": "ASXFLQdQXyU-todo-3",
@@ -1153,7 +1262,11 @@
             "en": "Find the Senate hearing record on the Fonds Marianne where Conspiracy Watch's public-subsidy share (~50%) was disclosed. Useful for the Critiques / About-this-Archive page.",
             "fr": "Retrouver le compte-rendu de l'audition sénatoriale sur le Fonds Marianne où la part de subventions publiques de Conspiracy Watch (~50%) a été révélée. Utile pour la page Critiques / À propos."
           },
-          "context": "Cited at 21:00 — Cotton uses this to support her counter-attack against the fact-checking establishment."
+          "context": "Cited at 21:00 — Cotton uses this to support her counter-attack against the fact-checking establishment.",
+          "timestamp": "20:08",
+          "documents": [
+            "Senate hearing on the Fonds Marianne (2023)"
+          ]
         },
         {
           "id": "ASXFLQdQXyU-todo-4",
@@ -1161,7 +1274,12 @@
             "en": "Document the ANSM's refusal of Raoult's ATU / RTU request for hydroxychloroquine. Cotton's argument is that the post-Mediator ATU/RTU framework was designed precisely for this kind of off-label use — locate the ANSM written response and the legal record.",
             "fr": "Documenter le refus par l'ANSM de la demande d'ATU / RTU de Raoult pour l'hydroxychloroquine. Cotton soutient que le dispositif ATU/RTU post-Mediator a été conçu exactement pour ce type d'usage — retrouver la réponse écrite de l'ANSM et le dossier juridique."
           },
-          "context": "Cotton makes this point at 47:36 — useful for cross-linking the Cotton archive to the broader controversy over French regulatory consistency."
+          "context": "Cotton makes this point at 47:36 — useful for cross-linking the Cotton archive to the broader controversy over French regulatory consistency.",
+          "timestamp": "45:37",
+          "documents": [
+            "ANSM ATU / RTU regulatory framework",
+            "Mediator affair regulatory aftermath"
+          ]
         }
       ],
       "notes": {
@@ -1326,7 +1444,11 @@
             "en": "Reproduce Cotton's 55% recalculation: pull the court-released Pfizer C4591001 trial database, run the analysis on the anti-nucleocapsid serology endpoint, and archive the script + result. This would give the archive an independently reproducible exhibit for the case-definition argument.",
             "fr": "Reproduire le recalcul à 55% de Cotton : récupérer la base C4591001 libérée par la FDA, refaire l'analyse sur le critère de sérologie antinucléocapside, et archiver le script + le résultat. Cela donnerait à l'archive un exemple reproductible de l'argument sur la définition du critère."
           },
-          "context": "Cited at 16:25 as the smoking-gun statistic that the 95% headline was driven by the choice of endpoint."
+          "context": "Cited at 16:25 as the smoking-gun statistic that the 95% headline was driven by the choice of endpoint.",
+          "timestamp": "16:25",
+          "documents": [
+            "Pfizer C4591001 trial database (FOIA / court-released)"
+          ]
         },
         {
           "id": "prH1pkJrWhg-todo-2",
@@ -1334,7 +1456,11 @@
             "en": "Locate the ClinicalTrials.gov record for the Pfizer-BioNTech pregnancy trial that ended in July 2022, and document whether any results have since been posted. Cotton states (~12:00) no results were released.",
             "fr": "Retrouver l'entrée ClinicalTrials.gov de l'essai Pfizer-BioNTech sur la grossesse terminé en juillet 2022, et documenter si des résultats ont été publiés depuis. Cotton dit (~12:00) qu'aucun résultat n'est sorti."
           },
-          "context": "Critical follow-up: an unpublished pregnancy trial undermines official agency assurances that there is \"no signal\" in pregnant women."
+          "context": "Critical follow-up: an unpublished pregnancy trial undermines official agency assurances that there is \"no signal\" in pregnant women.",
+          "timestamp": "11:47",
+          "documents": [
+            "Pfizer pregnancy clinical trial (terminated July 2022, no results released)"
+          ]
         },
         {
           "id": "prH1pkJrWhg-todo-3",
@@ -1342,7 +1468,12 @@
             "en": "Capture the HAS opinion of 2 February 2021 on AstraZeneca AZD1222 (the quote Bercoff reads at ~15:17): \"data do not allow conclusion on vaccine efficacy in those aged 65 and over, severe forms, or asymptomatic forms.\"",
             "fr": "Archiver l'avis HAS du 2 février 2021 sur AstraZeneca AZD1222 (cité par Bercoff vers 15:17) : « les données ne permettent pas de conclure quant à l'efficacité vaccinale chez les personnes âgées de 65 ans et plus, sur les formes sévères, sur les formes asymptomatiques. »"
           },
-          "context": "A French regulator stating publicly that the data did not support efficacy on the elderly or severe forms — a citable counterweight to the 95% messaging."
+          "context": "A French regulator stating publicly that the data did not support efficacy on the elderly or severe forms — a citable counterweight to the 95% messaging.",
+          "timestamp": "10:50",
+          "documents": [
+            "Pfizer C4591001 interim clinical study report (Dec 2020)",
+            "Pfizer pediatric trial reports (12-15, 5-11, 6 months-4 years)"
+          ]
         },
         {
           "id": "prH1pkJrWhg-todo-4",
@@ -1350,7 +1481,11 @@
             "en": "Catalog the call-in segments with listeners (Emilien, a suspended firefighter; Christophe of Angers) — both are anecdotal but valuable as voiced testimony of the vaccine-mandate cohort. Add to the trial-injuries / mandate documentation track.",
             "fr": "Cataloguer les interventions des auditeurs (Emilien, pompier suspendu ; Christophe d'Angers) — anecdotique mais précieux comme témoignage parlé sur la cohorte des suspendus. À ajouter à la piste documentaire victimes / obligation vaccinale."
           },
-          "context": "Both callers (~24:00 and ~26:08) ground the abstract critique in the lived experience of mandated French professionals."
+          "context": "Both callers (~24:00 and ~26:08) ground the abstract critique in the lived experience of mandated French professionals.",
+          "timestamp": "29:20",
+          "documents": [
+            "Cotton — January 2022 expertise report (LinkedIn post)"
+          ]
         }
       ],
       "notes": {
@@ -1577,7 +1712,12 @@
             "en": "Locate the Argentine military-hospital Pfizer trial site record (single site, 5,700 participants in Buenos Aires) and any audit / inspection documentation. The Augusto Roux case is the most concrete entry point.",
             "fr": "Retrouver le dossier du site Pfizer de l'hôpital militaire argentin (centre unique, 5 700 participants à Buenos Aires) et toute trace d'audit / inspection. Le cas Augusto Roux est le point d'entrée le plus concret."
           },
-          "context": "Cited at 18:40 — a single site holding ~15% of the entire C4591001 enrolment, and the locus of the Roux fraud allegation."
+          "context": "Cited at 18:40 — a single site holding ~15% of the entire C4591001 enrolment, and the locus of the Roux fraud allegation.",
+          "timestamp": "18:40",
+          "documents": [
+            "Augusto Roux medical file",
+            "Pfizer C4591001 clinical study report (adult)"
+          ]
         },
         {
           "id": "iecQwlo5AhM-todo-2",
@@ -1585,7 +1725,11 @@
             "en": "Pull the Brooke Jackson / Ventavia Research Group documentation: the BMJ whistleblower article (Thacker, Nov 2021), the underlying complaint to the FDA, and the False Claims Act lawsuit (United States ex rel. Jackson v. Ventavia / Pfizer).",
             "fr": "Récupérer la documentation Brooke Jackson / Ventavia : l'article BMJ (Thacker, nov. 2021), la plainte adressée à la FDA, et la procédure False Claims Act (United States ex rel. Jackson v. Ventavia / Pfizer)."
           },
-          "context": "Cited at 17:49 as one of the strongest publicly available pieces of evidence for site-level GCP violations."
+          "context": "Cited at 17:49 as one of the strongest publicly available pieces of evidence for site-level GCP violations.",
+          "timestamp": "17:49",
+          "documents": [
+            "Brooke Jackson — BMJ whistleblower report (Thacker, 2 November 2021)"
+          ]
         },
         {
           "id": "iecQwlo5AhM-todo-3",
@@ -1593,7 +1737,12 @@
             "en": "Build a single archive page on the French criminal complaint for poisoning — date filed, parties, expertise reports attached (including Cotton's), the dismissal, and the appeal status. Update last_reviewed when status changes.",
             "fr": "Construire une page d'archive unique sur la plainte française pour empoisonnement — date de dépôt, parties, rapports d'expertise joints (dont celui de Cotton), classement et statut d'appel. Mettre à jour last_reviewed quand le statut change."
           },
-          "context": "Cited at 45:37 as the French legal vehicle for Cotton's expertise."
+          "context": "Cited at 45:37 as the French legal vehicle for Cotton's expertise.",
+          "timestamp": "45:37",
+          "documents": [
+            "Cotton — Expertise of the Pfizer C4591001 trial (January 2022)",
+            "French criminal complaint for poisoning (plainte contre X)"
+          ]
         },
         {
           "id": "iecQwlo5AhM-todo-4",
@@ -1601,7 +1750,11 @@
             "en": "Identify the peer-reviewed publications Cotton references on placental transfer of spike protein and the absence of pregnancy-safety data. Cross-link to the ANSM and HAS pregnancy-vaccination guidance to expose the gap.",
             "fr": "Identifier les publications revues par les pairs auxquelles Cotton se réfère sur le passage placentaire de la spike et l'absence de données chez les femmes enceintes. Croiser avec les recommandations ANSM et HAS pour la vaccination des femmes enceintes."
           },
-          "context": "Cited at 36:55 as the basis for her objection to the official EMA / WHO / ANSM pregnancy recommendations."
+          "context": "Cited at 36:55 as the basis for her objection to the official EMA / WHO / ANSM pregnancy recommendations.",
+          "timestamp": "36:55",
+          "documents": [
+            "Peer-reviewed publications on placental transfer of spike protein"
+          ]
         }
       ],
       "notes": {
@@ -1823,7 +1976,11 @@
             "en": "Find the section of the Pfizer C4591001 protocol that documents the central-vs-local PCR testing arrangement — Pearl River as the authoritative lab even when in conflict with a positive local test. Cite page numbers.",
             "fr": "Retrouver dans le protocole C4591001 la section qui documente le dispositif PCR central vs local — Pearl River comme laboratoire faisant foi y compris en cas de conflit avec un test local positif. Citer les pages."
           },
-          "context": "Pierre describes this around 08:21 of the interview. The arrangement is a structural source of bias."
+          "context": "Pierre describes this around 08:21 of the interview. The arrangement is a structural source of bias.",
+          "timestamp": "08:05",
+          "documents": [
+            "Pfizer C4591001 Protocol"
+          ]
         },
         {
           "id": "O8S7BSrRj3U-todo-2",
@@ -1831,7 +1988,11 @@
             "en": "Locate Pierre / OpenVAET's Substack article(s) documenting the 301 disappeared subjects (Argentina concentration, 17-subject same-day cluster around Augusto Roux's enrollment) and add to catalog/external_links.html under the Pfizer-trial-data section.",
             "fr": "Retrouver les articles Substack de Pierre / OpenVAET documentant les 301 sujets disparus (concentration en Argentine, grappe de 17 sujets le même jour autour de l'inscription d'Augusto Roux) et les ajouter à catalog/external_links.html dans la section données de l'essai Pfizer."
           },
-          "context": "Cited throughout the interview (~26:53, ~42:25). Pierre publishes source code with each finding."
+          "context": "Cited throughout the interview (~26:53, ~42:25). Pierre publishes source code with each finding.",
+          "timestamp": "26:26",
+          "documents": [
+            "Pfizer C4591001 court-released database (PHMPT / FOIA)"
+          ]
         },
         {
           "id": "O8S7BSrRj3U-todo-3",
@@ -1839,7 +2000,11 @@
             "en": "Archive the EMA-Pfizer leaked correspondence (hacked December 2020) that flagged the mRNA-integrity discrepancy between Process 1 (trial) and Process 2 (marketed) products. BMJ coverage from March 2021 is a starting point.",
             "fr": "Archiver la correspondance Pfizer–EMA divulguée (piratée en décembre 2020) qui pointait l'écart d'intégrité de l'ARN entre Process 1 (essai) et Process 2 (commercialisé). La couverture BMJ de mars 2021 est un bon point de départ."
           },
-          "context": "Cited at ~28:15. Independently cross-references Cotton's Process-2-substitution claim."
+          "context": "Cited at ~28:15. Independently cross-references Cotton's Process-2-substitution claim.",
+          "timestamp": "28:15",
+          "documents": [
+            "EMA-Pfizer leaked correspondence (Dec 2020, hacked)"
+          ]
         },
         {
           "id": "O8S7BSrRj3U-todo-4",
@@ -1847,7 +2012,12 @@
             "en": "Request the C4591001 database audit trail and Firecrest data-management logs (\"Who deleted what, when, and why?\"). Pierre says ICON, as the data manager, should also be audited.",
             "fr": "Demander la piste d'audit (audit trail) de la base C4591001 et les logs de la plateforme Firecrest (« qui a supprimé quoi, quand, et pourquoi ? »). Pierre estime qu'ICON, comme data manager, doit également être audité."
           },
-          "context": "Cited at ~53:47. The audit trail would resolve the 301-disappeared-subjects question definitively."
+          "context": "Cited at ~53:47. The audit trail would resolve the 301-disappeared-subjects question definitively.",
+          "timestamp": "42:25",
+          "documents": [
+            "Pfizer C4591001 court-released database (PHMPT / FOIA)",
+            "ICON Firecrest data-management platform documentation"
+          ]
         }
       ],
       "notes": {
@@ -2016,7 +2186,11 @@
             "en": "Retrieve the December 2020 HAS opinion on Comirnaty and quote the exact sentence acknowledging Pfizer was already studying a booster. Add the source page to catalog/external_links.html.",
             "fr": "Retrouver l'avis de la HAS sur Comirnaty (décembre 2020) et citer la phrase exacte indiquant que Pfizer étudiait déjà un boost. Ajouter le lien dans catalog/external_links.html."
           },
-          "context": "Cited at ~17:45 as the smoking-gun proof regulators knew about waning protection at the moment of authorization."
+          "context": "Cited at ~17:45 as the smoking-gun proof regulators knew about waning protection at the moment of authorization.",
+          "timestamp": "17:45",
+          "documents": [
+            "HAS opinion on Comirnaty (December 2020)"
+          ]
         },
         {
           "id": "TQQVmdTXY-k-todo-2",
@@ -2024,7 +2198,11 @@
             "en": "Find Cotton's VAERS analysis Substack / report (the one establishing the 60% deaths-within-21-days figure across ~400,000 reports) and archive it.",
             "fr": "Retrouver l'analyse VAERS de Cotton (qui établit le chiffre de 60 % de décès dans les 21 jours sur ~400 000 lignes) et l'archiver."
           },
-          "context": "Referenced at ~20:39 / ~22:24 as the work that pushed her back to dissecting the Pfizer trial."
+          "context": "Referenced at ~20:39 / ~22:24 as the work that pushed her back to dissecting the Pfizer trial.",
+          "timestamp": "22:24",
+          "documents": [
+            "VAERS public dataset (US adverse-event reports)"
+          ]
         },
         {
           "id": "TQQVmdTXY-k-todo-3",
@@ -2032,7 +2210,12 @@
             "en": "Add the French criminal complaint for poisoning (with the section drawn from Cotton's expertise report) to archive/sources/ once a public copy is available — or note the case reference if redacted.",
             "fr": "Ajouter à archive/sources/ la plainte française pour empoisonnement (avec la partie rédigée à partir du rapport Cotton) dès qu'une version publique est disponible — ou inscrire la référence dossier si l'instruction est confidentielle."
           },
-          "context": "Cited at ~39:51 as the legal mechanism by which the GCP critique could reverse liability from states to manufacturers."
+          "context": "Cited at ~39:51 as the legal mechanism by which the GCP critique could reverse liability from states to manufacturers.",
+          "timestamp": "39:51",
+          "documents": [
+            "French criminal complaint for poisoning (2022)",
+            "Cotton — Expertise of the Pfizer C4591001 trial (January 2022)"
+          ]
         },
         {
           "id": "TQQVmdTXY-k-todo-4",
@@ -2040,7 +2223,11 @@
             "en": "Archive the LinkedIn-page screenshots showing the 133 lawyers and the institutional visitors (Apple, US State Department, WHO, etc.) to Cotton's January 2022 post — kept locally, used in `notes` to substantiate the regulatory-pressure claim.",
             "fr": "Archiver les captures d'écran LinkedIn montrant les 133 avocats et les visiteurs institutionnels (Apple, Département d'État américain, OMS, etc.) sur la publication de janvier 2022 — conservées localement, utilisées dans `notes` pour étayer le point sur la pression réglementaire."
           },
-          "context": "Cited at ~40:50. Cotton confirms she kept the print-screens before LinkedIn shut her account."
+          "context": "Cited at ~40:50. Cotton confirms she kept the print-screens before LinkedIn shut her account.",
+          "timestamp": "40:50",
+          "documents": [
+            "Cotton — January 2022 expertise report (LinkedIn post, screenshots)"
+          ]
         }
       ],
       "notes": {
@@ -2213,7 +2400,11 @@
             "en": "Locate Philippe Douste-Blazy's November 2020 interview where he said vaccine protection only lasts two months. The clip is the single best evidence that the antibody-decay problem was publicly flagged before authorization.",
             "fr": "Retrouver l'interview de Philippe Douste-Blazy (novembre 2020) où il déclare que la protection vaccinale ne dure que deux mois. Le clip est la meilleure preuve publique que le problème de chute des anticorps était signalé avant l'autorisation."
           },
-          "context": "Cited at ~07:01 as the lone politician who let the cat out of the bag and then \"disappeared\" from media."
+          "context": "Cited at ~07:01 as the lone politician who let the cat out of the bag and then \"disappeared\" from media.",
+          "timestamp": "07:01",
+          "documents": [
+            "Douste-Blazy public interview (Nov 2020)"
+          ]
         },
         {
           "id": "6D-LjaD99ys-todo-2",
@@ -2221,7 +2412,12 @@
             "en": "Side-by-side the Comirnaty Risk Management Plan from Nov 2020 and Sept 2022 — list the items that did and did not change. Cotton makes the comparison verbally at ~19:52; turning it into a table is high-leverage archive work.",
             "fr": "Comparer côte à côte le Plan de Gestion des Risques de Comirnaty de nov. 2020 et de sept. 2022 — lister ce qui a et n'a pas changé. Cotton fait la comparaison oralement à ~19:52 ; en faire un tableau est un travail d'archive à fort effet de levier."
           },
-          "context": "Anchors the strongest \"nothing was learned in 22 months\" argument in the interview."
+          "context": "Anchors the strongest \"nothing was learned in 22 months\" argument in the interview.",
+          "timestamp": "19:52",
+          "documents": [
+            "Comirnaty Risk Management Plan (Nov 2020, EMA)",
+            "Comirnaty Risk Management Plan (Sept 2022, EMA)"
+          ]
         },
         {
           "id": "6D-LjaD99ys-todo-3",
@@ -2229,7 +2425,12 @@
             "en": "Retrieve Micallef et al.'s pharmacovigilance under-reporting paper (the source for the 1-10% figure) and add to catalog/external_links.html. Cotton names her as \"la chef des CRPV.\"",
             "fr": "Retrouver l'article de Micallef et al. sur la sous-déclaration en pharmacovigilance (source du chiffre 1-10 %) et l'ajouter à catalog/external_links.html. Cotton la cite comme « la chef des CRPV »."
           },
-          "context": "Cited at ~25:21 as the methodological justification for the order-of-magnitude scaling argument."
+          "context": "Cited at ~25:21 as the methodological justification for the order-of-magnitude scaling argument.",
+          "timestamp": "25:21",
+          "documents": [
+            "ANSM pharmacovigilance reports",
+            "Micallef et al. — paper on adverse-event under-reporting"
+          ]
         }
       ],
       "notes": {
@@ -2410,7 +2611,11 @@
             "en": "Locate the December 2020 OPECST report on COVID-19 vaccination and quote the exact passage on UK first-day allergic reactions and the adrenaline-pen warning. This is the cleanest archived early-warning reference.",
             "fr": "Retrouver le rapport de l'OPECST de décembre 2020 sur la vaccination Covid-19 et citer le passage sur les réactions allergiques du premier jour au Royaume-Uni et la recommandation sur les stylos d'adrénaline. C'est la référence d'alerte précoce la plus propre à archiver."
           },
-          "context": "Cited at ~28:26 — institutional knowledge of severe allergic reactions before mass vaccination."
+          "context": "Cited at ~28:26 — institutional knowledge of severe allergic reactions before mass vaccination.",
+          "timestamp": "28:26",
+          "documents": [
+            "OPECST report (December 2020) on COVID-19 vaccination"
+          ]
         },
         {
           "id": "Jn-2b0fUsrk-todo-2",
@@ -2418,7 +2623,11 @@
             "en": "Find the EPI-PHARE / Epifar study that, per Cotton, defines an \"adverse event\" only within 21 days of injection — useful as an example of how real-world studies under-detect long-tail harms.",
             "fr": "Retrouver l'étude Epi-Phare / Epifar qui, selon Cotton, définit un « effet indésirable » uniquement dans les 21 jours après injection — utile comme exemple de la sous-détection des effets différés par les études en vie réelle."
           },
-          "context": "Cited at ~21:34 as the methodological reason real-world studies systematically conclude there is no problem."
+          "context": "Cited at ~21:34 as the methodological reason real-world studies systematically conclude there is no problem.",
+          "timestamp": "10:33",
+          "documents": [
+            "Pfizer C4591001 interim clinical study report (Dec 2020) — antipyretic use tables"
+          ]
         },
         {
           "id": "Jn-2b0fUsrk-todo-3",
@@ -2426,7 +2635,12 @@
             "en": "Identify the McKinsey article advocating 100-day vaccine development and add it to the EU-procurement section of catalog/external_links.html. Pairs with the McKinsey-EU contract claim from the snXhb5p5uTY brief.",
             "fr": "Identifier l'article McKinsey qui propose un développement vaccinal en 100 jours et l'ajouter à la section achats UE de catalog/external_links.html. Complète la mention du contrat McKinsey-UE dans la brève snXhb5p5uTY."
           },
-          "context": "Cited at ~40:05 as evidence the accelerated-development model is being normalized."
+          "context": "Cited at ~40:05 as evidence the accelerated-development model is being normalized.",
+          "timestamp": "39:44",
+          "documents": [
+            "McKinsey article on accelerated vaccine development (2022)",
+            "ICH-GCP guidelines"
+          ]
         },
         {
           "id": "Jn-2b0fUsrk-todo-4",
@@ -2434,7 +2648,12 @@
             "en": "Cross-link this interview to the OPECST written exchange Cotton entered into after her in-camera hearing — and to the 12-15 pediatric clinical study report so the Maddie de Garay omission can be page-cited.",
             "fr": "Croiser cet entretien avec les échanges écrits que Cotton a eus avec l'OPECST après son audition à huis clos — et avec le rapport clinique 12-15 ans pour pouvoir citer page par page l'omission Maddie de Garay."
           },
-          "context": "OPECST hearing referenced at ~03:07; Maddie de Garay omission detailed at ~17:48."
+          "context": "OPECST hearing referenced at ~03:07; Maddie de Garay omission detailed at ~17:48.",
+          "timestamp": "17:48",
+          "documents": [
+            "Maddie de Garay testimony to Sen. Ron Johnson",
+            "Pfizer C4591001 (12-15 yrs) clinical study report"
+          ]
         }
       ],
       "notes": {
@@ -2628,7 +2847,11 @@
             "en": "Locate Albert Bourla's public statement acknowledging mRNA technology had never been used in a marketed product. Cotton cites it as a load-bearing piece of evidence — pin down the exact venue and date.",
             "fr": "Retrouver la déclaration publique d'Albert Bourla reconnaissant que la technologie ARN messager n'avait jamais été utilisée commercialement. Cotton la cite comme un élément central — identifier le lieu et la date exacts."
           },
-          "context": "Cited at ~04:59. The clearest direct admission from the Pfizer CEO."
+          "context": "Cited at ~04:59. The clearest direct admission from the Pfizer CEO.",
+          "timestamp": "04:50",
+          "documents": [
+            "Albert Bourla — public statements / Pfizer interviews"
+          ]
         },
         {
           "id": "KwUr6wqeVT0-todo-2",
@@ -2636,7 +2859,11 @@
             "en": "Retrieve the June 2022 OPECST draft report and check whether a final version was ever published. Cotton notes the draft acknowledged victims and called for recognition — if the final was buried, that itself is an archive-worthy story.",
             "fr": "Retrouver le rapport préliminaire de l'OPECST de juin 2022 et vérifier si une version définitive a été publiée. Cotton indique que le brouillon reconnaissait les victimes et appelait à leur prise en charge — si la version définitive a été enterrée, c'est en soi un sujet d'archive."
           },
-          "context": "Cited at ~39:59 — Cotton testified in camera; the parliamentary follow-up is documented in the interview."
+          "context": "Cited at ~39:59 — Cotton testified in camera; the parliamentary follow-up is documented in the interview.",
+          "timestamp": "39:49",
+          "documents": [
+            "OPECST report on COVID-19 vaccine adverse events (June 2022 draft)"
+          ]
         },
         {
           "id": "KwUr6wqeVT0-todo-3",
@@ -2644,7 +2871,11 @@
             "en": "Pull Brianne Dressen's public testimony (REACT19, US Senate hearings) and add to catalog/external_links.html alongside the Maddie de Garay and Augusto Roux references — these three trial-injury cases anchor much of Cotton's argument.",
             "fr": "Récupérer le témoignage public de Brianne Dressen (REACT19, auditions au Sénat américain) et l'ajouter à catalog/external_links.html à côté des références Maddie de Garay et Augusto Roux — ces trois cas d'effets graves dans les essais structurent une grande part de l'argumentaire Cotton."
           },
-          "context": "Cited at ~19:49 — the AstraZeneca counterpart to the Pfizer trial-injury cases."
+          "context": "Cited at ~19:49 — the AstraZeneca counterpart to the Pfizer trial-injury cases.",
+          "timestamp": "19:49",
+          "documents": [
+            "Brianne Dressen — public testimony (REACT19, US Senate)"
+          ]
         }
       ],
       "notes": {
@@ -2839,7 +3070,11 @@
             "en": "Locate the Pfizer C4591001 5-11 yrs October 2021 clinical study report (the FDA briefing for the pediatric authorization) and capture the page where it explicitly says the sample size is too small to detect myocarditis.",
             "fr": "Retrouver le rapport clinique C4591001 5-11 ans d'octobre 2021 (briefing FDA pour l'autorisation pédiatrique) et identifier la page où il est explicitement écrit que la taille de l'échantillon est trop petite pour détecter une myocardite."
           },
-          "context": "Cited at ~51:50 as the strongest pediatric-trial admission."
+          "context": "Cited at ~51:50 as the strongest pediatric-trial admission.",
+          "timestamp": "51:50",
+          "documents": [
+            "Pfizer C4591001 pediatric (5-11 yrs) clinical study report (October 2021)"
+          ]
         },
         {
           "id": "LIPps6b8LgE-todo-2",
@@ -2847,7 +3082,11 @@
             "en": "Find the Santé publique France preprint on booster effectiveness in under-80s that Cotton shared on Twitter in early February 2022; archive a copy with publication metadata.",
             "fr": "Retrouver le pré-print de Santé publique France sur l'efficacité du rappel chez les moins de 80 ans, partagé par Cotton sur Twitter début février 2022 ; archiver une copie avec ses métadonnées."
           },
-          "context": "Cited at ~59:50 as undercutting the public-health rationale for the pass vaccinal."
+          "context": "Cited at ~59:50 as undercutting the public-health rationale for the pass vaccinal.",
+          "timestamp": "59:50",
+          "documents": [
+            "Santé publique France preprint (booster effectiveness)"
+          ]
         },
         {
           "id": "LIPps6b8LgE-todo-3",
@@ -2855,7 +3094,11 @@
             "en": "Capture the Comirnaty SmPC / package leaflet section on pregnancy that triggered Cotton's clash with MP Coralie Dubost.",
             "fr": "Capter la section grossesse de la notice Comirnaty qui a déclenché l'altercation avec la députée Coralie Dubost."
           },
-          "context": "Mentioned ~01:01:02 — useful for a future entry on official labels vs public messaging."
+          "context": "Mentioned ~01:01:02 — useful for a future entry on official labels vs public messaging.",
+          "timestamp": "01:01:02",
+          "documents": [
+            "Comirnaty SmPC / package leaflet"
+          ]
         },
         {
           "id": "LIPps6b8LgE-todo-4",
@@ -2863,7 +3106,11 @@
             "en": "Document the case of the Quebec lawyer who commissioned Cotton's January 2022 report and was subsequently ordered to undergo a psychiatric evaluation — verify name, date, and outcome.",
             "fr": "Documenter le cas de l'avocate québécoise qui a commandé le rapport de janvier 2022 et qui a ensuite reçu une injonction d'expertise psychiatrique — vérifier nom, date, suite."
           },
-          "context": "Cited at ~01:02:50 — Cotton presents the timing as a coincidence but flags it as troubling."
+          "context": "Cited at ~01:02:50 — Cotton presents the timing as a coincidence but flags it as troubling.",
+          "timestamp": "01:02:50",
+          "documents": [
+            "Cotton — January 2022 expertise report"
+          ]
         }
       ],
       "notes": {
@@ -3054,7 +3301,11 @@
             "en": "Find and archive Cotton's recomputed efficacy analysis from the court-released SAS tables — 8 vs. 162 (PCR-confirmed symptomatic) vs. 56 vs. 126 (anti-N serology). Capture the SAS table names and the underlying dataset identifiers from the PHMPT release.",
             "fr": "Retrouver et archiver l'analyse refaite par Cotton à partir des tables SAS judiciairement publiées — 8 vs 162 (Covid symptomatique confirmé par PCR) vs 56 vs 126 (sérologie antinucléocapside). Noter les noms des tables SAS et les identifiants des jeux de données dans la diffusion PHMPT."
           },
-          "context": "Cited at ~12:45 — Cotton's most concrete recomputation showing efficacy ~56% rather than 95%."
+          "context": "Cited at ~12:45 — Cotton's most concrete recomputation showing efficacy ~56% rather than 95%.",
+          "timestamp": "12:45",
+          "documents": [
+            "Pfizer C4591001 SAS datasets (court-released)"
+          ]
         },
         {
           "id": "j2RnxnY6QL8-todo-2",
@@ -3062,7 +3313,11 @@
             "en": "Locate the OPECST interim report on COVID-19 vaccine adverse events that Cotton references — capture publication date, rapporteurs, and the section acknowledging the transparency gap. Also pursue why the testimonies of Cotton and others were withheld from publication.",
             "fr": "Retrouver le rapport intermédiaire de l'OPECST sur les effets indésirables des vaccins Covid-19 — date de publication, rapporteurs, section reconnaissant le manque de transparence. Documenter aussi pourquoi les auditions de Cotton et d'autres n'ont pas été rendues publiques."
           },
-          "context": "Cited at ~28:05 — relevant to the wider OPECST hearings in Cotton's archive."
+          "context": "Cited at ~28:05 — relevant to the wider OPECST hearings in Cotton's archive.",
+          "timestamp": "28:05",
+          "documents": [
+            "OPECST interim report on COVID-19 vaccine adverse events"
+          ]
         },
         {
           "id": "j2RnxnY6QL8-todo-3",
@@ -3070,7 +3325,12 @@
             "en": "Archive the Argentine military-hospital recruitment data (site 1231, plus the \"4444\" patient block) from the released SAS tables — capture the daily-recruitment ramp from mi-August to end-September 2020.",
             "fr": "Archiver les données de recrutement de l'hôpital militaire argentin (centre 1231, plus le bloc de patients « 4444 ») depuis les tables SAS publiées — capter la courbe de recrutement journalier entre mi-août et fin septembre 2020."
           },
-          "context": "Cited at ~19:23 — central to Cotton's argument that the trial centers were not properly audited."
+          "context": "Cited at ~19:23 — central to Cotton's argument that the trial centers were not properly audited.",
+          "timestamp": "20:23",
+          "documents": [
+            "Pfizer C4591001 SAS datasets (court-released)",
+            "CDISC standards"
+          ]
         },
         {
           "id": "j2RnxnY6QL8-todo-4",
@@ -3078,7 +3338,11 @@
             "en": "Track the status of the EU Valneva contract suspension referenced by Joron — confirm dates, commissioner involved, and any subsequent termination, to anchor the procurement section.",
             "fr": "Suivre le statut de la suspension du contrat Valneva évoqué par Joron — dates, commissaire concerné, et éventuelle résiliation ultérieure, pour étayer la partie achats."
           },
-          "context": "Cited at ~24:27 — Joron describes asking Commissioner Kyriakides why Valneva was paused while 4 bn mRNA doses were already stockpiled."
+          "context": "Cited at ~24:27 — Joron describes asking Commissioner Kyriakides why Valneva was paused while 4 bn mRNA doses were already stockpiled.",
+          "timestamp": "24:27",
+          "documents": [
+            "EU Advance Purchase Agreements (Valneva and Pfizer/BioNTech)"
+          ]
         }
       ],
       "notes": {
@@ -3229,7 +3493,11 @@
             "en": "Locate the PCR-testing-rate comparison in the court-released SAS tables (vaccine arm vs. placebo arm) that supports Cotton's \"fewer tests in vaccine arm\" claim. Capture table name and the difference in tests-per-suspected-case.",
             "fr": "Retrouver dans les tables SAS publiées par voie judiciaire la comparaison du taux de tests PCR (groupe vaccin vs groupe placebo) qui étaye l'affirmation de Cotton sur le déséquilibre. Noter le nom de la table et l'écart de tests par cas suspecté."
           },
-          "context": "Cited at ~09:43 — supports the case-detection bias core argument."
+          "context": "Cited at ~09:43 — supports the case-detection bias core argument.",
+          "timestamp": "09:43",
+          "documents": [
+            "Pfizer C4591001 SAS datasets (court-released)"
+          ]
         },
         {
           "id": "D69Q58E0rMM-todo-2",
@@ -3237,7 +3505,11 @@
             "en": "Find and add Aaron Siri's / ICAN's litigation timeline (PHMPT v. FDA) — including the Pittman court order that produced the released datasets Cotton works from.",
             "fr": "Retrouver et ajouter la chronologie de la procédure d'Aaron Siri / ICAN (PHMPT v. FDA) — incluant la décision du juge Pittman ayant produit les jeux de données utilisés par Cotton."
           },
-          "context": "Referenced at ~09:43 — important provenance for any reader following the data."
+          "context": "Referenced at ~09:43 — important provenance for any reader following the data.",
+          "timestamp": "09:43",
+          "documents": [
+            "Pfizer C4591001 SAS datasets (court-released)"
+          ]
         },
         {
           "id": "D69Q58E0rMM-todo-3",
@@ -3245,7 +3517,11 @@
             "en": "Find the CeNC (Commission d'enquête nationale citoyenne) full transcript or final report — to cross-reference Cotton's testimony date and embed the longer Q&A if available.",
             "fr": "Retrouver le transcript complet ou le rapport final de la CeNC (Commission d'enquête nationale citoyenne) — pour croiser la date de l'audition de Cotton et intégrer la session complète si disponible."
           },
-          "context": "The available video transcript ends abruptly around 13:23; the full hearing likely runs longer."
+          "context": "The available video transcript ends abruptly around 13:23; the full hearing likely runs longer.",
+          "timestamp": "01:08",
+          "documents": [
+            "CeNC (Commission d enquete nationale citoyenne) hearing record"
+          ]
         }
       ],
       "notes": {
@@ -3407,7 +3683,11 @@
             "en": "Find the specific page in the EU Risk Management Plan (Comirnaty, Dec 2020) listing the populations to monitor post-authorization — pregnant women, immunocompromised, comorbidities, vaccine co-administration. Add a permalink to archive/sources/.",
             "fr": "Retrouver la page précise du PGR Comirnaty (UE, déc. 2020) listant les populations à surveiller après autorisation — femmes enceintes, immunodéprimés, comorbidités, co-administration. Ajouter un lien permanent dans archive/sources/."
           },
-          "context": "Cited at ~07:41 — the central document supporting Cotton's \"they vaccinated populations they hadn't tested\" argument."
+          "context": "Cited at ~07:41 — the central document supporting Cotton's \"they vaccinated populations they hadn't tested\" argument.",
+          "timestamp": "07:41",
+          "documents": [
+            "Comirnaty Risk Management Plan (December 2020, EMA)"
+          ]
         },
         {
           "id": "x887fvm-todo-2",
@@ -3415,7 +3695,11 @@
             "en": "Document the Ventavia whistleblower case (Brook Jackson, BMJ Nov 2021): three Texas trial centers, alleged data-integrity violations. Capture the BMJ article and any subsequent litigation status.",
             "fr": "Documenter l'affaire de l'alerte Ventavia (Brook Jackson, BMJ nov. 2021) : trois centres Texas, alertes sur l'intégrité des données. Capter l'article du BMJ et la suite contentieuse éventuelle."
           },
-          "context": "Cited at ~15:12 — exemplifies Cotton's call for an independent multi-center audit."
+          "context": "Cited at ~15:12 — exemplifies Cotton's call for an independent multi-center audit.",
+          "timestamp": "15:12",
+          "documents": [
+            "Ventavia whistleblower case (BMJ, Thacker, November 2021)"
+          ]
         },
         {
           "id": "x887fvm-todo-3",
@@ -3423,7 +3707,12 @@
             "en": "Identify and link the Verity (\"Verite\") patient-association adverse-event project Cotton mentions. Capture organization website, dataset description, and any signed-off submission to ANSM.",
             "fr": "Identifier et indexer l'association de patients Verity (« Verité ») mentionnée par Cotton. Capter son site, la description du jeu de données et l'éventuel dépôt formel auprès de l'ANSM."
           },
-          "context": "Cited at ~17:31 — co-signatory of the report submitted to ANSM."
+          "context": "Cited at ~17:31 — co-signatory of the report submitted to ANSM.",
+          "timestamp": "17:31",
+          "documents": [
+            "Cotton — Expertise report (January 2022)",
+            "Verity association adverse-event collection"
+          ]
         },
         {
           "id": "x887fvm-todo-4",
@@ -3431,7 +3720,12 @@
             "en": "Track ANSM's response (if any) to the joint Cotton-Verity submission of the January 2022 expertise report — the official correspondence is itself an artifact worth preserving.",
             "fr": "Suivre la réponse (le cas échéant) de l'ANSM à la soumission conjointe Cotton-Verity du rapport d'expertise de janvier 2022 — la correspondance officielle est elle-même un artefact à préserver."
           },
-          "context": "Mentioned at the very end of the interview (~17:31)."
+          "context": "Mentioned at the very end of the interview (~17:31).",
+          "timestamp": "17:31",
+          "documents": [
+            "Cotton — Expertise report (January 2022)",
+            "Verity association adverse-event collection"
+          ]
         }
       ],
       "notes": {
@@ -3585,7 +3879,12 @@
             "en": "Track the \"Jikkyleaks\" thread on the 4444 patient IDs and the Argentine military-hospital recruitment ramp — capture the underlying SAS table names and the screenshots/code Jikky used so the analysis is reproducible from the archive.",
             "fr": "Suivre le fil « Jikkyleaks » sur les patients « 4444 » et la rampe de recrutement de l'hôpital militaire argentin — noter les tables SAS sous-jacentes et les captures/code utilisés par Jikky, afin que l'analyse soit reproductible depuis l'archive."
           },
-          "context": "Cited at ~09:33 — the most concrete cross-checkable data-integrity finding."
+          "context": "Cited at ~09:33 — the most concrete cross-checkable data-integrity finding.",
+          "timestamp": "09:33",
+          "documents": [
+            "Pfizer C4591001 SAS datasets (court-released)",
+            "CDISC standards"
+          ]
         },
         {
           "id": "x8arx5y-todo-2",
@@ -3593,7 +3892,11 @@
             "en": "Identify the specific Ventavia case-report-form PDF Cotton opened (the patient with masked COVID date who apparently died) within the released documents — capture filename, page, and the masked field.",
             "fr": "Identifier le PDF de cahier patient Ventavia ouvert par Cotton (patient avec date Covid masquée et apparemment décédé) dans les documents publiés — capter nom de fichier, page et le champ masqué."
           },
-          "context": "Cited at ~06:30 — concrete proof of incomplete data handling at a known problematic center."
+          "context": "Cited at ~06:30 — concrete proof of incomplete data handling at a known problematic center.",
+          "timestamp": "06:30",
+          "documents": [
+            "Pfizer C4591001 case-report forms (court-released, Ventavia site)"
+          ]
         },
         {
           "id": "x8arx5y-todo-3",
@@ -3601,7 +3904,12 @@
             "en": "Find the French criminal complaint for \"poisoning\" by these vaccines that Cotton references — capture filing date, jurisdiction, complainants, and current status.",
             "fr": "Retrouver la plainte pénale française pour « empoisonnement » par ces vaccins évoquée par Cotton — date de dépôt, juridiction, plaignants, état d'avancement."
           },
-          "context": "Cited at ~14:34 as a real legal consequence of the adverse-event data."
+          "context": "Cited at ~14:34 as a real legal consequence of the adverse-event data.",
+          "timestamp": "14:34",
+          "documents": [
+            "French Senate OPECST inquiry on adverse events",
+            "Criminal complaint for poisoning (France)"
+          ]
         },
         {
           "id": "x8arx5y-todo-4",
@@ -3609,7 +3917,11 @@
             "en": "Locate the pre-2020 WHO guideline that called for 6 months of follow-up for vaccine tolerance and 1 year for efficacy — Cotton uses it as the comparator the COVID trials departed from.",
             "fr": "Retrouver la directive OMS pré-2020 préconisant 6 mois de suivi pour la tolérance vaccinale et 1 an pour l'efficacité — Cotton la cite comme l'étalon dont les essais Covid se sont écartés."
           },
-          "context": "Cited at ~04:15 as the comparator that the COVID trials departed from."
+          "context": "Cited at ~04:15 as the comparator that the COVID trials departed from.",
+          "timestamp": "04:15",
+          "documents": [
+            "WHO guidelines on COVID-19 vaccine evaluation (pre-2020)"
+          ]
         }
       ],
       "notes": {
