@@ -47,6 +47,35 @@ apply to both files in lockstep.
 | _next commit_ | `Michel Rivazzi` → `Michèle Rivasi` (additional variant) | 6 |
 | _next commit_ | `Michel Ribasi` → `Michèle Rivasi` (B instead of V) | 2 |
 | _next commit_ | `Rivazie` → `Rivasi` (in `Mrs Rivazie` / `Mme Rivazie`) | 2 |
+| _next commit_ | Long monologues split into paragraphs at natural breaks | 550 new |
+
+### Paragraph splitting
+
+In addition to spelling fixes, monologue paragraphs longer than ~1200
+characters are split into multiple paragraphs at sentence boundaries
+that begin with a discourse marker. The split chunks do **not** repeat
+the speaker label — continuation paragraphs naturally inherit the
+prior speaker. Timestamps appear only on the original turn-start
+label, since they reflect when the speaker started, not artificial
+reading breaks.
+
+Markers used:
+- FR: `Alors`, `Donc`, `Voilà`, `Aujourd'hui`, `Maintenant`,
+  `D'ailleurs`, `Et puis`, `Mais`, `Par contre`, `Bon`, `Ensuite`,
+  `En fait`, `Pour résumer`, `Pour finir`, `En conclusion`,
+  `Par ailleurs`, `En résumé`, `Premièrement`, `Deuxièmement`,
+  `Troisièmement`, `En effet`, `De plus`, `Cela dit`, `Évidemment`.
+- EN: `So`, `Now`, `Therefore`, `However`, `Furthermore`, `In fact`,
+  `Anyway`, `Also`, `Moreover`, `Indeed`, `In summary`, `Then`,
+  `But`, `First`, `Secondly`, `Finally`, `In conclusion`, `Well`,
+  `Thus`, `Additionally`, `Meanwhile`, `Specifically`, `Obviously`,
+  `For example`, `For instance`.
+
+Constraints to avoid awkward fragments:
+- Only paragraphs > 1200 chars get touched.
+- Each split chunk must be ≥ 400 chars on both sides.
+- If no discourse marker is found, the paragraph is left alone — no
+  artificial mid-sentence breaks.
 
 ## Definitively not in the audio (no fix possible)
 
