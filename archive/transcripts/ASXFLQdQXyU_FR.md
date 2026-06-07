@@ -237,7 +237,7 @@ notes: "Diarized French auto-transcript via whisperX (medium, fr) + pyannote dia
 
 **Animateur [39:23]** Alors vous n'êtes pas seul quand même, parce que vous êtes quand même soutenu dans vos combats par quelques personnalités comme Bartine Vauner ou encore l'eurodéputé Michèle Rivasi. Est-ce que vous avez d'autres soutiens dans le milieu politique cette fois ?
 
-**Cotton [39:39]** Laurence Muller-Browne, qui a écrit la préface avec Michel Rivazzi. Virginie Jorot aussi, qui demande la transparence. Aujourd'hui j'étais avec Nicolas Dupont-Aignan.
+**Cotton [39:39]** Laurence Muller-Browne, qui a écrit la préface avec Michèle Rivasi. Virginie Jorot aussi, qui demande la transparence. Aujourd'hui j'étais avec Nicolas Dupont-Aignan.
 
 **Animateur [39:50]** Et alors quel accueil vous a réservé ?
 

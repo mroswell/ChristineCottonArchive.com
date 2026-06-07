@@ -43,6 +43,10 @@ apply to both files in lockstep.
 | _this commit_ | `Abscience` → `AB Science` (French pharma) | 2 |
 | _this commit_ | `Neroche` → `Roche` (Swiss pharma) | 2 |
 | _this commit_ | `Pfizer-415` → `Pfizer, à 95 %` (efficacy reference) | 2 |
+| _next commit_ | `Bridgian` → `Bridgen` (Andrew Bridgen, UK MP) | 2 |
+| _next commit_ | `Michel Rivazzi` → `Michèle Rivasi` (additional variant) | 6 |
+| _next commit_ | `Michel Ribasi` → `Michèle Rivasi` (B instead of V) | 2 |
+| _next commit_ | `Rivazie` → `Rivasi` (in `Mrs Rivazie` / `Mme Rivazie`) | 2 |
 
 ## Definitively not in the audio (no fix possible)
 

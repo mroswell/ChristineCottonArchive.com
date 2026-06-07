@@ -237,7 +237,7 @@ notes: "English translation of the French diarized transcript via Helsinki-NLP/o
 
 **Host [39:23]** So you're not alone anyway, because you're still supported in your fights by some personalities like Bartine Vauner or MEP Michèle Rivasi. Do you have any other support in the political arena this time?
 
-**Cotton [39:39]** Laurence Muller-Browne, who wrote the preface with Michel Rivazzi. Virginie Jorot also, who asks for transparency. Today I was with Nicolas Dupont-Aignan.
+**Cotton [39:39]** Laurence Muller-Browne, who wrote the preface with Michèle Rivasi. Virginie Jorot also, who asks for transparency. Today I was with Nicolas Dupont-Aignan.
 
 **Host [39:50]** And then what welcome did you have?
 
