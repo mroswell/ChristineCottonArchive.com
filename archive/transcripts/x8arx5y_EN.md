@@ -9,7 +9,7 @@ notes: "English translation of the French diarized transcript via Helsinki-NLP/o
 
 **SPEAKER_01 [00:04]** And yes, you imagine, this song was written by Jacques Lansman and sung by Jacques Dutronc 60 years ago. And here we are, we're hiding everything, we're not told anything. Christine Cotton, hello.
 
-**SPEAKER_00 [00:21]** Good morning, Mr. Berkoff.
+**SPEAKER_00 [00:21]** Good morning, Mr. Bercoff.
 
 **SPEAKER_01 [00:22]** Good morning, ma'am. You have studied, you have in any case begun to study this report, these Pfizer tests declassified for some time, for about a month, a few weeks already and so there are a lot of things going out with that and you had been received with pleasure and we know that you are very rigorous in what you say and what you are doing, what you are advancing. You're not getting out of your hair, but you're saying what's in it. So what can we get out of it? It seems that 42,000 people would have been tested, that there would have been 11,000. I'll give you some advanced figures, but you'll tell me, you'll correct me if I'm wrong. 9,000 of which we do not know what they have had, what they have become, 11,000 who have not fully recovered their health, not to mention the dead. But again, what can be said today of concrete in relation to these declassified pages?
 

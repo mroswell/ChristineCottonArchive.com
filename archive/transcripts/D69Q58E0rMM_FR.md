@@ -7,7 +7,7 @@ source_date: "2023-05-30"
 notes: "Diarized French auto-transcript via whisperX (medium, fr) + pyannote diarization. Channel: Actualité Politique Du Québec. Speaker labels are anonymous (SPEAKER_00, SPEAKER_01…) and may need light editing."
 ---
 
-**SPEAKER_03 [00:10]** Bonjour madame Coton, vous m'entendez bien?
+**SPEAKER_03 [00:10]** Bonjour madame Cotton, vous m'entendez bien?
 
 **SPEAKER_02 [00:15]** Bonjour, bonjour chanteur.
 
@@ -17,7 +17,7 @@ notes: "Diarized French auto-transcript via whisperX (medium, fr) + pyannote dia
 
 **SPEAKER_03 [00:28]** Donc, on va procéder à l'identification, si vous le voulez bien, simplement, nommer votre nom et votre prénom.
 
-**SPEAKER_02 [00:38]** Christine Coton.
+**SPEAKER_02 [00:38]** Christine Cotton.
 
 **SPEAKER_03 [00:39]** Parfait. Je vais aussi, là, pour formalité, je vais vous assermenter. Donc, déclarez-vous solennellement de dire la vérité, juste la vérité. Dites « je l'affirme ».
 

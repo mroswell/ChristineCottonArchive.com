@@ -185,7 +185,7 @@ notes: "Diarized French auto-transcript via whisperX (medium, fr) + pyannote dia
 
 **SPEAKER_01 [41:34]** Oui, en fait, mais ça, ça montre, ils tuent le messager parce qu'ils s'attaquent pas à ce que vous dites, ils s'attaquent pas vos données. Ils peuvent pas, ils ont aucune compétence.
 
-**SPEAKER_00 [41:42]** Si, ils essayent, mais certains, ils ont essayé. Mais bon, les pauvres, ils n'ont même pas compris le titre, donc n'hésitez pas à démonter mon analyse. Ça m'a fait beaucoup rire d'ailleurs quand j'ai vu le torchon qu'ils ont pondu en étant tout fier de se dire, on a débunké Christine Coton, mais les pauvres...
+**SPEAKER_00 [41:42]** Si, ils essayent, mais certains, ils ont essayé. Mais bon, les pauvres, ils n'ont même pas compris le titre, donc n'hésitez pas à démonter mon analyse. Ça m'a fait beaucoup rire d'ailleurs quand j'ai vu le torchon qu'ils ont pondu en étant tout fier de se dire, on a débunké Christine Cotton, mais les pauvres...
 
 **SPEAKER_01 [41:58]** Ils ont débunké Idrissa Berkhan, ils vont débunker... Professeur Raoult, je veux dire, visiblement, bon, tout le monde qui est extrêmement intelligent, beaucoup plus intelligent que eux, se font des banquets, puis souvent, au Québec, je me fais citer hors contexte, puis là, ils rient de moi à la télévision ou à la radio, mais c'est tellement, c'est d'un vide intellectuel abyssal, puis ils vont pas m'appeler pour avoir une discussion, là, c'est pas ça la question. Surtout pas.
 

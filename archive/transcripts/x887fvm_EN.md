@@ -9,7 +9,7 @@ notes: "English translation of the French diarized transcript via Helsinki-NLP/o
 
 **SPEAKER_01 [00:01]** To address this issue, we will re-launch another war, the famous Covid War, which has occupied us for more than two years now. Hello Christine Cotton.
 
-**SPEAKER_00 [00:09]** Good morning, Mr. Verkoff.
+**SPEAKER_00 [00:09]** Good morning, Mr. Bercoff.
 
 **SPEAKER_01 [00:12]** Good morning, ma'am. I take up your own terms. You are an economist-statistical magisterium. You have 23 years of career in the pharmaceutical industry. You have a company, the CRO, the Clinical Research Organisation. And you take care of any type of trial in various therapeutic fields. So, I've read a lot of things and you've written, said a lot of things and in particular we're going to focus on Pfizer's essays. And I think you have a lot to say about these essays and, let's say, some legitimacy and some consistency of these essays. Tell me.
 
@@ -73,7 +73,7 @@ notes: "English translation of the French diarized transcript via Helsinki-NLP/o
 
 **SPEAKER_01 [15:51]** And we didn't do a serological test.
 
-**SPEAKER_00 [15:54]** So the participants, they go home quietly, they can contaminate their co-workers, their families, their neighbours, supposedly it's a deadly disease, we're in the middle of a pandemic, restriction of movement, and the lab lets its participants into their homes. Without saying anything, but be careful if they're sick they might die or contaminate the others, but I thought it was very serious the Covid. Obviously for the lab it wasn't that bad, since we let them go home, we don't give them a test, we tell them you call if you're not good, well, it's big stuff. And then the problem is, we've been trying for months to justify us with more or less studies where we can, by looking at the methodology, we'll see that we can quite question the results. It's like I'm telling you, Mr. Berkoff, we're going to do a survey to find out if people use the metro, that I'm 300 metres from the metro. I'm gonna have a lot of people using the subway, so see, the methods are really...
+**SPEAKER_00 [15:54]** So the participants, they go home quietly, they can contaminate their co-workers, their families, their neighbours, supposedly it's a deadly disease, we're in the middle of a pandemic, restriction of movement, and the lab lets its participants into their homes. Without saying anything, but be careful if they're sick they might die or contaminate the others, but I thought it was very serious the Covid. Obviously for the lab it wasn't that bad, since we let them go home, we don't give them a test, we tell them you call if you're not good, well, it's big stuff. And then the problem is, we've been trying for months to justify us with more or less studies where we can, by looking at the methodology, we'll see that we can quite question the results. It's like I'm telling you, Mr. Bercoff, we're going to do a survey to find out if people use the metro, that I'm 300 metres from the metro. I'm gonna have a lot of people using the subway, so see, the methods are really...
 
 **SPEAKER_01 [16:58]** I'm not on the subway, but I'm looking at it outside the subway, and I'm looking at it from the outside.
 
