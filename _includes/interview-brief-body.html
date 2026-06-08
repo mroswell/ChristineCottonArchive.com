@@ -1,0 +1,61 @@
+{%- comment -%}
+  Shared inner content of a brief (header, pull quote, key statements, documents
+  cited, research follow-ups + cited sources). Used both by the collapsed In Brief
+  panel on cards (interview-briefs.html) and the standalone detail page
+  (interview-brief-page.html). Read-only, build-time, language from page.lang.
+  Params: include.v (video), include.labels.
+{%- endcomment -%}
+{%- assign v = include.v -%}
+{%- assign labels = include.labels -%}
+{%- assign L = page.lang | default: 'en' -%}
+{%- assign brief = site.data.briefs[v.id] -%}
+{%- assign srcgrp = site.data.followup_sources | where: "videoId", v.id | first -%}
+<div class="brief-header">
+  {%- if brief.date %}<span>📅 {{ brief.date }}</span>{% endif -%}
+  {%- if brief.interviewer %}<span>🎙️ {{ brief.interviewer[L] | default: brief.interviewer.en }}</span>{% endif -%}
+  {%- if brief.outlet %}<span>📺 {{ brief.outlet[L] | default: brief.outlet.en }}</span>{% endif -%}
+  {%- if brief.duration_min %}<span>⏱ {{ brief.duration_min }} min</span>{% endif -%}
+</div>
+
+{%- if brief.pull_quote %}
+<blockquote class="pull-quote">“{{ brief.pull_quote[L] | default: brief.pull_quote.en }}”</blockquote>
+{%- endif %}
+
+{%- if brief.claims and brief.claims.size > 0 %}
+<div class="brief-section">
+  <h4>{{ labels.key_statements | default: 'Key statements' }}</h4>
+  <ul class="claims-list">
+    {%- for c in brief.claims %}
+    <li>
+      <span class="claim-text">{{ c[L] | default: c.en }}</span>
+      {%- if c.timestamp %} <span class="ts-chip">▶ {{ c.timestamp }}</span>{% endif -%}
+      {%- if c.documents and c.documents.size > 0 %}<div class="claim-sources">{{ labels.sources_inline | default: 'Sources:' }} {{ c.documents | join: '; ' }}</div>{% endif -%}
+    </li>
+    {%- endfor %}
+  </ul>
+</div>
+{%- endif %}
+
+{%- if brief.documents_cited and brief.documents_cited.size > 0 %}
+<div class="brief-section">
+  <h4>{{ labels.documents_cited | default: 'Documents cited' }}</h4>
+  <ul class="docs-list">
+    {%- for d in brief.documents_cited %}<li>{{ d.name }}{% if d.where %} — {{ d.where }}{% endif %}</li>{% endfor %}
+  </ul>
+</div>
+{%- endif %}
+
+{%- if brief.todos and brief.todos.size > 0 %}
+<div class="brief-section">
+  <h4>{{ labels.follow_ups | default: 'Research follow-ups' }}</h4>
+  <ul class="todo-list">
+    {%- for t in brief.todos %}
+    <li class="todo-item">
+      <span class="todo-text">{{ t.text[L] | default: t.text.en }}</span>
+      {%- if t.context %}<span class="todo-context">{{ t.context }}</span>{% endif -%}
+      {%- include todo-sources.html srcgrp=srcgrp todo_id=t.id labels=labels %}
+    </li>
+    {%- endfor %}
+  </ul>
+</div>
+{%- endif %}

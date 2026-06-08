@@ -1,0 +1,34 @@
+{%- comment -%}
+  Build-time cross-interview research-follow-ups overview: every follow-up from
+  every brief, grouped by interview, each with its cited book sources. Read-only.
+  Param: include.labels.
+{%- endcomment -%}
+{%- assign L = page.lang | default: 'en' -%}
+{%- assign labels = include.labels -%}
+{% include interviews-styles.html %}
+{%- assign total = 0 -%}
+{%- for v in site.data.interviews -%}
+  {%- assign b = site.data.briefs[v.id] -%}
+  {%- if b.todos -%}{%- assign total = total | plus: b.todos.size -%}{%- endif -%}
+{%- endfor -%}
+<p class="fu-count">{{ total }} {{ labels.followups_count | default: 'research follow-ups across 18 interviews' }}</p>
+
+{%- for v in site.data.interviews -%}
+  {%- assign brief = site.data.briefs[v.id] -%}
+  {%- if brief and brief.todos and brief.todos.size > 0 -%}
+  {%- assign srcgrp = site.data.followup_sources | where: "videoId", v.id | first -%}
+  <section class="fu-group">
+    <h3><a href="{{ '/' | append: L | append: '/interviews/' | append: v.id | append: '/' | relative_url }}">{{ v.title }}</a></h3>
+    <div class="fu-meta">{{ v.author }}{% if brief.date %} · {{ brief.date }}{% endif %} · <a href="{{ v.url }}" target="_blank" rel="noopener">{{ labels.watch_button }} &#9654;</a></div>
+    <ul class="todo-list">
+      {%- for t in brief.todos %}
+      <li class="todo-item">
+        <span class="todo-text">{{ t.text[L] | default: t.text.en }}</span>
+        {%- if t.context %}<span class="todo-context">{{ t.context }}</span>{% endif -%}
+        {%- include todo-sources.html srcgrp=srcgrp todo_id=t.id labels=labels %}
+      </li>
+      {%- endfor %}
+    </ul>
+  </section>
+  {%- endif -%}
+{%- endfor -%}

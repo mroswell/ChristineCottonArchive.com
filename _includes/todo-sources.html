@@ -1,0 +1,23 @@
+{%- comment -%}
+  The "Sources she cites in the book" box for one research follow-up.
+  Params: include.srcgrp (a _data/followup_sources group), include.todo_id, include.labels.
+{%- endcomment -%}
+{%- assign srcgrp = include.srcgrp -%}
+{%- assign labels = include.labels -%}
+{%- if srcgrp -%}
+  {%- assign tsrc = srcgrp.todos | where: "id", include.todo_id | first -%}
+  {%- if tsrc and tsrc.sources and tsrc.sources.size > 0 -%}
+  <div class="todo-sources">
+    <span class="docs-label">{{ labels.sources_label | default: 'Sources she cites in the book' }}</span>
+    <ul>
+      {%- for s in tsrc.sources %}
+      <li>
+        {%- if s.footnote and s.footnote != 'none' %}<span class="fn-num" title="{{ labels.footnote | default: 'Footnote' }} {{ s.footnote }}">{{ s.footnote }}</span> {% endif -%}
+        {%- if s.url %}<a href="{{ s.url }}" target="_blank" rel="noopener"{% if s.cited_for %} title="{{ s.cited_for | escape }}"{% endif %}>{{ s.document }}</a>{% else %}<span{% if s.cited_for %} title="{{ s.cited_for | escape }}"{% endif %}>{{ s.document }}</span>{% endif -%}
+        {%- if s.archive_url %} <a class="arch-link" href="{{ s.archive_url }}" target="_blank" rel="noopener" title="{{ labels.archived_title | default: 'Archived copy (Internet Archive)' }}">⧉ {{ labels.archived | default: 'archived' }}</a>{% endif -%}
+      </li>
+      {%- endfor %}
+    </ul>
+  </div>
+  {%- endif -%}
+{%- endif -%}

@@ -1,0 +1,15 @@
+{%- comment -%}
+  Standalone per-interview brief DETAIL page body. Rendered by the
+  interview_brief_pages.rb generator at /<lang>/interviews/<id>/.
+  Reads page.video_id + page.lang.
+{%- endcomment -%}
+{%- assign L = page.lang | default: 'en' -%}
+{%- if L == 'fr' %}{% assign labels = site.data.interviews_labels_fr %}{% else %}{% assign labels = site.data.interviews_labels_en %}{% endif -%}
+{%- assign v = site.data.interviews | where: "id", page.video_id | first -%}
+{% include interviews-styles.html %}
+<p class="breadcrumb"><a href="{{ '/' | append: L | append: '/interviews/' | relative_url }}">← {{ labels.back_to_interviews | default: 'All interviews' }}</a></p>
+<h1>{{ v.title }}</h1>
+<p class="brief-page-meta">{{ v.author }} · <span class="badge">{{ v.platform }}</span> · <a href="{{ v.url }}" target="_blank" rel="noopener">{{ labels.watch_button }} &#9654;</a></p>
+<div class="brief-body brief-standalone">
+  {%- include interview-brief-body.html v=v labels=labels %}
+</div>
