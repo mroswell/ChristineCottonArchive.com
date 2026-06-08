@@ -104,6 +104,28 @@
   }
   .todo-docs ul { margin: 0; padding-left: 18px; }
   .todo-docs li { margin: 2px 0; }
+
+  .todo-sources {
+    display:block; margin-top: 6px; padding: 8px 10px;
+    background: #f3f6f9; border: 1px solid #dfe7ee; border-radius: 8px;
+    font-size: .82rem;
+  }
+  .todo-sources .docs-label {
+    display:block; font-size:.7rem; text-transform: uppercase;
+    letter-spacing:.05em; color: var(--accent); font-weight: 700; margin-bottom: 2px;
+  }
+  .todo-sources ul { margin: 0; padding-left: 18px; }
+  .todo-sources li { margin: 3px 0; }
+  .todo-sources a { color: var(--accent); text-decoration: none; }
+  .todo-sources a:hover { text-decoration: underline; }
+  .todo-sources .fn-num {
+    display:inline-block; min-width: 1.4em; text-align:center;
+    background:#e3ebf2; color:#4f6f8a; border-radius: 4px;
+    font-size:.68rem; font-variant-numeric: tabular-nums; padding: 0 4px; margin-right: 2px;
+  }
+  .todo-sources .arch-link { color: var(--muted); font-size:.74rem; white-space: nowrap; }
+  .todo-sources .arch-link:hover { color: var(--accent2); }
+  .todo-item.done .todo-sources { opacity: .65; }
   .checked-at { display:block; font-size:.72rem; color:#3e8a55; margin-top: 4px; font-style: italic; }
 
   .empty { color: var(--muted); padding: 30px 0; text-align: center; }
@@ -199,6 +221,7 @@ function loadLang() { return localStorage.getItem(LANG_KEY) === "fr" ? "fr" : "e
 function saveLang(l) { localStorage.setItem(LANG_KEY, l); }
 
 let briefs = {};
+let sourcesByTodo = {}; // todoId -> [{footnote, document, url, archive_url, cited_for, page}] (from book_followup_sources.data.json)
 let filters = { status: "all" /* all|open|done */, videoId: "" /* "" = all */ };
 
 const listEl = document.getElementById("list");
@@ -275,6 +298,22 @@ function renderList() {
             <span class="docs-label fr-only">Documents associés</span>
             <ul>${todo.documents.map(d => `<li>${esc(d)}</li>`).join("")}</ul>
           </div>` : "";
+      const srcs = sourcesByTodo[todo.id] || [];
+      const sourcesHTML = srcs.length
+        ? `<div class="todo-sources">
+            <span class="docs-label en-only">Sources she cites in the book</span>
+            <span class="docs-label fr-only">Sources qu'elle cite dans le livre</span>
+            <ul>${srcs.map(s => {
+              const fn = (s.footnote && s.footnote !== "none")
+                ? `<span class="fn-num" title="Footnote ${esc(s.footnote)} in the book">${esc(s.footnote)}</span> ` : "";
+              const label = s.url
+                ? `<a href="${esc(s.url)}" target="_blank" rel="noopener"${s.cited_for ? ` title="${esc(s.cited_for)}"` : ""}>${esc(s.document)}</a>`
+                : `<span${s.cited_for ? ` title="${esc(s.cited_for)}"` : ""}>${esc(s.document)}</span>`;
+              const arch = s.archive_url
+                ? ` <a class="arch-link" href="${esc(s.archive_url)}" target="_blank" rel="noopener" title="Archived copy (Internet Archive) — use if the link above is down">⧉ archived</a>` : "";
+              return `<li>${fn}${label}${arch}</li>`;
+            }).join("")}</ul>
+          </div>` : "";
       return `<li class="todo-item ${isDone ? "done" : ""}">
         <input type="checkbox" id="cb-${esc(todo.id)}" data-todo-id="${esc(todo.id)}" ${isDone ? "checked" : ""}>
         <div style="flex:1; min-width:0;">
@@ -285,6 +324,7 @@ function renderList() {
           ${todo.context ? `<span class="todo-context">${esc(todo.context)}</span>` : ""}
           <div class="todo-meta">${tsChip}${briefChip}</div>
           ${docsHTML}
+          ${sourcesHTML}
           ${isDone && checkedAt ? `<span class="checked-at">✓ ${esc(checkedAt)}</span>` : ""}
         </div>
       </li>`;
@@ -379,6 +419,21 @@ async function init() {
     }
   } catch (err) {
     console.warn("Could not load briefs.json", err);
+  }
+  // Underlying source documents Cotton cites in her book, resolved from footnotes to
+  // validated URLs (+ Wayback fallbacks). Joined to each follow-up by todo id.
+  try {
+    const r = await fetch("./book_followup_sources.data.json", {cache: "no-cache"});
+    if (r.ok) {
+      const groups = await r.json();
+      for (const g of groups) {
+        for (const t of (g.todos || [])) {
+          if (t.sources && t.sources.length) sourcesByTodo[t.id] = t.sources;
+        }
+      }
+    }
+  } catch (err) {
+    console.warn("Could not load book_followup_sources.data.json", err);
   }
   populateInterviewFilter();
   refreshAll();
