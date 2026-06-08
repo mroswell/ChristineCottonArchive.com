@@ -1,0 +1,16 @@
+{%- comment -%}
+  One research follow-up: a tickable checkbox (saved in the browser via
+  todo-checklist-script.html), the follow-up text, optional context, and its
+  cited book sources. Used by the In Brief panels, the detail pages, and the
+  follow-ups summary page. Params: include.todo, include.srcgrp, include.labels.
+{%- endcomment -%}
+{%- assign t = include.todo -%}
+{%- assign L = page.lang | default: 'en' -%}
+<li class="todo-item" data-todo-row="{{ t.id }}">
+  <input type="checkbox" class="todo-cb" id="cb-{{ t.id }}" data-todo-id="{{ t.id }}">
+  <div class="todo-main">
+    <label for="cb-{{ t.id }}" class="todo-text">{{ t.text[L] | default: t.text.en }}</label>
+    {%- if t.context %}<span class="todo-context">{{ t.context }}</span>{% endif -%}
+    {%- include todo-sources.html srcgrp=include.srcgrp todo_id=t.id labels=include.labels %}
+  </div>
+</li>

@@ -49,13 +49,7 @@
 <div class="brief-section">
   <h4>{{ labels.follow_ups | default: 'Research follow-ups' }}</h4>
   <ul class="todo-list">
-    {%- for t in brief.todos %}
-    <li class="todo-item">
-      <span class="todo-text">{{ t.text[L] | default: t.text.en }}</span>
-      {%- if t.context %}<span class="todo-context">{{ t.context }}</span>{% endif -%}
-      {%- include todo-sources.html srcgrp=srcgrp todo_id=t.id labels=labels %}
-    </li>
-    {%- endfor %}
+    {%- for t in brief.todos %}{% include todo-item.html todo=t srcgrp=srcgrp labels=labels %}{%- endfor %}
   </ul>
 </div>
 {%- endif %}

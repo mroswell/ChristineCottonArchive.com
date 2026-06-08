@@ -1,0 +1,49 @@
+{%- comment -%}
+  Makes the build-time research-follow-up checkboxes interactive: persists ticks
+  in localStorage and keeps them in sync across the In Brief panels, detail pages,
+  and the follow-ups summary page (and other open tabs). The follow-up text/sources
+  remain static HTML (still indexed by Pagefind); this only adds the tick state.
+  Key matches the legacy catalog page so progress carries over.
+{%- endcomment -%}
+<script>
+(function () {
+  const KEY = "cotton-todos-v1";
+  const load = () => { try { return JSON.parse(localStorage.getItem(KEY)) || {}; } catch (e) { return {}; } };
+  const save = (s) => localStorage.setItem(KEY, JSON.stringify(s));
+  const boxes = Array.from(document.querySelectorAll('input.todo-cb[data-todo-id]'));
+
+  function updateCount() {
+    const el = document.getElementById("fu-progress");
+    if (!el) return;
+    const s = load();
+    const done = boxes.filter(cb => s[cb.dataset.todoId] && s[cb.dataset.todoId].checked).length;
+    el.textContent = (el.dataset.template || "{done} / {total}")
+      .replace("{done}", done).replace("{total}", boxes.length);
+  }
+  function apply() {
+    const s = load();
+    boxes.forEach(cb => {
+      const on = !!(s[cb.dataset.todoId] && s[cb.dataset.todoId].checked);
+      cb.checked = on;
+      const row = cb.closest(".todo-item");
+      if (row) row.classList.toggle("done", on);
+    });
+    updateCount();
+  }
+
+  document.addEventListener("change", (e) => {
+    const cb = e.target.closest('input.todo-cb[data-todo-id]');
+    if (!cb) return;
+    const s = load();
+    if (cb.checked) s[cb.dataset.todoId] = { checked: true, at: new Date().toISOString() };
+    else delete s[cb.dataset.todoId];
+    save(s);
+    const row = cb.closest(".todo-item");
+    if (row) row.classList.toggle("done", cb.checked);
+    updateCount();
+  });
+  window.addEventListener("storage", (e) => { if (e.key === KEY) apply(); });
+
+  apply();
+})();
+</script>

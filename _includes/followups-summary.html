@@ -11,7 +11,7 @@
   {%- assign b = site.data.briefs[v.id] -%}
   {%- if b.todos -%}{%- assign total = total | plus: b.todos.size -%}{%- endif -%}
 {%- endfor -%}
-<p class="fu-count">{{ total }} {{ labels.followups_count | default: 'research follow-ups across 18 interviews' }}</p>
+<p class="fu-count"><span id="fu-progress" data-template="{{ labels.followups_progress }}"></span>{{ total }} {{ labels.followups_count | default: 'research follow-ups across 18 interviews' }}</p>
 
 {%- for v in site.data.interviews -%}
   {%- assign brief = site.data.briefs[v.id] -%}
@@ -21,14 +21,9 @@
     <h3><a href="{{ '/' | append: L | append: '/interviews/' | append: v.id | append: '/' | relative_url }}">{{ v.title }}</a></h3>
     <div class="fu-meta">{{ v.author }}{% if brief.date %} · {{ brief.date }}{% endif %} · <a href="{{ v.url }}" target="_blank" rel="noopener">{{ labels.watch_button }} &#9654;</a></div>
     <ul class="todo-list">
-      {%- for t in brief.todos %}
-      <li class="todo-item">
-        <span class="todo-text">{{ t.text[L] | default: t.text.en }}</span>
-        {%- if t.context %}<span class="todo-context">{{ t.context }}</span>{% endif -%}
-        {%- include todo-sources.html srcgrp=srcgrp todo_id=t.id labels=labels %}
-      </li>
-      {%- endfor %}
+      {%- for t in brief.todos %}{% include todo-item.html todo=t srcgrp=srcgrp labels=labels %}{%- endfor %}
     </ul>
   </section>
   {%- endif -%}
 {%- endfor -%}
+{% include todo-checklist-script.html %}
