@@ -45,9 +45,15 @@
 </div>
 {%- endif %}
 
-{%- if brief.todos and brief.todos.size > 0 %}
+{%- comment -%} Research follow-ups (with checkboxes + cited sources) only render on
+  the standalone detail page, not in the card In Brief preview. {%- endcomment -%}
+{%- if include.show_followups and brief.todos and brief.todos.size > 0 %}
 <div class="brief-section">
-  <h4>{{ labels.follow_ups | default: 'Research follow-ups' }}</h4>
+  <div class="fu-head">
+    <h4>{{ labels.follow_ups | default: 'Research follow-ups' }}</h4>
+    <span id="fu-progress" class="fu-progress" data-template="{{ labels.followups_progress }}"></span>
+    <button type="button" id="fu-clear" class="fu-clear" data-confirm="{{ labels.clear_confirm | default: 'Clear all checkmarks on this page?' | escape }}">{{ labels.clear_all | default: 'Clear all checkmarks' }}</button>
+  </div>
   <ul class="todo-list">
     {%- for t in brief.todos %}{% include todo-item.html todo=t srcgrp=srcgrp labels=labels %}{%- endfor %}
   </ul>

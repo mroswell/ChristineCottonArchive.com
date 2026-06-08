@@ -11,6 +11,6 @@
 <h1>{{ v.title }}</h1>
 <p class="brief-page-meta">{{ v.author }} · <span class="badge">{{ v.platform }}</span> · <a href="{{ v.url }}" target="_blank" rel="noopener">{{ labels.watch_button }} &#9654;</a></p>
 <div class="brief-body brief-standalone">
-  {%- include interview-brief-body.html v=v labels=labels %}
+  {%- include interview-brief-body.html v=v labels=labels show_followups=true %}
 </div>
 {% include todo-checklist-script.html %}

@@ -19,8 +19,6 @@
   {%- assign url_expertise = "/fr/expertises/" -%}
   {%- assign url_book = "/fr/livre/" -%}
   {%- assign url_interviews = "/fr/interviews/" -%}
-  {%- assign nav_followups = "Suivis de recherche" -%}
-  {%- assign url_followups = "/fr/follow-ups/" -%}
   {%- assign url_sources = "/fr/sources/" -%}
   {%- assign url_archive = "/fr/archive/" -%}
 {%- else -%}
@@ -36,8 +34,6 @@
   {%- assign url_expertise = "/en/expertise/" -%}
   {%- assign url_book = "/en/book/" -%}
   {%- assign url_interviews = "/en/interviews/" -%}
-  {%- assign nav_followups = "Research follow-ups" -%}
-  {%- assign url_followups = "/en/follow-ups/" -%}
   {%- assign url_sources = "/en/sources/" -%}
   {%- assign url_archive = "/en/archive/" -%}
 {%- endif -%}
@@ -68,7 +64,6 @@
       <a href="{{ url_expertise  | relative_url }}">{{ nav_expertise }}</a>
       <a href="{{ url_book       | relative_url }}">{{ nav_book }}</a>
       <a href="{{ url_interviews | relative_url }}">{{ nav_interviews }}</a>
-      <a href="{{ url_followups  | relative_url }}">{{ nav_followups }}</a>
       <a href="{{ url_sources    | relative_url }}">{{ nav_sources }}</a>
       <a href="{{ url_archive    | relative_url }}">{{ nav_archive }}</a>
     </nav>

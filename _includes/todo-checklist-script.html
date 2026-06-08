@@ -42,6 +42,19 @@
     if (row) row.classList.toggle("done", cb.checked);
     updateCount();
   });
+
+  const clearBtn = document.getElementById("fu-clear");
+  if (clearBtn) {
+    clearBtn.addEventListener("click", () => {
+      if (!confirm(clearBtn.dataset.confirm || "Clear all checkmarks on this page?")) return;
+      const s = load();
+      boxes.forEach(cb => { delete s[cb.dataset.todoId]; cb.checked = false;
+        const row = cb.closest(".todo-item"); if (row) row.classList.remove("done"); });
+      save(s);
+      updateCount();
+    });
+  }
+
   window.addEventListener("storage", (e) => { if (e.key === KEY) apply(); });
 
   apply();

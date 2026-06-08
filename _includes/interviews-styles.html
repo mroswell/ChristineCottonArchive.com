@@ -64,6 +64,14 @@
   .todo-item.done .todo-text { text-decoration: line-through; color: var(--muted); }
   .todo-item.done .todo-context, .todo-item.done .todo-sources { opacity: .6; }
   .todo-context { display: block; font-size: .76rem; color: var(--muted); margin-top: 2px; }
+  /* follow-ups toolbar (detail page): heading + progress + clear-all */
+  .fu-head { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+  .fu-head h4 { margin: 0; }
+  .fu-progress { font-size: .76rem; color: var(--muted); font-variant-numeric: tabular-nums; }
+  .fu-clear { margin-left: auto; font: inherit; font-size: .76rem; cursor: pointer;
+    background: #fff; color: var(--accent-2, #7c2f3e); border: 1px solid var(--line);
+    border-radius: 8px; padding: 3px 10px; }
+  .fu-clear:hover { background: #f5e6ea; }
   .todo-sources { margin: 6px 0 2px; padding: 8px 10px; background: #f3f6f9;
     border: 1px solid #dfe7ee; border-radius: 8px; }
   .todo-sources .docs-label { display: block; font-size: .68rem; text-transform: uppercase;
