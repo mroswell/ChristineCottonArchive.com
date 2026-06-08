@@ -1,7 +1,7 @@
 {%- comment -%}
   Read-only "In Brief" panel for one interview card, rendered at BUILD TIME (in
-  the static HTML → indexed by Pagefind). Wraps the shared brief body, plus an
-  always-visible link to the standalone detail page.
+  the static HTML → indexed by Pagefind). The "Open as page" link sits on the same
+  line as the "In Brief" toggle (stopPropagation so it navigates without toggling).
   Params: include.v (a video from _data/interviews.json), include.labels.
 {%- endcomment -%}
 {%- assign v = include.v -%}
@@ -9,9 +9,8 @@
 {%- assign L = page.lang | default: 'en' -%}
 {%- assign brief = site.data.briefs[v.id] -%}
 {%- if brief and brief.status != 'stub' -%}
-<a class="card-detail-link" href="{{ '/' | append: L | append: '/interviews/' | append: v.id | append: '/' | relative_url }}">{{ labels.open_as_page | default: 'Open as page' }} ↗</a>
 <details class="brief">
-  <summary>{{ labels.in_brief | default: 'In Brief' }}<span class="chevron"> ▾</span></summary>
+  <summary><span class="brief-label">{{ labels.in_brief | default: 'In Brief' }}<span class="chevron"> ▾</span></span><a class="open-page" href="{{ '/' | append: L | append: '/interviews/' | append: v.id | append: '/' | relative_url }}" onclick="event.stopPropagation()">↗ {{ labels.open_as_page | default: 'Open as page' }}</a></summary>
   <div class="brief-body">
     {%- include interview-brief-body.html v=v labels=labels %}
   </div>
