@@ -72,10 +72,13 @@
   .todo-sources .arch-link { color: var(--muted); font-size: .72rem; white-space: nowrap; }
   .todo-sources .arch-link:hover { color: var(--accent-2, #7c2f3e); }
 
-  /* ---- "Open as page" link on cards ---- */
-  .brief-body .open-page { display: inline-block; font-size: .78rem; color: var(--accent);
-    text-decoration: none; margin-bottom: 6px; }
-  .brief-body .open-page:hover { text-decoration: underline; }
+  /* ---- always-visible link to the detail page, on each card ---- */
+  .vcard .card-detail-link { display: inline-block; align-self: flex-start; margin-top: 4px;
+    font-size: .82rem; font-weight: 600; color: var(--accent); text-decoration: none; }
+  .vcard .card-detail-link:hover { text-decoration: underline; }
+  /* ---- "Document located" box (a doc we found, not a book citation) ---- */
+  .todo-sources.todo-located { background: #f4f1ea; border-color: #e6dfcf; }
+  .todo-sources.todo-located .docs-label { color: var(--accent-2, #7c2f3e); }
 
   /* ---- standalone brief detail page ---- */
   .breadcrumb { font-size: .85rem; margin-bottom: 10px; }

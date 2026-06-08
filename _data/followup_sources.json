@@ -30,7 +30,16 @@
    },
    {
     "id": "WmDFTibK-Ek-todo-2",
-    "sources": []
+    "sources": [
+     {
+      "footnote": "none",
+      "kind": "located",
+      "url": "https://healthjusticeinitiative.org.za/wp-content/uploads/2023/09/OCRPfizer-1_Redacted.pdf",
+      "document": "Health Justice Initiative (South Africa) — redacted Pfizer/South Africa COVID-19 vaccine supply agreement (released Sept 2023)",
+      "cited_for": "The leaked April 2021 Pfizer–South Africa supply contract the follow-up sought (states the Phase 2/3 trials are completed). Located via the Health Justice Initiative disclosure.",
+      "page": ""
+     }
+    ]
    },
    {
     "id": "WmDFTibK-Ek-todo-3",
