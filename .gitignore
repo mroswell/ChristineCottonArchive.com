@@ -73,3 +73,6 @@ archive/sources/VAERS_*.md
 # copyright policy in CLAUDE.md). Drop screenshots, .html, .json, or .txt
 # captures into archive/social/ and they'll stay out of git.
 archive/social/
+
+# Christine Cotton tweet archive — preserve locally, do not republish (copyright policy)
+tweets/
