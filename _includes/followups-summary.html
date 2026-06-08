@@ -1,0 +1,34 @@
+{%- comment -%}
+  Standalone cross-interview research-follow-ups checklist: every follow-up from
+  every brief, grouped by interview, each with checkbox + cited sources. Build-time
+  (searchable). NOT in the site nav — linked from each interview detail page.
+  Param: include.labels.
+{%- endcomment -%}
+{%- assign L = page.lang | default: 'en' -%}
+{%- assign labels = include.labels -%}
+{% include interviews-styles.html %}
+{%- assign total = 0 -%}
+{%- for v in site.data.interviews -%}
+  {%- assign b = site.data.briefs[v.id] -%}
+  {%- if b.todos -%}{%- assign total = total | plus: b.todos.size -%}{%- endif -%}
+{%- endfor -%}
+<div class="fu-head fu-summary-head">
+  <span id="fu-progress" class="fu-progress" data-template="{{ labels.followups_progress }}"></span>
+  <span class="fu-count">{{ total }} {{ labels.followups_count | default: 'research follow-ups across 18 interviews' }}</span>
+  <button type="button" id="fu-clear" class="fu-clear" data-confirm="{{ labels.clear_confirm | default: 'Clear all checkmarks?' | escape }}">{{ labels.clear_all | default: 'Clear all checkmarks' }}</button>
+</div>
+
+{%- for v in site.data.interviews -%}
+  {%- assign brief = site.data.briefs[v.id] -%}
+  {%- if brief and brief.todos and brief.todos.size > 0 -%}
+  {%- assign srcgrp = site.data.followup_sources | where: "videoId", v.id | first -%}
+  <section class="fu-group">
+    <h3><a href="{{ '/' | append: L | append: '/interviews/' | append: v.id | append: '/' | relative_url }}">{{ v.title }}</a></h3>
+    <div class="fu-meta">{{ v.author }}{% if brief.date %} · {{ brief.date }}{% endif %} · <a href="{{ v.url }}" target="_blank" rel="noopener">{{ labels.watch_button }} &#9654;</a></div>
+    <ul class="todo-list">
+      {%- for t in brief.todos %}{% include todo-item.html todo=t srcgrp=srcgrp labels=labels %}{%- endfor %}
+    </ul>
+  </section>
+  {%- endif -%}
+{%- endfor -%}
+{% include todo-checklist-script.html %}

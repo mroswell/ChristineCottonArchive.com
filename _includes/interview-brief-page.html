@@ -7,10 +7,11 @@
 {%- if L == 'fr' %}{% assign labels = site.data.interviews_labels_fr %}{% else %}{% assign labels = site.data.interviews_labels_en %}{% endif -%}
 {%- assign v = site.data.interviews | where: "id", page.video_id | first -%}
 {% include interviews-styles.html %}
-<p class="breadcrumb"><a href="{{ '/' | append: L | append: '/interviews/' | relative_url }}">← {{ labels.back_to_interviews | default: 'All interviews' }}</a></p>
+<p class="breadcrumb"><a href="{{ '/' | append: L | append: '/interviews/' | relative_url }}">← {{ labels.back_to_interviews | default: 'All interviews' }}</a> · <a href="{{ '/' | append: L | append: '/follow-ups/' | relative_url }}">{{ labels.all_followups | default: 'All research follow-ups' }} →</a></p>
 <h1>{{ v.title }}</h1>
 <p class="brief-page-meta">{{ v.author }} · <span class="badge">{{ v.platform }}</span> · <a href="{{ v.url }}" target="_blank" rel="noopener">{{ labels.watch_button }} &#9654;</a></p>
 <div class="brief-body brief-standalone">
   {%- include interview-brief-body.html v=v labels=labels show_followups=true %}
 </div>
+<p class="fu-all-link"><a href="{{ '/' | append: L | append: '/follow-ups/' | relative_url }}">{{ labels.all_followups | default: 'All research follow-ups' }} →</a></p>
 {% include todo-checklist-script.html %}
