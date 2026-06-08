@@ -1,0 +1,35 @@
+{%- comment -%}
+  Build-time render of the interview cards (was client-side JS). Each card carries
+  a data-search attribute so interviews-script.html can filter by show/hide, and
+  embeds its read-only In Brief panel via interview-briefs.html.
+  Param: include.labels (interviews_labels_en|fr).
+{%- endcomment -%}
+{%- assign labels = include.labels -%}
+<div class="vgrid" id="vgrid">
+  {%- for v in site.data.interviews %}
+  {%- assign search = v.title | append: ' ' | append: v.author | append: ' ' | append: v.platform | downcase -%}
+  {%- assign tr = site.data.transcripts_index[v.id] -%}
+  {%- assign has_tr = false -%}
+  {%- if tr and tr.fr %}{% assign has_tr = true %}{% endif -%}
+  {%- if tr and tr.en %}{% assign has_tr = true %}{% endif -%}
+  <article class="card vcard" data-search="{{ search | escape }}">
+    {%- if v.thumb %}<img class="thumb" src="{{ v.thumb }}" alt="" loading="lazy">{% else %}<div class="thumb placeholder">{{ labels.no_thumbnail }}</div>{% endif %}
+    <div class="body">
+      <span class="badge">{{ v.platform }}</span>
+      <div class="title">{{ v.title }}</div>
+      <div class="meta">{{ v.author }}</div>
+      {%- if has_tr %}
+      <div class="transcript"><strong>{{ labels.transcript_label }}</strong>
+        {%- if tr.fr %} <a href="{{ site.baseurl }}/archive/transcripts/{{ v.id }}/">{{ labels.lang_fr }}</a>{% endif -%}
+        {%- if tr.en %}{% if tr.fr %} ·{% endif %} <a href="{{ site.baseurl }}/archive/transcripts/{{ v.id }}_en/">{{ labels.lang_en }}</a>{% endif -%}
+      </div>
+      {%- else %}
+      <div class="transcript">{{ labels.transcript_pending }}</div>
+      {%- endif %}
+      <a class="watch" href="{{ v.url }}" target="_blank" rel="noopener">{{ labels.watch_button }} &#9654;</a>
+      {%- include interview-briefs.html v=v labels=labels %}
+    </div>
+  </article>
+  {%- endfor %}
+</div>
+<p id="vempty" hidden>{{ labels.no_results | default: 'No matching videos.' }}</p>

@@ -27,4 +27,43 @@
     box-shadow: 0 0 0 3px rgba(47,93,124,.15); }
   #vcount { color: var(--muted); font-size: .9rem; }
   #vempty { color: var(--muted); padding: 30px 0; }
+  .vcard[hidden] { display: none; }
+
+  /* ---- read-only In Brief panel (build-time) ---- */
+  .vcard .watch { margin-top: 0; }
+  details.brief { margin-top: 12px; border-top: 1px solid var(--line); padding-top: 8px; }
+  details.brief > summary {
+    cursor: pointer; font-weight: 600; font-size: .9rem; color: var(--accent);
+    list-style: none; user-select: none;
+  }
+  details.brief > summary::-webkit-details-marker { display: none; }
+  details.brief[open] > summary { margin-bottom: 8px; }
+  .brief-body { font-size: .85rem; color: var(--ink); }
+  .brief-header { display: flex; flex-wrap: wrap; gap: 4px 12px; color: var(--muted);
+    font-size: .78rem; margin-bottom: 8px; }
+  .pull-quote { margin: 8px 0; padding: 6px 10px; border-left: 3px solid var(--accent);
+    background: var(--soft, #fbfaf7); font-style: italic; color: #33414d; }
+  .brief-section { margin-top: 10px; }
+  .brief-section h4 { margin: 0 0 4px; font-size: .76rem; text-transform: uppercase;
+    letter-spacing: .05em; color: var(--accent-2, #7c2f3e); }
+  .claims-list, .docs-list, .todo-list { margin: 0; padding-left: 16px; }
+  .claims-list li, .docs-list li, .todo-list li { margin: 4px 0; }
+  .claim-sources { color: var(--muted); font-size: .76rem; margin-top: 2px; }
+  .ts-chip { color: var(--accent); font-size: .74rem; white-space: nowrap; }
+  .todo-list { list-style: disc; }
+  .todo-item .todo-text { display: block; }
+  .todo-context { display: block; font-size: .76rem; color: var(--muted); margin-top: 2px; }
+  .todo-sources { margin: 6px 0 2px; padding: 8px 10px; background: #f3f6f9;
+    border: 1px solid #dfe7ee; border-radius: 8px; }
+  .todo-sources .docs-label { display: block; font-size: .68rem; text-transform: uppercase;
+    letter-spacing: .05em; color: var(--accent); font-weight: 700; margin-bottom: 2px; }
+  .todo-sources ul { margin: 0; padding-left: 16px; list-style: none; }
+  .todo-sources li { margin: 3px 0; }
+  .todo-sources a { color: var(--accent); text-decoration: none; }
+  .todo-sources a:hover { text-decoration: underline; }
+  .todo-sources .fn-num { display: inline-block; min-width: 1.4em; text-align: center;
+    background: #e3ebf2; color: #4f6f8a; border-radius: 4px; font-size: .66rem;
+    font-variant-numeric: tabular-nums; padding: 0 4px; margin-right: 2px; }
+  .todo-sources .arch-link { color: var(--muted); font-size: .72rem; white-space: nowrap; }
+  .todo-sources .arch-link:hover { color: var(--accent-2, #7c2f3e); }
 </style>
