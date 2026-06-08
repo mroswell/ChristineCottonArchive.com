@@ -91,6 +91,25 @@
   .todo-item label { cursor: pointer; font-size: .95rem; }
   .todo-item.done label { color: var(--muted); text-decoration: line-through; }
   .todo-context { display:block; font-size:.82rem; color: var(--muted); margin-top: 4px; }
+  .todo-sources {
+    display:block; margin: 6px 0 2px; padding: 8px 10px;
+    background: #f3f6f9; border: 1px solid #dfe7ee; border-radius: 8px; font-size: .82rem;
+  }
+  .todo-sources .docs-label {
+    display:block; font-size:.7rem; text-transform: uppercase; letter-spacing:.05em;
+    color: var(--accent); font-weight: 700; margin-bottom: 2px;
+  }
+  .todo-sources ul { margin: 0; padding-left: 18px; }
+  .todo-sources li { margin: 3px 0; }
+  .todo-sources a { color: var(--accent); text-decoration: none; }
+  .todo-sources a:hover { text-decoration: underline; }
+  .todo-sources .fn-num {
+    display:inline-block; min-width: 1.4em; text-align:center; background:#e3ebf2; color:#4f6f8a;
+    border-radius: 4px; font-size:.68rem; font-variant-numeric: tabular-nums; padding: 0 4px; margin-right: 2px;
+  }
+  .todo-sources .arch-link { color: var(--muted); font-size:.74rem; white-space: nowrap; }
+  .todo-sources .arch-link:hover { color: var(--accent2); }
+  .todo-item.done .todo-sources { opacity: .65; }
   .brief-footer {
     margin-top: 18px; padding-top: 12px; border-top: 1px dashed var(--line);
     font-size: .8rem; color: var(--muted); display:flex; flex-wrap:wrap; gap:14px; align-items:center;
@@ -250,6 +269,8 @@ async function init() {
     const r = await fetch("./briefs.json", {cache: "no-cache"});
     if (!r.ok) throw new Error("briefs.json " + r.status);
     const data = await r.json();
+    // Load the cited-source index (optional enrichment — must never block the page).
+    try { await window.briefUtils.loadSourceIndex(); } catch (e) { console.warn("source index load failed", e); }
     renderPage(data.briefs || {});
   } catch (err) {
     renderError("Could not load briefs.json: " + err.message);

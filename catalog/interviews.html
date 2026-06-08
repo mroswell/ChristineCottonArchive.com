@@ -33,12 +33,6 @@
     border-radius: 8px; background: #fff; outline: none;
   }
   #search:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(47,93,124,.15); }
-  .filter-pill {
-    display:inline-flex; align-items:center; gap:6px; font-size:.85rem; color:var(--ink);
-    background:#fff; border:1px solid var(--line); border-radius:999px; padding:6px 12px;
-    cursor:pointer; user-select:none;
-  }
-  .filter-pill input { accent-color: var(--accent2); }
   #count { color: var(--muted); font-size: .9rem; white-space: nowrap; }
   .grid {
     display: grid; gap: 18px;
@@ -152,6 +146,25 @@
   .todo-item label { cursor: pointer; }
   .todo-item.done label { color: var(--muted); text-decoration: line-through; }
   .todo-context { display:block; font-size:.78rem; color: var(--muted); margin-top: 2px; }
+  .todo-sources {
+    display:block; margin: 6px 0 2px; padding: 8px 10px;
+    background: #f3f6f9; border: 1px solid #dfe7ee; border-radius: 8px; font-size: .82rem;
+  }
+  .todo-sources .docs-label {
+    display:block; font-size:.7rem; text-transform: uppercase; letter-spacing:.05em;
+    color: var(--accent); font-weight: 700; margin-bottom: 2px;
+  }
+  .todo-sources ul { margin: 0; padding-left: 18px; }
+  .todo-sources li { margin: 3px 0; }
+  .todo-sources a { color: var(--accent); text-decoration: none; }
+  .todo-sources a:hover { text-decoration: underline; }
+  .todo-sources .fn-num {
+    display:inline-block; min-width: 1.4em; text-align:center; background:#e3ebf2; color:#4f6f8a;
+    border-radius: 4px; font-size:.68rem; font-variant-numeric: tabular-nums; padding: 0 4px; margin-right: 2px;
+  }
+  .todo-sources .arch-link { color: var(--muted); font-size:.74rem; white-space: nowrap; }
+  .todo-sources .arch-link:hover { color: var(--accent2); }
+  .todo-item.done .todo-sources { opacity: .65; }
   .brief-footer {
     margin-top: 14px; padding-top: 10px; border-top: 1px dashed var(--line);
     font-size: .76rem; color: var(--muted); display:flex; flex-wrap:wrap; gap:12px; align-items:center;
@@ -182,7 +195,6 @@
   </header>
   <div class="controls">
     <input id="search" type="search" placeholder="Search by title, channel, or platform…" autocomplete="off">
-    <label class="filter-pill"><input type="checkbox" id="open-only">Has open follow-ups</label>
     <span id="count"></span>
   </div>
   <div class="grid" id="grid"></div>
@@ -218,7 +230,6 @@ const grid = document.getElementById("grid");
 const countEl = document.getElementById("count");
 const emptyEl = document.getElementById("empty");
 const searchEl = document.getElementById("search");
-const openOnlyEl = document.getElementById("open-only");
 const openCountEl = document.getElementById("open-count");
 
 let briefs = {};                  // map videoId -> brief
@@ -291,11 +302,9 @@ function cardHTML(v) {
 
 function applyFilters() {
   const q = searchEl.value.trim().toLowerCase();
-  const openOnly = openOnlyEl.checked;
-  let filtered = !q ? videos : videos.filter(v =>
+  if (!q) return videos;
+  return videos.filter(v =>
     (v.title + " " + v.author + " " + v.platform).toLowerCase().includes(q));
-  if (openOnly) filtered = filtered.filter(v => videoHasOpenTodo(v.id));
-  return filtered;
 }
 
 function render() {
@@ -326,7 +335,6 @@ function refreshOpenIndicators() {
 
 // ---------- events ----------
 searchEl.addEventListener("input", render);
-openOnlyEl.addEventListener("change", render);
 
 grid.addEventListener("change", (e) => {
   const cb = e.target.closest('input[type=checkbox][data-todo-id]');
@@ -401,7 +409,14 @@ async function init() {
     console.warn("Could not load briefs.json — rendering without briefs.", err);
   }
   briefsLoaded = true;
-  render();
+  render(); // show the video wall immediately — never gate it on optional data
+  // Then enrich each follow-up with clickable cited book sources and re-render.
+  try {
+    await window.briefUtils.loadSourceIndex();
+    render();
+  } catch (err) {
+    console.warn("Could not load cited-source index — continuing without it.", err);
+  }
 }
 init();
 </script>

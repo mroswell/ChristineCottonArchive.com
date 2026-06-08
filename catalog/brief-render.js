@@ -5,6 +5,25 @@
   const TODO_KEY = "cotton-todos-v1";
   const LANG_KEY = "cottonBriefLang";
 
+  // todoId -> [{footnote, document, url, archive_url, cited_for, page}], the underlying
+  // source documents Cotton cites in her book (resolved from footnotes to validated URLs).
+  let sourceIndex = {};
+  async function loadSourceIndex(url) {
+    try {
+      const r = await fetch(url || "./book_followup_sources.data.json", { cache: "no-cache" });
+      if (r.ok) {
+        const groups = await r.json();
+        const idx = {};
+        for (const g of groups) for (const t of (g.todos || [])) {
+          if (t.sources && t.sources.length) idx[t.id] = t.sources;
+        }
+        sourceIndex = idx;
+      }
+    } catch (e) { console.warn("Could not load book_followup_sources.data.json", e); }
+    return sourceIndex;
+  }
+  function setSourceIndex(idx) { sourceIndex = idx || {}; }
+
   const esc = (s) =>
     String(s).replace(/[&<>"']/g, (c) =>
       ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c])
@@ -108,6 +127,26 @@
       })
       .join("");
 
+    const renderTodoSources = (id) => {
+      const srcs = sourceIndex[id] || [];
+      if (!srcs.length) return "";
+      const items = srcs.map((s) => {
+        const fn = (s.footnote && s.footnote !== "none")
+          ? `<span class="fn-num" title="Footnote ${esc(s.footnote)} in the book">${esc(s.footnote)}</span> ` : "";
+        const label = s.url
+          ? `<a href="${esc(s.url)}" target="_blank" rel="noopener"${s.cited_for ? ` title="${esc(s.cited_for)}"` : ""}>${esc(s.document)}</a>`
+          : `<span${s.cited_for ? ` title="${esc(s.cited_for)}"` : ""}>${esc(s.document)}</span>`;
+        const arch = s.archive_url
+          ? ` <a class="arch-link" href="${esc(s.archive_url)}" target="_blank" rel="noopener" title="Archived copy (Internet Archive) — use if the link above is down">⧉ archived</a>` : "";
+        return `<li>${fn}${label}${arch}</li>`;
+      }).join("");
+      return `<div class="todo-sources">
+        <span class="docs-label en-only">Sources she cites in the book</span>
+        <span class="docs-label fr-only">Sources qu'elle cite dans le livre</span>
+        <ul>${items}</ul>
+      </div>`;
+    };
+
     const todosHTML = (brief.todos || [])
       .map((t) => {
         const done = !!todosState[t.id]?.checked;
@@ -118,6 +157,7 @@
             <span class="fr-only">${esc(t.text.fr || t.text.en)}</span>
             ${t.context ? `<span class="todo-context">${esc(t.context)}</span>` : ""}
           </label>
+          ${renderTodoSources(t.id)}
         </li>`;
       })
       .join("");
@@ -171,6 +211,7 @@
     esc, tsToSeconds, videoTimeUrl,
     loadTodos, saveTodos, setTodoChecked,
     loadLang, saveLang,
+    loadSourceIndex, setSourceIndex,
     renderBriefBody, renderStubBody, syncLangButtons
   };
 })();
